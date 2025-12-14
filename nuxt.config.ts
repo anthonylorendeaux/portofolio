@@ -20,7 +20,4 @@ export default defineNuxtConfig({
     description: 'Welcome on my personal portofolio',
     defaultLocale: 'en',
   },
-  content: {
-    experimental: { nativeSqlite: true },
-  },
 })
