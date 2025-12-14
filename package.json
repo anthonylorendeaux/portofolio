@@ -14,7 +14,7 @@
     "@nuxt/content": "^3.6.3",
     "@nuxt/eslint": "^1.4.1",
     "@nuxt/image": "^1.10.0",
-    "@nuxt/ui": "^3.2.0",
+    "@nuxt/ui": "^3.3.7",
     "@nuxtjs/strapi": "^2.1.0",
     "better-sqlite3": "^12.2.0",
     "eslint": "^9.30.0",
