@@ -8,7 +8,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxt/eslint',
-    '@nuxtjs/strapi',
     '@nuxt/ui',
     '@nuxt/image',
     '@nuxtjs/seo',
@@ -20,5 +19,5 @@ export default defineNuxtConfig({
     name: 'Portofolio - Anthony Lorendeaux',
     description: 'Welcome on my personal portofolio',
     defaultLocale: 'en',
-  }
+  },
 })
