@@ -7,7 +7,7 @@ slug: "garage-bourgeois"
 date: "2024-10-19"
 ---
 
-::hero{:url='https://garage-bourgeois.vercel.app'}
+::ArticleHeader{:url='https://garage-bourgeois.vercel.app'}
 Garage Bourgeois.
 
 #type

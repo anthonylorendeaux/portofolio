@@ -7,7 +7,7 @@ slug: "personal-portofolio"
 date: "2025-07-10"
 ---
 
-::hero{:url='#'}
+::ArticleHeader{:url='#'}
 Portofolio.
 
 #type

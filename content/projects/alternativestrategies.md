@@ -7,7 +7,7 @@ slug: "alternativestrategies"
 date: "2025-05-19"
 ---
 
-::hero{:url='https://alternativestrategies.fr/'}
+::ArticleHeader{:url='https://alternativestrategies.fr/'}
 Alternative Stragies
 
 #type

@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/image',
     '@nuxtjs/seo',
-    '@nuxt/content'
+    '@nuxt/content',
+    'nuxt-studio',
   ],
   css: ['~/assets/css/main.css'],
   site: {

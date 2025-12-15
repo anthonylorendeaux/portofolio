@@ -7,7 +7,7 @@ slug: "chrome-dino"
 date: "2024-10-19"
 ---
 
-::hero{:url='https://github.com/anthonylorendeaux/python-chrome-dinosaur'}
+::ArticleHeader{:url='https://github.com/anthonylorendeaux/python-chrome-dinosaur'}
 Dino Game.
 
 #type

@@ -7,7 +7,7 @@ slug: "les-caprices"
 date: "2024-10-19"
 ---
 
-::hero{:url='https://www.les-caprices.fr'}
+::ArticleHeader{:url='https://www.les-caprices.fr'}
 Les Caprices.
 
 #type

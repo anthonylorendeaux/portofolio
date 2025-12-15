@@ -7,7 +7,7 @@ slug: "jums-cookbook"
 date: "2025-02-06"
 ---
 
-::hero{:url=''}
+::ArticleHeader{:url=''}
 Jums Cookbook.
 
 #type

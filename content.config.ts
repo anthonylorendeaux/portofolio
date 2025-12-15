@@ -3,6 +3,15 @@ import { asSitemapCollection } from '@nuxtjs/sitemap/content'
 
 export default defineContentConfig({
     collections: {
+        pages: defineCollection(
+            asSitemapCollection({
+                type: 'page',
+                source: '**/*.md',
+                schema: z.object({
+                    layout: z.string().default('default')
+                })
+            })
+        ),
         projects: defineCollection(
             asSitemapCollection({
                 type: 'page',

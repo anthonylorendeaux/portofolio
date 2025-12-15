@@ -7,7 +7,7 @@ slug: "tempbox"
 date: "2025-04-01"
 ---
 
-::hero{:url='https://tempbox.fr/'}
+::ArticleHeader{:url='https://tempbox.fr/'}
 Tempbox
 
 #type
