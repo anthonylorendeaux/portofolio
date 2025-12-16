@@ -1,5 +1,16 @@
-title: Anthony Lorendeaux - Portfolio
-description: Ingénieur logiciel à Toulouse
+seo:
+  title: "Anthony Lorendeaux | Fullstack Nuxt & Vue.js Developer"
+  description: "I turn your ideas into high-performance web applications. Nuxt 3, TypeScript, and SaaS architecture expert based in Toulouse."
+  keywords: "Nuxt Freelancer, Vue.js Developer Toulouse, Fullstack Engineer, SaaS Builder, Docker"
+ogImage:
+  component: "NuxtSeo"
+  props:
+    title: "Anthony Lorendeaux"
+    description: "Software Engineer & Entrepreneur"
+    theme: "#00DC82"
+    
+title: "Anthony Lorendeaux - Portfolio"
+description: "Software Engineer based in Toulouse"
 hero:
   badge: false
   title: Hey, I'm Anthony Lorendeaux

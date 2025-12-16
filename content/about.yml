@@ -1,12 +1,22 @@
+seo:
+  title: "About Me | Anthony Lorendeaux - Fullstack Engineer & Nuxt Expert"
+  description: "Learn more about Anthony Lorendeaux. Full-stack web developer with an engineering degree and Microsoft certification. Expert in Nuxt.js, Strapi, and complex SaaS architectures."
+  keywords: "Anthony Lorendeaux, Fullstack Developer, Nuxt.js Expert, Microsoft Certified, Engineering Degree, Strapi Developer"
+ogImage:
+  component: "NuxtSeo"
+  props:
+    title: "About Anthony Lorendeaux"
+    description: "Engineering Degree • Microsoft Certified • Fullstack Dev"
+    theme: "#00DC82"
+    icon: "i-heroicons-user-circle"
+
 title: "About me."
 description: "Why choose me and my stack"
-
 bio: |
   I am a full-stack web developer with experience in building web applications that integrate both frontend and backend technologies. One of my key projects involved creating a full-stack application with **Strapi** as the CMS. I specialize in solving complex content management problems by utilizing modern tools and frameworks like **Nuxt.js**, **Tailwind CSS**, and **Node.js**.
   With experience working both in teams and as a solo freelancer, I’ve had the opportunity to collaborate across various industries. I thrive on delivering results that enhance user engagement and conversion rates, utilizing **SEO plugins** and **content management systems**.
   In addition to my hands-on development experience, I use **GitLab** and **GitHub Actions** to manage projects. I’m particularly interested in further improving **Three.js** visualizations.
   With an **engineering degree** and **Microsoft certification**, I have a strong technical foundation that allows me to approach problems from multiple disciplines.
-
 techStack:
   title: "My Tech Stack"
   description: "The tools I use to build robust applications."
