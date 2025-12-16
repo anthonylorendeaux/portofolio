@@ -1,5 +1,6 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 import { asSitemapCollection } from '@nuxtjs/sitemap/content'
+import { asSeoCollection } from '@nuxtjs/seo/content'
 
 const createBaseSchema = () => z.object({
     title: z.string(),
@@ -27,12 +28,12 @@ const createStackCategorySchema = () => z.object({
 export default defineContentConfig({
     collections: {
         index: defineCollection(
-            asSitemapCollection({
+            asSeoCollection({
                 type: 'page',
                 source: 'index.yml',
                 schema: z.object({
                     hero: z.object({
-                        badge: z.string(),
+                        badge: z.boolean(),
                         title: z.string(),
                         subtitle: z.string(),
                         links: z.array(createButtonSchema())
@@ -42,7 +43,7 @@ export default defineContentConfig({
         ),
 
         about: defineCollection(
-            asSitemapCollection({
+            asSeoCollection({
                 type: 'page',
                 source: 'about.yml',
                 schema: z.object({
@@ -58,8 +59,18 @@ export default defineContentConfig({
             })
         ),
 
+        projects: defineCollection(
+            asSeoCollection({
+                type: 'page',
+                source: 'projects.yml',
+                schema: createBaseSchema().extend({
+                    title: z.string(),
+                })
+            })
+        ),
+
         contact: defineCollection(
-            asSitemapCollection({
+            asSeoCollection({
                 type: 'page',
                 source: 'contact.yml',
                 schema: createBaseSchema().extend({
@@ -70,7 +81,7 @@ export default defineContentConfig({
             })
         ),
 
-        projects: defineCollection(
+        projects_articles: defineCollection(
             asSitemapCollection({
                 type: 'page',
                 source: 'projects/*.md',

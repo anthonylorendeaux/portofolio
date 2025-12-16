@@ -1,3 +1,15 @@
+seo:
+  title: "Contact Anthony Lorendeaux | Freelance Web Developer & Consultant"
+  description: "Ready to launch your web project? Let's discuss how I can help you build fast, responsive, and scalable applications with Nuxt and Strapi."
+  keywords: "Contact Web Developer, Hire Freelance Nuxt, Web Development Toulouse, Anthony Lorendeaux Contact"
+ogImage:
+  component: "NuxtSeo"
+  props:
+    title: "Let's Work Together"
+    description: "Start your project with Anthony Lorendeaux"
+    theme: "#00DC82"
+    icon: "i-heroicons-envelope"
+
 title: "Contact"
 description: "Discutons de votre projet."
 intro: |

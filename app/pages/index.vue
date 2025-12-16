@@ -6,7 +6,11 @@ const { data: page } = await useAsyncData(route.path, () => {
 
 if (!page.value) throw createError({ statusCode: 404 })
 
-useSeoMeta(page.value.seo)
+useSeoMeta(page.value.seo || {})
+
+if (page.value.ogImage) {
+    defineOgImage(page.value.ogImage)
+}
 
 definePageMeta({
     layout: 'hero-centered'
