@@ -1,0 +1,14 @@
+title: Anthony Lorendeaux - Portfolio
+description: Ingénieur logiciel à Toulouse
+hero:
+  badge: false
+  title: Hey, I'm Anthony Lorendeaux
+  subtitle: A software engineer, based in Toulouse, France 🇫🇷
+  links:
+    - label: Let's work together
+      to: /contact
+      color: primary
+    - label: My Resume
+      to: https://notion.so/...
+      color: neutral
+      target: _blank

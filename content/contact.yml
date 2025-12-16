@@ -1,0 +1,17 @@
+title: "Contact"
+description: "Discutons de votre projet."
+intro: |
+  You are seeking for a well-structured website that not only looks great but is also fast, responsive, and easy to maintain on your own?
+  I specialize in crafting modern web experiences using robust technologies like Nuxt, Strapi, and Tailwind CSS. Whether you're a business, a creative, or just someone with a bold idea — let’s build something that reflects your vision and performs at scale.
+  Feel free to reach out and let’s talk about how we can bring your project to life.
+email: "anthony.lorendeaux19@gmail.com"
+socials:
+  - label: "LinkedIn"
+    to: "https://linkedin.com/in/anthony-lorendeaux/"
+    target: "_blank"
+  - label: "Fiverr"
+    to: "https://www.fiverr.com/..." 
+    target: "_blank"
+  - label: "GitHub"
+    to: "https://github.com/anthonylorendeaux"
+    target: "_blank"

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const { data: page } = await useAsyncData(route.path, () => {
-    return queryCollection('pages').path(route.path).first()
+    return queryCollection('index').path(route.path).first()
 })
 
 if (!page.value) throw createError({ statusCode: 404 })
@@ -14,7 +14,8 @@ definePageMeta({
 </script>
 
 <template>
-    <UContainer>
-        <ContentRenderer :value="page" />
-    </UContainer>
+    <UPage v-if="page">
+        <Hero v-if="page.hero" :title="page.hero.title" :subtitle="page.hero.subtitle" :badge="page.hero.badge"
+            :buttons="page.hero.links" />
+    </UPage>
 </template>
