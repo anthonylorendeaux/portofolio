@@ -1,13 +1,20 @@
 ---
-title: "Alternative Strategies"
-description: "A website for a professional recruter and coach"
-image: "/alternativestrategies-landing.png"
-type: "Website"
-slug: "alternativestrategies"
-date: "2025-05-19"
+title: Alternativestrategies
+date: 2025-05-19
+image: /alternativestrategies-landing.png
+seo:
+  title: Alternative Strategies
+  description: A website for a professional recruter and coach
+sitemap:
+  loc: /projects/alternativestrategies
+slug: alternativestrategies
+type: Website
 ---
 
-::ArticleHeader{:url='https://alternativestrategies.fr/'}
+::article-header
+---
+:url: https://alternativestrategies.fr/
+---
 Alternative Stragies
 
 #type
@@ -39,5 +46,5 @@ For those looking to advance their careers or find the right talent, Alternative
 Nuxt, Tailwind, Strapi
 ::
 
-::showcase{:img='alternativestrategies-website.png'}
+::showcase{:img="alternativestrategies-website.png"}
 ::

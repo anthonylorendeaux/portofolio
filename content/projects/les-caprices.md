@@ -1,6 +1,7 @@
 ---
-title: "Les Caprices"
-description: "A showcase website with a custom reservation API for a restaurant"
+seo:
+  title: "Les Caprices"
+  description: "A showcase website with a custom reservation API for a restaurant"
 image: "/lc-landing.png"
 type: "Website"
 slug: "les-caprices"

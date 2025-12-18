@@ -1,6 +1,7 @@
 ---
-title: "Tempbox"
-description: "A website for temporary emails"
+seo: 
+  title: "Tempbox"
+  description: "A website for temporary emails"
 image: "/tempbox-landing.png"
 type: "Application"
 slug: "tempbox"
