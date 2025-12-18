@@ -1,6 +1,7 @@
 ---
-title: "Chrome dinosaur"
-description: "A little game in python made with pygame"
+seo:
+  title: "Chrome dinosaur"
+  description: "A little game in python made with pygame"
 image: "/dino-thumbnail.png"
 type: "Game"
 slug: "chrome-dino"

@@ -1,13 +1,19 @@
 ---
-title: "(In progress)"
-description: "A portofolio website with different type of technologies to showcase my work"
-image: "/portofolio-thumbnail.png"
-type: "Website"
-slug: "personal-portofolio"
-date: "2025-07-10"
+date: 2025-07-10
+image: /portofolio-thumbnail.png
+seo:
+  title: Personal portofolio
+  description: A portofolio website with different type of technologies to showcase my work
+sitemap:
+  loc: /projects/personal-portofolio
+slug: personal-portofolio
+type: Website
 ---
 
-::ArticleHeader{:url='#'}
+::article-header
+---
+:url: "#"
+---
 Portofolio.
 
 #type
@@ -34,5 +40,5 @@ This portfolio effectively combines functionality and user experience, serving a
 Nuxt, Tailwind, ThreeJS
 ::
 
-::showcase{:img='/portofolio-thumbnail.png'}
+::showcase{:img="/portofolio-thumbnail.png"}
 ::

@@ -1,13 +1,20 @@
 ---
-title: "Jums Cookbook"
-description: "A recipe web app"
-image: "/jc-landing.png"
-type: "Application"
-slug: "jums-cookbook"
-date: "2025-02-06"
+title: Jums Cookbook
+date: 2025-02-06
+image: /jc-landing.png
+seo:
+  title: Jums Cookbook
+  description: A recipe web app
+sitemap:
+  loc: /projects/jums-cookbook
+slug: jums-cookbook
+type: Application
 ---
 
-::ArticleHeader{:url=''}
+::article-header
+---
+:url: ""
+---
 Jums Cookbook.
 
 #type
@@ -34,5 +41,5 @@ More than just a digital cookbook, Jums Cookbook transforms the way families int
 Nuxt, Tailwind, Strapi
 ::
 
-::showcase{:img='/jums-cookbook-website.jpeg'}
+::showcase{:img="/jums-cookbook-website.jpeg"}
 ::

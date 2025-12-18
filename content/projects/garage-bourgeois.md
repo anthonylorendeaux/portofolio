@@ -1,6 +1,7 @@
 ---
-title: "Garage Bourgeois"
-description: "A showcase website for a car mechanic"
+seo:
+  title: "Garage Bourgeois"
+  description: "A showcase website for a car mechanic"
 image: "/gb-landing.png"
 type: "Website"
 slug: "garage-bourgeois"
