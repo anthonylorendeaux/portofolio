@@ -21,4 +21,12 @@ export default defineNuxtConfig({
     description: 'Welcome on my personal portofolio',
     defaultLocale: 'en',
   },
+  studio: {
+    repository: {
+      provider: 'github',
+      owner: 'anthonylorendeaux',
+      repo: 'portofolio',
+      branch: 'master'
+    }
+  }
 })
