@@ -15,7 +15,7 @@ type: Website
 ---
 :url: https://alternativestrategies.fr/
 ---
-Alternative Stragies
+Alternative Strategies
 
 #type
 Website
