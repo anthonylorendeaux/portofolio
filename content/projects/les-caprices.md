@@ -1,14 +1,20 @@
 ---
+title: Les Caprices
+date: 2024-10-19
+image: /lc-landing.png
 seo:
-  title: "Les Caprices"
-  description: "A showcase website with a custom reservation API for a restaurant"
-image: "/lc-landing.png"
-type: "Website"
-slug: "les-caprices"
-date: "2024-10-19"
+  title: Les Caprices
+  description: A showcase website with a custom reservation API for a restaurant
+sitemap:
+  loc: /projects/les-caprices
+slug: les-caprices
+type: Website
 ---
 
-::ArticleHeader{:url='https://www.les-caprices.fr'}
+::article-header
+---
+:url: https://www.les-caprices.fr
+---
 Les Caprices.
 
 #type
@@ -33,5 +39,5 @@ Designed with both functionality and style in mind, the website serves as a digi
 Nuxt, Tailwind, Gsap
 ::
 
-::showcase{:img='/lc-website.jpeg'}
+::showcase{:img="/lc-website.jpeg"}
 ::

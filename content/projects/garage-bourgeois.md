@@ -1,14 +1,20 @@
 ---
+title: Garage Bourgeois
+date: 2024-10-19
+image: /gb-landing.png
 seo:
-  title: "Garage Bourgeois"
-  description: "A showcase website for a car mechanic"
-image: "/gb-landing.png"
-type: "Website"
-slug: "garage-bourgeois"
-date: "2024-10-19"
+  title: Garage Bourgeois
+  description: A showcase website for a car mechanic
+sitemap:
+  loc: /projects/garage-bourgeois
+slug: garage-bourgeois
+type: Website
 ---
 
-::ArticleHeader{:url='https://garage-bourgeois.vercel.app'}
+::article-header
+---
+:url: https://garage-bourgeois.vercel.app
+---
 Garage Bourgeois.
 
 #type
@@ -33,5 +39,5 @@ The "Garage Bourgeois" website effectively combines functionality with user expe
 Nuxt, Tailwind
 ::
 
-::showcase{:img='/gb-website.jpeg'}
+::showcase{:img="/gb-website.jpeg"}
 ::

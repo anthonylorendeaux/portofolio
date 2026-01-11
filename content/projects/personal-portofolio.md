@@ -1,4 +1,5 @@
 ---
+title: Personal Portofolio
 date: 2025-07-10
 image: /portofolio-thumbnail.png
 seo:

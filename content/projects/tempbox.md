@@ -1,14 +1,20 @@
 ---
-seo: 
-  title: "Tempbox"
-  description: "A website for temporary emails"
-image: "/tempbox-landing.png"
-type: "Application"
-slug: "tempbox"
-date: "2025-04-01"
+title: Tempbox
+date: 2025-04-01
+image: /tempbox-landing.png
+seo:
+  title: Tempbox
+  description: A website for temporary emails
+sitemap:
+  loc: /projects/tempbox
+slug: tempbox
+type: Application
 ---
 
-::ArticleHeader{:url='https://tempbox.fr/'}
+::article-header
+---
+:url: https://tempbox.fr/
+---
 Tempbox
 
 #type
@@ -35,5 +41,5 @@ With a focus on security and user experience, [Tempbox.fr](http://tempbox.fr/) s
 Nuxt, Tailwind, Python
 ::
 
-::showcase{:img='tempbox-website.png'}
+::showcase{:img="tempbox-website.png"}
 ::

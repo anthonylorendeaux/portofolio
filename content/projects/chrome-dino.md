@@ -1,14 +1,20 @@
 ---
+title: Chrome Dino
+date: 2024-10-19
+image: /dino-thumbnail.png
 seo:
-  title: "Chrome dinosaur"
-  description: "A little game in python made with pygame"
-image: "/dino-thumbnail.png"
-type: "Game"
-slug: "chrome-dino"
-date: "2024-10-19"
+  title: Chrome dinosaur
+  description: A little game in python made with pygame
+sitemap:
+  loc: /projects/chrome-dino
+slug: chrome-dino
+type: Game
 ---
 
-::ArticleHeader{:url='https://github.com/anthonylorendeaux/python-chrome-dinosaur'}
+::article-header
+---
+:url: https://github.com/anthonylorendeaux/python-chrome-dinosaur
+---
 Dino Game.
 
 #type
@@ -29,8 +35,8 @@ One week
 Python, Pygame
 ::
 
-::showcase{:img='/dino.gif'}
+::showcase{:img="/dino.gif"}
 ::
 
-::game{:url='/dino-game/index.html'}
+::game{:url="/dino-game/index.html"}
 ::
