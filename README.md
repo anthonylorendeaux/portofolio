@@ -1,75 +1,60 @@
-# Nuxt Minimal Starter
+# Portfolio - Nuxt 4 & Bun Application
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Application full-stack développée avec **Nuxt 4**, optimisée pour tourner nativement sur **Bun**.
+Ce projet utilise Docker pour la production et profite de la rapidité de Bun pour le développement et le build.
 
-## Setup
+Consultez la [documentation Nuxt](https://nuxt.com/docs/getting-started/introduction) pour en savoir plus.
 
-Make sure to install dependencies:
+## 🚀 Prérequis
+
+- [Bun](https://bun.sh/) (v1.0.0 ou supérieur)
+- Docker (pour le déploiement)
+
+## 🛠️ Installation & Développement
+
+Installez les dépendances ultra-rapidement avec Bun :
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
 bun install
-```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Lancez le serveur de développement (HMR activé) sur http://localhost:3000 :
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+bun run Dev
+# Ou pour forcer le runtime Bun natif (encore plus rapide) :
+bun --bun run dev
 ```
 
-## Production
-
-Build the application for production:
+## 📦 Production
+Compilez l'application pour la production (génère le dossier .output) :
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
 bun run build
 ```
-
-Locally preview production build:
+Pour prévisualiser le build de production localement :
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
 bun run preview
+# Ou lancer directement le serveur de prod :
+bun .output/server/index.mjs
 ```
+## 🐳 Docker (Déploiement)
+Le projet est conteneurisé avec une image multi-stage optimisée (base Alpine).
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Construire l'image
+
+```bash
+docker build -t mon-portfolio .
+```
+Lancer le conteneur
+
+```bash
+# Lance le site sur http://localhost:3000
+docker run --rm -p 3000:80 --name portfolio mon-Portfolio
+```
+## 🏗️ Architecture Technique
+- Framework : Nuxt 4
+- Runtime : Bun (Dev & Prod via Nitro Preset)
+- UI Library : Nuxt UI
+- Content : Nuxt Content (v2/v3)
+- Base de données : SQLite (via bun:sqlite natif en prod)

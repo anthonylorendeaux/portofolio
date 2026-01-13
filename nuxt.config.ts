@@ -1,5 +1,7 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  nitro: {
+    preset: 'bun'
+  },
   compatibilityDate: '2025-05-15',
   devServer: {
     host: '0.0.0.0',

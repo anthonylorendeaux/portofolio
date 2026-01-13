@@ -1,37 +1,34 @@
-# Build Stage 1
-
-FROM node:22-alpine AS build
+# use the official Bun image
+# see all versions at https://hub.docker.com/r/oven/bun/tags
+FROM oven/bun:1 AS build
 WORKDIR /app
 
-RUN corepack enable
+COPY package.json bun.lock* ./
 
-# Copy package.json and your lockfile, here we add pnpm-lock.yaml for illustration
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
-
-# Install dependencies
-RUN pnpm i
+# use ignore-scripts to avoid building node modules like better-sqlite3
+# NOTE: Si vous avez encore l'erreur de lockfile, retirez temporairement "--frozen-lockfile"
+RUN bun install --frozen-lockfile --ignore-scripts
 
 # Copy the entire project
-COPY . ./
+COPY . .
 
-# Build the project
-RUN pnpm run build
+RUN bun --bun run build
 
-# Build Stage 2
-
-FROM node:22-alpine
+# copy production dependencies and source code into final image
+FROM oven/bun:1 AS production
 WORKDIR /app
 
 # Only `.output` folder is needed from the build stage
-COPY --from=build /app/.output/ ./
+COPY --from=build /app/.output /app
 
-# Change the port and host
+# run the app
 ENV PORT=80
 ENV HOST=0.0.0.0
 
 EXPOSE 80
 
+# Healthcheck ajouté
 HEALTHCHECK --interval=5s --timeout=5s --start-period=30s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://127.0.0.1:80/health || exit 1
+  CMD curl -f http://127.0.0.1:80/health || exit 1
 
-CMD ["node", "/app/server/index.mjs"]
+ENTRYPOINT [ "bun", "--bun", "run", "/app/server/index.mjs" ]
