@@ -16,7 +16,9 @@ RUN bun --bun run build
 
 # copy production dependencies and source code into final image
 FROM oven/bun:1 AS production
-RUN apk add --no-cache curl
+
+RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 
 # Only `.output` folder is needed from the build stage
@@ -28,8 +30,7 @@ ENV HOST=0.0.0.0
 
 EXPOSE 80
 
-# Healthcheck standard utilisant curl
 HEALTHCHECK --interval=5s --timeout=5s --start-period=30s --retries=3 \
-  CMD curl -f http://127.0.0.1:80/health || exit 1
+  CMD wget --no-verbose --tries=1 --spider http://127.0.0.1:80/health || exit 1
 
 ENTRYPOINT [ "bun", "--bun", "run", "/app/server/index.mjs" ]
