@@ -42,7 +42,12 @@ if (page.value.ogImage) {
             </section>
 
             <div class="lg:w-2/5 flex justify-center items-center">
-                <LazyCanvasEffect />
+                <ClientOnly>
+                    <LazyCanvasEffect />
+                    <template #fallback>
+                        <div class="w-full h-64 bg-gray-100 animate-pulse rounded"></div>
+                    </template>
+                </ClientOnly>
             </div>
         </div>
     </UContainer>

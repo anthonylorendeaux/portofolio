@@ -9,12 +9,8 @@ defineProps(['url'])
                 <slot />
             </h1>
             <div class="flex items-center gap-2">
-                <NuxtLink :to="url">
-                    <UButton trailing-icon="i-lucide-external-link" size="xl" variant="ghost">
-                        <slot name="type" />
-                    </UButton>
-                </NuxtLink>
-
+                <UButton :to="url" trailing-icon="i-lucide-external-link" target="_blank" variant="soft"> Link
+                </UButton>
             </div>
         </div>
         <div class="mt-2 text-justify">
