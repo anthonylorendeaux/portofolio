@@ -31,6 +31,6 @@ ENV HOST=0.0.0.0
 EXPOSE 80
 
 HEALTHCHECK --interval=5s --timeout=5s --start-period=30s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://127.0.0.1:80/health || exit 1
+  CMD wget --no-verbose --tries=1 --spider http://127.0.0.1:80/ || exit 1
 
 ENTRYPOINT [ "bun", "--bun", "run", "/app/server/index.mjs" ]
