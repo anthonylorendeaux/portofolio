@@ -11,8 +11,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/seo',
     '@nuxt/content',
-    'nuxt-studio',
-  ],
+/*     'nuxt-studio',
+ */  ],
   css: ['~/assets/css/main.css'],
   site: {
     url: 'https://anthony-lorendeaux.com',
@@ -20,24 +20,12 @@ export default defineNuxtConfig({
     description: 'Welcome on my personal portofolio',
     defaultLocale: 'en',
   },
-  studio: {
-    repository: {
-      provider: 'github',
-      owner: 'anthonylorendeaux',
-      repo: 'portofolio',
-      branch: 'master'
-    }
-  },
-  runtimeConfig: {
-    // Privé (serveur seulement, injecté runtime Nitro/Netlify)
-    studioGoogleClientId: process.env.STUDIO_GOOGLE_CLIENT_ID || process.env.NITRO_STUDIO_GOOGLE_CLIENT_ID,
-    studioGoogleClientSecret: process.env.STUDIO_GOOGLE_CLIENT_SECRET || process.env.NITRO_STUDIO_GOOGLE_CLIENT_SECRET,
-    studioGoogleModerators: process.env.STUDIO_GOOGLE_MODERATORS || process.env.NITRO_STUDIO_GOOGLE_MODERATORS,
-    // Ajoute tous tes autres STUDIO_* privés ici
-    // githubToken: process.env.STUDIO_GITHUB_TOKEN,
-
-    public: {
-      // Publiques (client-safe, si besoin)
-    }
-  },
+  /*   studio: {
+      repository: {
+        provider: 'github',
+        owner: 'anthonylorendeaux',
+        repo: 'portofolio',
+        branch: 'master'
+      } 
+} */
 })
