@@ -28,8 +28,4 @@ export default defineNuxtConfig({
       branch: 'master'
     }
   },
-  runtimeConfig: {
-    studioGithubClientSecret: process.env.STUDIO_GITHUB_CLIENT_SECRET,
-    studioGithubClientId: process.env.STUDIO_GITHUB_CLIENT_ID
-  }
 })
