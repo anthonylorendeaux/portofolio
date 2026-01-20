@@ -27,5 +27,9 @@ export default defineNuxtConfig({
       repo: 'portofolio',
       branch: 'master'
     }
+  },
+  runtimeConfig: {
+    studioGithubClientSecret: process.env.STUDIO_GITHUB_CLIENT_SECRET,
+    studioGithubClientId: process.env.STUDIO_GITHUB_CLIENT_ID
   }
 })
