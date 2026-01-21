@@ -4,7 +4,11 @@ export default defineNuxtConfig({
     cloudflare: {
       deployConfig: true,
       nodeCompat: true
-    }
+    },
+    prerender: {
+      crawlLinks: true,
+      routes: ['/'],
+    },
   },
   compatibilityDate: '2025-05-15',
   devServer: {
