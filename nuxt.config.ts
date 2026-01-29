@@ -22,8 +22,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/seo',
     '@nuxt/content',
-/*     'nuxt-studio',
- */  ],
+    'nuxt-studio',
+  ],
   css: ['~/assets/css/main.css'],
   site: {
     url: 'https://anthony-lorendeaux.com',
@@ -31,12 +31,12 @@ export default defineNuxtConfig({
     description: 'Welcome on my personal portofolio',
     defaultLocale: 'en',
   },
-  /*   studio: {
-      repository: {
-        provider: 'github',
-        owner: 'anthonylorendeaux',
-        repo: 'portofolio',
-        branch: 'master'
-      } 
-} */
+  studio: {
+    repository: {
+      provider: 'github',
+      owner: 'anthonylorendeaux',
+      repo: 'portofolio',
+      branch: 'master'
+    }
+  }
 })
