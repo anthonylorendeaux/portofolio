@@ -1,6 +1,5 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 import { asSitemapCollection } from '@nuxtjs/sitemap/content'
-import { asSeoCollection } from '@nuxtjs/seo/content'
 
 const createBaseSchema = () => z.object({
     title: z.string(),
@@ -27,72 +26,73 @@ const createStackCategorySchema = () => z.object({
 
 export default defineContentConfig({
     collections: {
-        index: defineCollection(
-            asSeoCollection({
-                type: 'page',
-                source: 'index.yml',
-                schema: z.object({
-                    hero: z.object({
-                        badge: z.boolean(),
-                        title: z.string(),
-                        subtitle: z.string(),
-                        links: z.array(createButtonSchema())
-                    }),
-                })
-            })
-        ),
-
-        about: defineCollection(
-            asSeoCollection({
-                type: 'page',
-                source: 'about.yml',
-                schema: z.object({
+        index: defineCollection({
+            type: 'page',
+            source: 'index.yml',
+            schema: z.object({
+                hero: z.object({
+                    badge: z.boolean(),
                     title: z.string(),
-                    bio: z.string(),
-
-                    techStack: z.object({
-                        title: z.string(),
-                        description: z.string(),
-                        categories: z.array(createStackCategorySchema())
-                    })
-                })
+                    subtitle: z.string(),
+                    links: z.array(createButtonSchema())
+                }),
             })
-        ),
+        }),
 
-        projects: defineCollection(
-            asSeoCollection({
-                type: 'page',
-                source: 'projects.yml',
-                schema: createBaseSchema().extend({
+        about: defineCollection({
+            type: 'page',
+            source: 'about.yml',
+            schema: z.object({
+                title: z.string(),
+                bio: z.string(),
+
+                techStack: z.object({
                     title: z.string(),
+                    description: z.string(),
+                    categories: z.array(createStackCategorySchema())
                 })
             })
-        ),
+        }),
 
-        contact: defineCollection(
-            asSeoCollection({
-                type: 'page',
-                source: 'contact.yml',
-                schema: createBaseSchema().extend({
-                    intro: z.string(),
-                    email: z.string(),
-                    socials: z.array(createButtonSchema())
-                })
+        projects: defineCollection({
+            type: 'page',
+            source: 'projects.yml',
+            schema: createBaseSchema().extend({
+                title: z.string(),
             })
-        ),
+        }),
+
+        contact: defineCollection({
+            type: 'page',
+            source: 'contact.yml',
+            schema: createBaseSchema().extend({
+                intro: z.string(),
+                email: z.string(),
+                socials: z.array(createButtonSchema())
+            })
+        }),
 
         projects_articles: defineCollection(
             asSitemapCollection({
                 type: 'page',
                 source: 'projects/*.md',
-
                 schema: z.object({
                     date: z.string(),
                     type: z.string(),
                     image: z.string(),
                     slug: z.string()
                 })
-            }),
+            })
+        ),
+
+        blog: defineCollection(
+            asSitemapCollection({
+                type: 'page',
+                source: 'blog/*.md',
+                schema: z.object({
+                    date: z.string()
+                })
+            })
         )
     },
 })
