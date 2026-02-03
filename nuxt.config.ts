@@ -13,6 +13,10 @@ export default defineNuxtConfig({
   routeRules: {
     '/blog/**': { prerender: true },
   },
+  site: {
+    url: 'https://anthony-lorendeaux.com',
+    name: 'Portofolio website of Anthony Lorendeaux'
+  },
   compatibilityDate: '2025-05-15',
   devServer: {
     host: '0.0.0.0',
