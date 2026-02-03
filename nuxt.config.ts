@@ -10,6 +10,9 @@ export default defineNuxtConfig({
       routes: ['/'],
     },
   },
+  routeRules: {
+    '/blog/**': { prerender: true },
+  },
   compatibilityDate: '2025-05-15',
   devServer: {
     host: '0.0.0.0',
@@ -20,17 +23,11 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/ui',
     '@nuxt/image',
-    '@nuxtjs/seo',
     '@nuxt/content',
     'nuxt-studio',
+    '@nuxtjs/sitemap'
   ],
   css: ['~/assets/css/main.css'],
-  site: {
-    url: 'https://anthony-lorendeaux.com',
-    name: 'Portofolio - Anthony Lorendeaux',
-    description: 'Welcome on my personal portofolio',
-    defaultLocale: 'en',
-  },
   studio: {
     repository: {
       provider: 'github',
