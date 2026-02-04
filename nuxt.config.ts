@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    '/blog/**': { prerender: true },
+    '/blog/**': { ssr: false, prerender: true },
   },
   site: {
     url: 'https://anthony-lorendeaux.com',
