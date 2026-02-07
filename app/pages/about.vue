@@ -7,9 +7,6 @@ if (!page.value) throw createError({ statusCode: 404 })
 
 useSeoMeta(page.value.seo || {})
 
-if (page.value.ogImage) {
-    defineOgImage(page.value.ogImage)
-}
 </script>
 
 <template>

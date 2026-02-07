@@ -19,7 +19,7 @@ defineProps<{
 
 <template>
     <LazyHeroParticules />
-    <UContainer class="flex items-center justify-center">
+    <UContainer class="flex items-center justify-center h-[60vh]">
         <div class="w-full h-full max-w-4xl flex flex-col items-center text-center gap-6">
             <UBadge size="md" color="neutral" variant="outline">
                 <span class="relative flex w-2 h-2 mr-2">

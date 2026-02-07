@@ -12,11 +12,6 @@ useSeoMeta({
     ...((page.value?.seo as any) || {})
 })
 
-
-if (page.value.ogImage) {
-    defineOgImage(page.value.ogImage)
-}
-
 definePageMeta({
     layout: 'hero-centered'
 })
