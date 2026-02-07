@@ -12,10 +12,6 @@ if (!page.value) throw createError({ statusCode: 404 })
 
 useSeoMeta(page.value.seo || {})
 
-if (page.value.ogImage) {
-    defineOgImage(page.value.ogImage)
-}
-
 const { data: projects, refresh } = await useAsyncData(key, () => {
     const query = queryCollection('projects_articles')
         .select("title", "description", "image", "type", "slug", "date")
@@ -35,7 +31,7 @@ watch(selectedType, () => {
 </script>
 
 <template>
-    <UContainer>
+    <UContainer v-if="page">
         <h2 class="text-xl sm:text-3xl font-bold text-left"> {{ page.title }} </h2>
 
         <div class="flex flex-wrap gap-2 sm:justify-center my-4">

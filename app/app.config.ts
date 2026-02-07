@@ -13,7 +13,7 @@ export default defineAppConfig({
                 children: [
                     { label: 'Accueil', to: '/' },
                     { label: 'À propos', to: '/about' },
-                    { label: 'Portfolio', to: '/portfolio' },
+                    { label: 'Portfolio', to: '/projects' },
                     { label: 'Blog', to: '/blog' },
                     { label: 'Contact', to: '/contact' }
                 ]
