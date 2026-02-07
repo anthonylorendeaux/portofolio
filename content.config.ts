@@ -93,6 +93,13 @@ export default defineContentConfig({
                     date: z.string()
                 })
             })
+        ),
+
+        legal: defineCollection(
+            asSitemapCollection({
+                type: 'page',
+                source: 'legal/*.md',
+            })
         )
     },
 })

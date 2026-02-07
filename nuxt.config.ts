@@ -9,9 +9,28 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: ['/'],
     },
+    routeRules: {
+      // Priorité statiques /pdf/**
+      '/pdf/**': {
+        ssr: false,  // Bypass SSR → direct fichier
+        headers: {
+          'Cache-Control': 'public, max-age=31536000, immutable'
+        }
+      }
+    },
+    publicAssets: [
+      {
+        baseURL: '/pdf',
+        dir: 'public/pdf',
+        maxAge: 31536000  // 1 an cache
+      }
+    ]
   },
   routeRules: {
     '/blog/**': { ssr: false, prerender: true },
+    '/pdf/**': {
+      ssr: false
+    }
   },
   site: {
     url: 'https://anthony-lorendeaux.com',
