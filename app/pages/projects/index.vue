@@ -10,7 +10,15 @@ const { data: page } = await useAsyncData('project', () => {
 
 if (!page.value) throw createError({ statusCode: 404 })
 
-useSeoMeta(page.value.seo || {})
+const title = page.value?.seo?.title || page.value?.title
+const description = page.value?.seo?.description || page.value?.description
+
+useSeoMeta({
+    title,
+    ogTitle: title,
+    description,
+    ogDescription: description
+})
 
 const { data: projects, refresh } = await useAsyncData(key, () => {
     const query = queryCollection('projects_articles')

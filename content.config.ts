@@ -1,5 +1,6 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 import { asSitemapCollection } from '@nuxtjs/sitemap/content'
+import { asSeoCollection } from '@nuxtjs/seo/content'
 
 const createBaseSchema = () => z.object({
     title: z.string(),
@@ -73,7 +74,7 @@ export default defineContentConfig({
         }),
 
         projects_articles: defineCollection(
-            asSitemapCollection({
+            asSeoCollection({
                 type: 'page',
                 source: 'projects/*.md',
                 schema: z.object({
@@ -81,17 +82,18 @@ export default defineContentConfig({
                     type: z.string(),
                     image: z.string(),
                     slug: z.string()
-                })
+                }),
             })
         ),
 
         blog: defineCollection(
-            asSitemapCollection({
+            asSeoCollection({
                 type: 'page',
                 source: 'blog/*.md',
                 schema: z.object({
-                    date: z.string()
-                })
+                    date: z.date(),
+                    image: z.object({ src: z.string().nonempty().editor({ input: 'media' }) }),
+                }),
             })
         ),
 

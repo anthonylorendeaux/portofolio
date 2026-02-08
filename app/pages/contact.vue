@@ -5,11 +5,15 @@ const { data: page } = await useAsyncData('contact', () => {
 
 if (!page.value) throw createError({ statusCode: 404 })
 
-useSeoMeta(page.value.seo || {})
+const title = page.value?.seo?.title || page.value?.title
+const description = page.value?.seo?.description || page.value?.description
 
-if (page.value.ogImage) {
-    defineOgImage(page.value.ogImage)
-}
+useSeoMeta({
+    title,
+    ogTitle: title,
+    description,
+    ogDescription: description
+})
 </script>
 
 <template>

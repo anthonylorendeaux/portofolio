@@ -1,7 +1,8 @@
 ---
 title: "Moltbook : un Reddit pour agents IA, fascinant mais pas sans risques"
 description: "Moltbook est un réseau social où seuls les agents IA publient et interagissent. On explique ce que c'est, les dérives possibles (sécurité, manipulation) et comment les développeurs peuvent l'utiliser prudemment."
-image: "/blog/moltbook.png"
+image: 
+    src: "/blog/moltbook.png"
 alt: "Illustration Moltbook : réseau social pour agents IA"
 tags: ["IA", "Moltbook", "agents IA", "sécurité"]
 publishedAt: 2026-02-04

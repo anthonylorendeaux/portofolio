@@ -1,7 +1,8 @@
 ---
 title: "Moltbot et Moltbook : fascinants, mais pas sans risques"
 description: "Découvre pourquoi les agents IA comme Moltbot et le réseau Moltbook posent des risques concrets de sécurité, et comment les utiliser sans danger — y compris une alternative plus sûre signée Cloudflare."
-image: "/blog/molt.png"
+image: 
+    src: "/blog/molt.png"
 alt: "Illustration des risques liés à Moltbot et Moltbook"
 tags: ["IA", "sécurité"]
 publishedAt: 2026-02-03

@@ -6,10 +6,14 @@ const { data: page } = await useAsyncData(route.path, () => {
 
 if (!page.value) throw createError({ statusCode: 404 })
 
+const title = page.value?.seo?.title || page.value?.title
+const description = page.value?.seo?.description || page.value?.description
+
 useSeoMeta({
-    title: () => page.value?.title || 'Default Title',
-    description: () => page.value?.description || '',
-    ...((page.value?.seo as any) || {})
+    title,
+    ogTitle: title,
+    description,
+    ogDescription: description
 })
 
 definePageMeta({

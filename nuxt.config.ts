@@ -7,34 +7,18 @@ export default defineNuxtConfig({
     },
     prerender: {
       crawlLinks: true,
-      routes: ['/'],
+      routes: ['/', '/sitemap.xml']
     },
     routeRules: {
-      // Priorité statiques /pdf/**
-      '/pdf/**': {
-        ssr: false,  // Bypass SSR → direct fichier
-        headers: {
-          'Cache-Control': 'public, max-age=31536000, immutable'
-        }
-      }
-    },
-    publicAssets: [
-      {
-        baseURL: '/pdf',
-        dir: 'public/pdf',
-        maxAge: 31536000  // 1 an cache
-      }
-    ]
-  },
-  routeRules: {
-    '/blog/**': { ssr: false, prerender: true },
-    '/pdf/**': {
-      ssr: false
+      '/blog/**': { ssr: false, prerender: true },
+      '/projects/**': { ssr: false, prerender: true }
     }
   },
   site: {
     url: 'https://anthony-lorendeaux.com',
-    name: 'Portofolio website of Anthony Lorendeaux'
+    name: 'Anthony Lorendeaux - Développeur Fullstack Nuxt',
+    description: 'Portfolio freelance Nuxt/Vue.js, SaaS et sites optimisés SEO à Toulouse.',
+    defaultLocale: 'fr'
   },
   compatibilityDate: '2025-05-15',
   devServer: {
@@ -46,9 +30,9 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/ui',
     '@nuxt/image',
+    '@nuxtjs/seo',
     '@nuxt/content',
     'nuxt-studio',
-    '@nuxtjs/sitemap'
   ],
   css: ['~/assets/css/main.css'],
   studio: {

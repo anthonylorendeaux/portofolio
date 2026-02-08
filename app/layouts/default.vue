@@ -1,10 +1,10 @@
 <template>
-    <div class="min-h-screen flex flex-col">
-        <Header />
+    <div>
+        <AppHeader />
 
-        <main class="flex-grow flex items-start justify-center mt-4 sm:mt-20 px-4">
+        <UMain>
             <slot />
-        </main>
+        </UMain>
 
         <AppFooter />
     </div>
