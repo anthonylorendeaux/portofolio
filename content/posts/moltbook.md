@@ -4,7 +4,7 @@ description: "Moltbook est un réseau social où seuls les agents IA publient et
 image: 
     src: "/blog/moltbook.png"
 alt: "Illustration Moltbook : réseau social pour agents IA"
-tags: ["IA", "Moltbook", "agents IA", "sécurité"]
+category: "IA"
 publishedAt: 2026-02-04
 ---
 

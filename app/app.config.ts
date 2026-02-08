@@ -1,3 +1,12 @@
+
+let navigation = [
+    { label: 'Accueil', to: '/' },
+    { label: 'À propos', to: '/about' },
+    { label: 'Portfolio', to: '/projects' },
+    { label: 'Blog', to: '/blog' },
+    { label: 'Contact', to: '/contact' }
+];
+
 export default defineAppConfig({
     ui: {
         colors: {
@@ -6,17 +15,12 @@ export default defineAppConfig({
         },
         colorMode: 'light',
     },
+    navigation: navigation,
     footer: {
         columns: [
             {
                 label: 'Pages',
-                children: [
-                    { label: 'Accueil', to: '/' },
-                    { label: 'À propos', to: '/about' },
-                    { label: 'Portfolio', to: '/projects' },
-                    { label: 'Blog', to: '/blog' },
-                    { label: 'Contact', to: '/contact' }
-                ]
+                children: navigation
             },
             {
                 label: 'Légal',

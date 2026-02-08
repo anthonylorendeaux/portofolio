@@ -4,7 +4,7 @@ description: "Découvre pourquoi les agents IA comme Moltbot et le réseau Moltb
 image: 
     src: "/blog/molt.png"
 alt: "Illustration des risques liés à Moltbot et Moltbook"
-tags: ["IA", "sécurité"]
+category: "IA"
 publishedAt: 2026-02-03
 ---
 

@@ -58,9 +58,13 @@ export default defineContentConfig({
         projects: defineCollection({
             type: 'page',
             source: 'projects.yml',
-            schema: createBaseSchema().extend({
-                title: z.string(),
-            })
+            schema: createBaseSchema()
+        }),
+
+        blog: defineCollection({
+            type: 'page',
+            source: 'blog.yml',
+            schema: createBaseSchema()
         }),
 
         contact: defineCollection({
@@ -86,12 +90,13 @@ export default defineContentConfig({
             })
         ),
 
-        blog: defineCollection(
+        posts: defineCollection(
             asSeoCollection({
                 type: 'page',
-                source: 'blog/*.md',
+                source: 'posts/*.md',
                 schema: z.object({
-                    date: z.date(),
+                    category: z.string(),
+                    publishedAt: z.date(),
                     image: z.object({ src: z.string().nonempty().editor({ input: 'media' }) }),
                 }),
             })
