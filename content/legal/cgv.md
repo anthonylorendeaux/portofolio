@@ -12,7 +12,7 @@
 Prestataire :  
 Nom : Lorendeaux Anthony  
 Statut juridique : Micro-entrepreneur / Entreprise individuelle  
-Adresse du siège social : 40 rue des jardins du sauzat 31750, Escalquens
+Adresse du siège social : 40 rue des jardins du sauzat, 31750 Escalquens, France
 SIRET : 88803558100014  
 N° TVA intracommunautaire : TVA non applicable \- article 293 B du CGI  
 Email : [anthony.lorendeaux19@gmail.com](mailto:anthony.lorendeaux19@gmail.com)
@@ -502,7 +502,7 @@ Pour toute question concernant les présentes CGV :
 
 **Email :** anthony.lorendeaux19@gmail.com  
 **Téléphone :** \+33652923733  
-**Adresse :** 40 rue des jardins du sauzat 31750, Escalquens
+**Adresse :** 40 rue des jardins du sauzat, 31750 Escalquens, France
 
 ---
 

@@ -25,23 +25,23 @@ export default defineAppConfig({
                         label: 'Conditions Générales de Vente',
                         to: '/legal/cgv',
                     },
-                    /*                     {
-                                            label: 'Mentions Légales',
-                                            to: '/legal/mentions',
-                                        },
-                                        {
-                                            label: 'Politique de Confidentialité',
-                                            to: '/legal/confidentialite',
-                                        } */
+                    {
+                        label: 'Mentions Légales',
+                        to: '/legal/mentions',
+                    },
+                    {
+                        label: 'Politique de Confidentialité',
+                        to: '/legal/confidentialite',
+                    }
                 ]
             }
         ],
         copyright: `© Made in 2026, Copyright Anthony Lorendeaux.`,
         socials: [
-            { label: 'Github', to: 'https://github.com/anthonylorendeaux' },
-            { label: 'Linkedin', to: 'https://linkedin.com/in/anthony-lorendeaux/' },
-            { label: 'Fiverr', to: 'https://www.fiverr.com/antho_lor' },
-            { label: 'Mail', to: 'mailto:anthony.lorendeaux@icloud.com' }
+            { icon: 'i-ri-github-fill', to: 'https://github.com/anthonylorendeaux' },
+            { icon: 'i-ri-linkedin-fill', to: 'https://linkedin.com/in/anthony-lorendeaux/' },
+            { icon: 'i-ri-fiverr-fill', to: 'https://www.fiverr.com/antho_lor' },
+            { icon: 'i-lucide-mail', to: 'mailto:anthony.lorendeaux@icloud.com' }
         ]
     }
 })
