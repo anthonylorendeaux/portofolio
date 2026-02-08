@@ -32,7 +32,7 @@ Le site peut contenir des liens hypertextes vers d'autres sites. Anthony Lorende
 
 ## 7. Données personnelles
 
-Pour toute information concernant la collecte et le traitement de vos données personnelles, veuillez consulter notre [Politique de Confidentialité](/legales/confidentialite).
+Pour toute information concernant la collecte et le traitement de vos données personnelles, veuillez consulter notre [Politique de Confidentialité](/legal/confidentialite).
 
 ## 9. Cookies
 
