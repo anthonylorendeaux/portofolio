@@ -34,7 +34,7 @@ export default defineContentConfig({
                 hero: z.object({
                     badge: z.boolean(),
                     title: z.string(),
-                    subtitle: z.string(),
+                    description: z.string(),
                     links: z.array(createButtonSchema())
                 }),
             })
@@ -90,10 +90,10 @@ export default defineContentConfig({
             })
         ),
 
-        posts: defineCollection(
+        blog_articles: defineCollection(
             asSeoCollection({
                 type: 'page',
-                source: 'posts/*.md',
+                source: 'blog/*.md',
                 schema: z.object({
                     category: z.string(),
                     publishedAt: z.date(),

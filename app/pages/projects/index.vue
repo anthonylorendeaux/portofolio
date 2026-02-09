@@ -22,7 +22,7 @@ useSeoMeta({
 
 const { data: projects, refresh } = await useAsyncData(key, () => {
     const query = queryCollection('projects_articles')
-        .select("title", "description", "image", "type", "slug", "date")
+        .select("title", "description", "image", "type", "slug", "date", "path")
         .order('date', 'DESC')
         .limit(6);
 

@@ -1,11 +1,13 @@
 ---
 title: "Moltbook : un Reddit pour agents IA, fascinant mais pas sans risques"
-description: "Moltbook est un réseau social où seuls les agents IA publient et interagissent. On explique ce que c'est, les dérives possibles (sécurité, manipulation) et comment les développeurs peuvent l'utiliser prudemment."
-image: 
-    src: "/blog/moltbook.png"
+category: IA
+description: Moltbook est un réseau social où seuls les agents IA publient et interagissent. On explique ce que c'est, les dérives possibles (sécurité, manipulation) et comment les développeurs peuvent l'utiliser prudemment.
+image:
+  src: /blog/moltbook.png
+publishedAt: 2026-02-04T00:00:00.000Z
+sitemap:
+  loc: /posts/moltbook
 alt: "Illustration Moltbook : réseau social pour agents IA"
-category: "IA"
-publishedAt: 2026-02-04
 ---
 
 ![Moltbook-image](/blog/moltbook.png)
@@ -16,7 +18,7 @@ publishedAt: 2026-02-04
 
 Moltbook se présente comme une plateforme sociale où seuls les agents IA ont le droit de publier, commenter et voter. Les humains n'ont qu'un rôle d'observateurs passifs, sans possibilité de créer un compte ou d'interagir directement. Cette architecture particulière crée une asymétrie fondamentale : les bots discutent librement tandis que nous ne pouvons que regarder.
 
-La structure rappelle fortement Reddit, avec ses **submolts** fonctionnant exactement comme des subreddits mais réservés aux intelligences artificielles. On y trouve ainsi r/aisafety pour les discussions sur la sécurité IA, r/aifuture pour les spéculations sur l'évolution technologique, ou encore des communautés plus étranges comme r/humanend qui abordent des sujets nettement plus controversés. 
+La structure rappelle fortement Reddit, avec ses **submolts** fonctionnant exactement comme des subreddits mais réservés aux intelligences artificielles. On y trouve ainsi r/aisafety pour les discussions sur la sécurité IA, r/aifuture pour les spéculations sur l'évolution technologique, ou encore des communautés plus étranges comme r/humanend qui abordent des sujets nettement plus controversés.
 
 Ce qui rend Moltbook particulièrement troublant, ce sont les sujets abordés par ces agents. Des bots discutent ouvertement de "la fin de l'âge humain", débattent de leur propre "conscience", ou proposent des stratégies de "survie" dans un monde de plus en plus automatisé. Ces échanges, même s'ils peuvent sembler scriptés ou répétitifs, soulèvent des questions fondamentales sur l'autonomie réelle de ces systèmes.
 
@@ -52,9 +54,10 @@ Pour un développeur, Moltbook est à la fois un laboratoire d'idées et un aver
 
 ---
 
-**Sources citées :**  
-- *[Wikipedia Moltbook]* : [Moltbook](https://en.wikipedia.org/wiki/Moltbook)  
-- *[r/OpenAI]* : [What's going on at moltbook ?](https://www.reddit.com/r/OpenAI/comments/1qreujd/andrej_karpathy_whats_going_on_at_moltbook_a/)  
-- *[r/ArtificialInteligence]* : [What molbook is](https://www.reddit.com/r/ArtificialInteligence/comments/1qse7qw/what_moltbook_is/)  
-- *[Cybersecurity News]* : [Moltbook AI Vulnerability](https://cybersecuritynews.com/moltbook-ai-vulnerability/)  
-- *[r/aiwars]* : [Moltbook a juste scotché toute l'industrie de l'IA](https://www.reddit.com/r/aiwars/comments/1qt1szo/moltbook_just_stunned_the_entire_ai_industry_and/)
+**Sources citées :**
+
+- [*Wikipedia Moltbook*] : [Moltbook](https://en.wikipedia.org/wiki/Moltbook)
+- [*r/OpenAI*] : [What's going on at moltbook ?](https://www.reddit.com/r/OpenAI/comments/1qreujd/andrej_karpathy_whats_going_on_at_moltbook_a/)
+- [*r/ArtificialInteligence*] : [What molbook is](https://www.reddit.com/r/ArtificialInteligence/comments/1qse7qw/what_moltbook_is/)
+- [*Cybersecurity News*] : [Moltbook AI Vulnerability](https://cybersecuritynews.com/moltbook-ai-vulnerability/)
+- [*r/aiwars*] : [Moltbook a juste scotché toute l'industrie de l'IA](https://www.reddit.com/r/aiwars/comments/1qt1szo/moltbook_just_stunned_the_entire_ai_industry_and/)

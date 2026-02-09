@@ -9,9 +9,9 @@ defineProps(['project']);
             placeholder>
         </NuxtImg>
 
-        <NuxtLink :to="'/projects/' + project.slug"
+        <NuxtLink :to="project.path"
             class="absolute bottom-4 right-4 w-auto px-4 py-2 flex items-center space-x-2 rounded-md text-sm font-medium sm:opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
-            <UButton trailing-icon="i-lucide-arrow-right" size="md">See Project</UButton>
+            <UButton trailing-icon="i-lucide-arrow-right" size="md">See Project </UButton>
         </NuxtLink>
     </UCard>
 </template>

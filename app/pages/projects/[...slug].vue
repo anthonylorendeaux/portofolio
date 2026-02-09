@@ -1,11 +1,11 @@
 <script setup>
-const slug = useRoute().params.slug
-const { data: post } = await useAsyncData(`projects-${slug}`, () => {
-    return queryCollection('projects_articles').path(`/projects/${slug}`).first()
-})
+const route = useRoute()
 
-const title = page.value?.seo?.title || page.value?.title
-const description = page.value?.seo?.description || page.value?.description
+const { data: post } = await useAsyncData(route.path, () =>
+    queryCollection('projects_articles').path(route.path).first());
+
+const title = post.value?.seo?.title || post.value?.title
+const description = post.value?.seo?.description || post.value?.description
 
 useSeoMeta({
     title,
