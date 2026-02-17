@@ -1,32 +1,4 @@
 title: Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.js
-description: Sites web qui convertissent • SEO-first • Expert Fullstack France
-hero:
-  badge: true
-  title: "Développeur Freelance Nuxt/Vue.js"
-  description: "Je crée des sites modernes qui attirent du trafic qualifié et convertissent vos visiteurs en clients."
-  links:
-    - label: "Devis gratuit 24h"
-      to: /contact
-      color: primary
-      variant: solid
-    - label: "Mon Portfolio"
-      to: "#projects"
-      color: neutral
-      variant: outline
-projects:
-  title: Découvrez mes dernières réalisations
-  description: Chaque projet reflète ma passion pour l'innovation et mon engagement à livrer des résultats de haute qualité.
-  headline: Portofolio
-faq:
-  title: "Questions fréquentes"
-  description: "Tout ce que vous devez savoir avant de lancer votre projet"
-  items:
-    - label: "Combien de temps pour un site ?"
-      content: "Vitrine : 2-3 semaines | E-commerce : 4-6 semaines. Devis détaillé sous 24h."
-    - label: "Maintenance incluse ?"
-      content: "Forfaits dès 30€/mois : mises à jour, SEO continu, backups automatiques."
-    - label: "WordPress ou Nuxt ?"
-      content: "Nuxt/Vue.js uniquement : 10x plus rapide, SEO supérieur, maintenance simplifiée."
 contact:
   title: Discutons de votre projet
   description: Devis gratuit sous 24h. Aucun engagement. Je réponds à toutes vos questions technique et budget.
@@ -34,7 +6,34 @@ contact:
     - label: Prendre RDV
       to: /contact
       color: primary
-    - label: Voir mes services
-      to: /services
+description: Sites web qui convertissent • SEO-first • Expert Fullstack France
+faq:
+  title: Questions fréquentes
+  description: Tout ce que vous devez savoir avant de lancer votre projet
+  items:
+    - label: Combien de temps pour un site ?
+      content: "Vitrine : 2-3 semaines | E-commerce : 4-6 semaines. Devis détaillé sous 24h."
+    - label: Maintenance incluse ?
+      content: "Forfaits dès 30€/mois : mises à jour, SEO continu, backups automatiques."
+    - label: WordPress ou Nuxt ?
+      content: "Nuxt/Vue.js uniquement : 10x plus rapide, SEO supérieur, maintenance simplifiée."
+hero:
+  badge: true
+  title: Développeur Freelance Nuxt/Vue.js
+  description: Je crée des sites modernes qui attirent du trafic qualifié et convertissent vos visiteurs en clients.
+  links:
+    - label: Devis gratuit 24h
+      to: /contact
+      color: primary
+      variant: solid
+    - label: Mon Portfolio
+      to: "#projects"
       color: neutral
-      target: _blank
+      variant: outline
+projects:
+  title: Découvrez mes dernières réalisations
+  description: Chaque projet reflète ma passion pour l'innovation et mon engagement à livrer des résultats de haute qualité.
+  headline: Portofolio
+seo:
+  title: Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.jas
+  description: Sites web qui convertissent • SEO-first • Expert Fullstack France
