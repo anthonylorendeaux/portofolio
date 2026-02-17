@@ -1,29 +1,58 @@
-import { defineCollection, defineContentConfig, z } from '@nuxt/content'
-import { asSitemapCollection } from '@nuxtjs/sitemap/content'
+import { defineCollection, defineContentConfig, property, z } from '@nuxt/content'
 import { asSeoCollection } from '@nuxtjs/seo/content'
+import { asSitemapCollection } from '@nuxtjs/sitemap/content'
 
 const createBaseSchema = () => z.object({
-    title: z.string(),
-    description: z.string()
+    title: z.string().nonempty(),
+    description: z.string().nonempty()
+})
+
+const createBaseSectionSchema = () => z.object({
+    title: z.string().nonempty(),
+    description: z.string().nonempty()
+})
+
+const createIconString = () => property(z.string()).editor({
+    input: 'icon',
+    iconLibraries: ['lucide', 'simple-icons']
+})
+
+const createMediaString = () => property(z.string()).editor({ input: 'media' })
+
+const createLinkSchema = () => z.object({
+    label: z.string().nonempty(),
+    to: z.string().nonempty(),
+    icon: createIconString().optional(),
+    size: z.enum(['xs', 'sm', 'md', 'lg', 'xl']).optional(),
+    trailing: z.boolean().optional(),
+    target: z.string().optional(),
+    color: z.enum(['primary', 'secondary', 'neutral', 'error', 'warning', 'success', 'info']).optional(),
+    variant: z.enum(['solid', 'outline', 'subtle', 'soft', 'ghost', 'link']).optional()
 })
 
 const createButtonSchema = () => z.object({
-    label: z.string(),
-    to: z.string(),
+    label: z.string().nonempty(),
+    to: z.string().nonempty(),
     color: z.enum(["error", "primary", "secondary", "success", "info", "warning", "neutral"]).default('primary'),
     variant: z.enum(['solid', 'outline', 'ghost', 'link']).default('solid'),
-    icon: z.string().optional(),
+    icon: createIconString().optional(),
     target: z.enum(['_blank', '_self']).default('_self')
 })
 
-const createStackCategorySchema = () => z.object({
-    title: z.string(),
-    description: z.string(),
-    icon: z.string(),
-    items: z.array(z.string()),
-    class: z.string().optional()
+const createImageSchema = () => z.object({
+    src: createMediaString(),
+    alt: z.string().optional(),
+    loading: z.enum(['lazy', 'eager']).optional(),
+    srcset: z.string().optional()
 })
 
+const createStackCategorySchema = () => z.object({
+    title: z.string().nonempty(),
+    description: z.string().nonempty(),
+    icon: createIconString().nonempty(),
+    items: z.array(z.string().nonempty()),
+    class: z.string().optional()
+})
 
 export default defineContentConfig({
     collections: {
@@ -31,12 +60,20 @@ export default defineContentConfig({
             type: 'page',
             source: 'index.yml',
             schema: z.object({
-                hero: z.object({
+                hero: createBaseSchema().extend({
                     badge: z.boolean(),
-                    title: z.string(),
-                    description: z.string(),
-                    links: z.array(createButtonSchema())
+                    links: z.array(createLinkSchema())
                 }),
+                projects: createBaseSectionSchema(),
+                faq: createBaseSectionSchema().extend({
+                    items: z.array(z.object({
+                        label: z.string().nonempty(),
+                        content: z.string().nonempty()
+                    }))
+                }),
+                contact: createBaseSectionSchema().extend({
+                    links: z.array(createButtonSchema())
+                })
             })
         }),
 
@@ -44,12 +81,9 @@ export default defineContentConfig({
             type: 'page',
             source: 'about.yml',
             schema: z.object({
-                title: z.string(),
-                bio: z.string(),
-
-                techStack: z.object({
-                    title: z.string(),
-                    description: z.string(),
+                title: z.string().nonempty(),
+                bio: z.string().nonempty(),
+                techStack: createBaseSectionSchema().extend({
                     categories: z.array(createStackCategorySchema())
                 })
             })
@@ -58,21 +92,21 @@ export default defineContentConfig({
         projects: defineCollection({
             type: 'page',
             source: 'projects.yml',
-            schema: createBaseSchema()
+            schema: createBaseSectionSchema()
         }),
 
         blog: defineCollection({
             type: 'page',
             source: 'blog.yml',
-            schema: createBaseSchema()
+            schema: createBaseSectionSchema()
         }),
 
         contact: defineCollection({
             type: 'page',
             source: 'contact.yml',
-            schema: createBaseSchema().extend({
-                intro: z.string(),
-                email: z.string(),
+            schema: createBaseSectionSchema().extend({
+                intro: z.string().nonempty(),
+                email: z.string().nonempty(),
                 socials: z.array(createButtonSchema())
             })
         }),
@@ -82,11 +116,10 @@ export default defineContentConfig({
                 type: 'page',
                 source: 'projects/*.md',
                 schema: z.object({
-                    date: z.string(),
-                    type: z.string(),
-                    image: z.string(),
-                    slug: z.string()
-                }),
+                    publishedAt: z.string().nonempty(),
+                    type: z.string().nonempty(),
+                    image: createImageSchema(),
+                })
             })
         ),
 
@@ -95,18 +128,18 @@ export default defineContentConfig({
                 type: 'page',
                 source: 'blog/*.md',
                 schema: z.object({
-                    category: z.string(),
+                    category: z.string().nonempty(),
                     publishedAt: z.date(),
-                    image: z.object({ src: z.string().nonempty().editor({ input: 'media' }) }),
-                }),
+                    image: createImageSchema()
+                })
             })
         ),
 
         legal: defineCollection(
             asSitemapCollection({
                 type: 'page',
-                source: 'legal/*.md',
+                source: 'legal/*.md'
             })
         )
-    },
+    }
 })

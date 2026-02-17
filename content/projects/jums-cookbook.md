@@ -1,6 +1,6 @@
 ---
 title: Jums Cookbook
-date: 2025-02-06
+publishedAt: 2025-02-06T00:00:00.000Z
 image: /jc-landing.png
 seo:
   title: Jums Cookbook

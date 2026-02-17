@@ -1,26 +1,40 @@
-title: Anthony Lorendeaux - Portfolio
-description: Software Engineer based in Toulouse
+title: Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.js
+description: Sites web qui convertissent • SEO-first • Expert Fullstack France
 hero:
   badge: true
-  title: Hey, I'm Anthony Lorendeaux
-  subtitle: A software engineer, based in Toulouse, France 🇫🇷
+  title: "Développeur Freelance Nuxt/Vue.js"
+  description: "Je crée des sites modernes qui attirent du trafic qualifié et convertissent vos visiteurs en clients."
   links:
-    - label: Let's work together
+    - label: "Devis gratuit 24h"
       to: /contact
       color: primary
-    - label: My Resume
-      to: https://notion.so/...
+      variant: solid
+    - label: "Mon Portfolio"
+      to: "#projects"
+      color: neutral
+      variant: outline
+projects:
+  title: Découvrez mes dernières réalisations
+  description: Chaque projet reflète ma passion pour l'innovation et mon engagement à livrer des résultats de haute qualité.
+  headline: Portofolio
+faq:
+  title: "Questions fréquentes"
+  description: "Tout ce que vous devez savoir avant de lancer votre projet"
+  items:
+    - label: "Combien de temps pour un site ?"
+      content: "Vitrine : 2-3 semaines | E-commerce : 4-6 semaines. Devis détaillé sous 24h."
+    - label: "Maintenance incluse ?"
+      content: "Forfaits dès 30€/mois : mises à jour, SEO continu, backups automatiques."
+    - label: "WordPress ou Nuxt ?"
+      content: "Nuxt/Vue.js uniquement : 10x plus rapide, SEO supérieur, maintenance simplifiée."
+contact:
+  title: Discutons de votre projet
+  description: Devis gratuit sous 24h. Aucun engagement. Je réponds à toutes vos questions technique et budget.
+  links:
+    - label: Prendre RDV
+      to: /contact
+      color: primary
+    - label: Voir mes services
+      to: /services
       color: neutral
       target: _blank
-ogImage:
-  component: NuxtSeo
-  props:
-    title: Anthony Lorendeaux
-    description: Software Engineer & Entrepreneur
-    theme: "#00DC82"
-seo:
-  title: Anthony Lorendeaux | Fullstack Nuxt & Vue.js Developer
-  description: I turn your ideas into high-performance web applications. Nuxt 3, TypeScript, and SaaS architecture expert based in Toulouse.
-  keywords: Nuxt Freelancer, Vue.js Developer Toulouse, Fullstack Engineer, SaaS Builder, Docker
-sitemap:
-  loc: /

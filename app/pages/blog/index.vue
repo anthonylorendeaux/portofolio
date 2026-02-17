@@ -2,7 +2,7 @@
 const route = useRoute()
 
 const { data: page } = await useAsyncData('blog', () => queryCollection('blog').first())
-const { data: posts } = await useAsyncData(route.path, () => queryCollection('blog_articles').all())
+const { data: posts } = await useAsyncData('blog_posts', () => queryCollection('blog_articles').all())
 
 if (!page.value) throw createError({ statusCode: 404 })
 
@@ -24,7 +24,7 @@ useSeoMeta({
         <UPageBody>
             <UBlogPosts>
                 <UBlogPost v-for="(post, index) in posts" :key="index" :to="post.path" :title="post.title"
-                    :description="post.path" :image="post.image"
+                    :description="post.description" :image="post.image"
                     :date="new Date(post.publishedAt).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })"
                     :badge="{ label: post.category, variant: 'solid' }"
                     :orientation="index === 0 ? 'horizontal' : 'vertical'" :class="[index === 0 && 'col-span-full']"

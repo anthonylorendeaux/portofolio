@@ -1,10 +1,10 @@
 ---
 title: Email Cleaner API
-date: 2026-01-11
+publishedAt: 2026-01-11T00:00:00.000Z
 image: /email-cleaner.jpeg
 seo:
   title: Email Cleaner API
-  description: High-performance Email validation & scoring API (syntax, MX, disposable/free providers) with bulk endpoint and scheduled domain updates.
+  description: High-performance Email validation & scoring API (syntax, MX, disposable/free providers) with bulk endpoint and scheduled domain uppublishedAts.
 sitemap:
   loc: /projects/email-cleaner-api
 slug: email-cleaner
@@ -21,7 +21,7 @@ Email cleaner API.
 Application
 
 #description
-Email Cleaner API is a high-performance backend built with Nitro (Nuxt server engine) to validate and score email addresses for lead quality and deliverability use cases.
+Email Cleaner API is a high-performance backend built with Nitro (Nuxt server engine) to valipublishedAt and score email addresses for lead quality and deliverability use cases.
 The API combines syntax validation, MX resolution with caching, disposable domain detection, and free-provider detection to return an actionable score and grade (HIGH / MEDIUM / LOW / INVALID).
 It also includes a bulk endpoint (up to 50 emails per request) processed in parallel to minimize latency, making it suitable for batch validation workflows and integrations.
 
@@ -35,7 +35,7 @@ It also includes a bulk endpoint (up to 50 emails per request) processed in para
 
 ## Endpoints
 
-- `GET /validate?email=...` — single email analysis.
+- `GET /valipublishedAt?email=...` — single email analysis.
 - `POST /api/bulk-scoring` — batch analysis (JSON array of emails, max 50).
 
   :::infos

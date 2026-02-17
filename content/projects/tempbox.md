@@ -1,6 +1,6 @@
 ---
 title: Tempbox
-date: 2025-04-01
+publishedAt: 2025-04-01T00:00:00.000Z
 image: /tempbox-landing.png
 seo:
   title: Tempbox

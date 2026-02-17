@@ -1,6 +1,6 @@
 ---
 title: Personal Portofolio
-date: 2025-07-10
+publishedAt: 2025-07-10T00:00:00.000Z
 image: /portofolio-thumbnail.png
 seo:
   title: Personal portofolio

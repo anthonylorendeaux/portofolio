@@ -1,6 +1,6 @@
 ---
 title: Les Caprices
-date: 2024-10-19
+publishedAt: 2024-10-19T00:00:00.000Z
 image: /lc-landing.png
 seo:
   title: Les Caprices

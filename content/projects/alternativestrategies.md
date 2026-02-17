@@ -1,6 +1,7 @@
 ---
 title: Alternativestrategies
-date: 2025-05-19
+description: A website for a professional recruter and coach
+publishedAt: 2025-05-19T00:00:00.000Z
 image: /alternativestrategies-landing.png
 seo:
   title: Alternative Strategies
@@ -21,7 +22,7 @@ Alternative Strategies
 Website
 
 #description
-Alternative Strategies is a dedicated platform focused on bridging the gap between ambitious talent and dynamic companies, with a strong emphasis on integrity, transparency, and excellence. The website serves as a hub for personalized recruitment and coaching services, tailored to meet the specific needs of both clients and candidates.
+Alternative Strategies is a dedicated platform focused on bridging the gap between ambitious talent and dynamic companies, with a strong emphasis on integrity, transparency, and excellence. The website serves as a hub for personalized recruitment and coaching services, tailored to meet the specific needs of both clients and candipublishedAts.
 
 At the core of Alternative Strategies are values rooted in trust, mutual respect, and active listening, fostering lasting and fruitful professional relationships. The platform offers a range of services designed to support career growth and development within the financial sector, particularly in Luxembourg.
 

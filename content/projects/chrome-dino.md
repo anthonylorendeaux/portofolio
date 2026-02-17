@@ -1,6 +1,6 @@
 ---
 title: Chrome Dino
-date: 2024-10-19
+publishedAt: 2024-10-19T00:00:00.000Z
 image: /dino-thumbnail.png
 seo:
   title: Chrome dinosaur

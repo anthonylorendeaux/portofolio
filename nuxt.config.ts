@@ -16,8 +16,8 @@ export default defineNuxtConfig({
   },
   site: {
     url: 'https://anthony-lorendeaux.com',
-    name: 'Anthony Lorendeaux - Développeur Fullstack Nuxt',
-    description: 'Portfolio freelance Nuxt/Vue.js, SaaS et sites optimisés SEO à Toulouse.',
+    name: 'Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.js',
+    description: 'Sites web Nuxt/Vue.js qui convertissent • SEO-first • Devis gratuit 24h',
     defaultLocale: 'fr'
   },
   compatibilityDate: '2025-05-15',
