@@ -8,6 +8,7 @@ const createBaseSchema = () => z.object({
 })
 
 const createBaseSectionSchema = () => z.object({
+    headline: z.string(),
     title: z.string().nonempty(),
     description: z.string().nonempty()
 })
@@ -62,9 +63,14 @@ export default defineContentConfig({
             schema: z.object({
                 hero: createBaseSchema().extend({
                     badge: z.boolean(),
-                    links: z.array(createLinkSchema())
+                    links: z.array(createLinkSchema()),
+                    image: createImageSchema(),
                 }),
                 projects: createBaseSectionSchema(),
+                about: createBaseSectionSchema().extend({
+                    links: z.array(createLinkSchema()),
+                    image: createImageSchema()
+                }),
                 faq: createBaseSectionSchema().extend({
                     items: z.array(z.object({
                         label: z.string().nonempty(),

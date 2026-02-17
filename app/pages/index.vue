@@ -38,7 +38,8 @@ useSeoMeta({
                     {{ page.hero.badge ? 'Available for work' : 'Working on a project' }}
                 </UBadge>
             </template>
-            <NuxtImg src="/contact_head.png" />
+            <NuxtImg :src="page.hero.image.src" :alt="page.hero.image.alt" placeholder
+                :loading="page.hero.image.loading" />
         </UPageHero>
         <USeparator />
         <UPageSection v-if="page.projects" :title="page.projects.title" :description="page.projects.description"
@@ -49,6 +50,10 @@ useSeoMeta({
                     :date="new Date(project.publishedAt).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })"
                     :badge="{ label: project.type, variant: 'solid' }" variant="outline" />
             </UBlogPosts>
+        </UPageSection>
+        <UPageSection v-if="page.about" :headline="page.about.headline" :title="page.about.title"
+            :description="page.about.description" :links="page.about.links" orientation="horizontal" :reverse="true">
+            <NuxtImg :src="page.about.image.src" :alt="page.about.image.alt" class="rounded-md" />
         </UPageSection>
         <UPageSection v-if="page.faq" :title="page.faq.title" :description="page.faq.description">
             <UAccordion :items="page.faq.items" />

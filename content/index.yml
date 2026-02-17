@@ -1,4 +1,18 @@
 title: Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.js
+about:
+  links:
+    - label: En Savoir plus
+      to: /about
+      icon: i-lucide-arrow-right
+      variant: subtle
+      color: neutral
+      trailing: true
+  title: Qui je suis ?
+  description: Ingénieur logiciel (backend Java), passionné frontend Nuxt/Vue.js. Je développe des sites fullstack qui convertissent pour indépendants et PME. Microsoft & Google certifié je fais des projets freelance en soirée & le week-end.
+  image:
+    src: /tlse.jpg
+    alt: Toulouse
+    loading: lazy
 contact:
   title: Discutons de votre projet
   description: Devis gratuit sous 24h. Aucun engagement. Je réponds à toutes vos questions technique et budget.
@@ -26,10 +40,18 @@ hero:
       to: /contact
       color: primary
       variant: solid
+      icon: ""
+      trailing: false
     - label: Mon Portfolio
       to: "#projects"
       color: neutral
       variant: outline
+      trailing: true
+      icon: i-lucide-arrow-right
+  image:
+    src: /contact_head.png
+    alt: Anthony
+    loading: lazy
 projects:
   title: Découvrez mes dernières réalisations
   description: Chaque projet reflète ma passion pour l'innovation et mon engagement à livrer des résultats de haute qualité.
