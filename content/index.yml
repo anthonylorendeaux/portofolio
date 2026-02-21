@@ -59,3 +59,20 @@ projects:
 seo:
   title: Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.jas
   description: Sites web qui convertissent • SEO-first • Expert Fullstack France
+services:
+  headline: Services
+  title: Mes différents services
+  description: Des sites vitrines aux applications web complexes je vous accompagne dans vos projets.
+  features:
+    - title: Site Vitrine
+      description: Site 5-10 pages responsive avec une mise en place de SEO technique. Administration incluse. Dès 500€.
+      icon: i-lucide-layout
+      to: ""
+    - title: Site E-commerce
+      description: Boutique complète avec paiement configuré. SEO produits et analytics. Dès 800€.
+      icon: i-lucide-shopping-cart
+      to: ""
+    - title: Application SaaS
+      description: SaaS multi-tenant Nuxt avec database incluse, et paiement configuré. Dès 1200€.
+      icon: i-lucide-cpu
+      to: ""

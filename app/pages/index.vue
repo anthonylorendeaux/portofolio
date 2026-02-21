@@ -55,6 +55,8 @@ useSeoMeta({
             :description="page.about.description" :links="page.about.links" orientation="horizontal" :reverse="true">
             <NuxtImg :src="page.about.image.src" :alt="page.about.image.alt" class="rounded-md" />
         </UPageSection>
+        <UPageSection v-if="page.services" :headline="page.services.headline" :title="page.services.title"
+            :description="page.services.description" :features="page.services.features" />
         <UPageSection v-if="page.faq" :title="page.faq.title" :description="page.faq.description">
             <UAccordion :items="page.faq.items" />
         </UPageSection>

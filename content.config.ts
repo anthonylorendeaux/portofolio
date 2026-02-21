@@ -55,6 +55,14 @@ const createStackCategorySchema = () => z.object({
     class: z.string().optional()
 })
 
+const createFeatureSchema = () => z.object({
+  title: z.string().nonempty(),
+  description: z.string().nonempty().max(120),
+  icon: createIconString().nonempty(),
+  to: z.string(),
+})
+
+
 export default defineContentConfig({
     collections: {
         index: defineCollection({
@@ -70,6 +78,9 @@ export default defineContentConfig({
                 about: createBaseSectionSchema().extend({
                     links: z.array(createLinkSchema()),
                     image: createImageSchema()
+                }),
+                services: createBaseSectionSchema().extend({
+                    features: z.array(createFeatureSchema()),
                 }),
                 faq: createBaseSectionSchema().extend({
                     items: z.array(z.object({
