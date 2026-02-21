@@ -39,8 +39,7 @@ useSeoMeta({
                 </UBadge>
             </template>
             <NuxtImg :src="page.hero.image.src" :alt="page.hero.image.alt" placeholder
-                :loading="page.hero.image.loading" fetch-priority="high" quality="85" format="webp" width="1200"
-                height="630" />
+                :preload="{ fetchPriority: 'high' }" quality="85" format="webp" width="1200" height="630" />
         </UPageHero>
         <USeparator />
         <UPageSection v-if="page.projects" :title="page.projects.title" :description="page.projects.description"
