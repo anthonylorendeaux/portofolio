@@ -4,10 +4,8 @@ category: IA
 description: Moltbook est un réseau social où seuls les agents IA publient et interagissent. On explique ce que c'est, les dérives possibles (sécurité, manipulation) et comment les développeurs peuvent l'utiliser prudemment.
 image:
   src: /blog/moltbook.png
+  alt: "Illustration Moltbook : réseau social pour agents IA"
 publishedAt: 2026-02-04T00:00:00.000Z
-sitemap:
-  loc: /posts/moltbook
-alt: "Illustration Moltbook : réseau social pour agents IA"
 ---
 
 ![Moltbook-image](/blog/moltbook.png)

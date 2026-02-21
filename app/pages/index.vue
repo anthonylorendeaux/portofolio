@@ -39,21 +39,23 @@ useSeoMeta({
                 </UBadge>
             </template>
             <NuxtImg :src="page.hero.image.src" :alt="page.hero.image.alt" placeholder
-                :loading="page.hero.image.loading" />
+                :loading="page.hero.image.loading" fetch-priority="high" quality="85" format="webp" width="1200"
+                height="630" />
         </UPageHero>
         <USeparator />
         <UPageSection v-if="page.projects" :title="page.projects.title" :description="page.projects.description"
             :headline="page.projects.headline">
             <UBlogPosts>
                 <UBlogPost v-for="(project, index) in projects" :key="index" :to="project.path" :title="project.title"
-                    :description="project.description" :image="project.image"
-                    :date="new Date(project.publishedAt).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })"
-                    :badge="{ label: project.type, variant: 'solid' }" variant="outline" />
+                    :description="project.description" :image="project.image" :date="new Date(project.publishedAt).toLocaleDateString('en', {
+                        year: 'numeric', month: 'short', day:
+                            'numeric'
+                    })" :badge="{ label: project.type, variant: 'solid' }" variant="outline" />
             </UBlogPosts>
         </UPageSection>
         <UPageSection v-if="page.about" :headline="page.about.headline" :title="page.about.title"
             :description="page.about.description" :links="page.about.links" orientation="horizontal" :reverse="true">
-            <NuxtImg :src="page.about.image.src" :alt="page.about.image.alt" class="rounded-md" />
+            <NuxtImg :src="page.about.image.src" :alt="page.about.image.alt" class="rounded-md" placeholder />
         </UPageSection>
         <UPageSection v-if="page.services" :headline="page.services.headline" :title="page.services.title"
             :description="page.services.description" :features="page.services.features" />
