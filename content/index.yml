@@ -56,9 +56,6 @@ projects:
   title: Découvrez mes dernières réalisations
   description: Chaque projet reflète ma passion pour l'innovation et mon engagement à livrer des résultats de haute qualité.
   headline: Portofolio
-seo:
-  title: Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.js
-  description: Sites web qui convertissent • SEO-first • Expert Fullstack France
 services:
   headline: Services
   title: Mes différents services

@@ -1,35 +1,57 @@
-seo:
-  title: "About Me | Anthony Lorendeaux - Fullstack Engineer & Nuxt Expert"
-  description: "Learn more about Anthony Lorendeaux. Full-stack web developer with an engineering degree and Microsoft certification. Expert in Nuxt.js, Strapi, and complex SaaS architectures."
-  keywords: "Anthony Lorendeaux, Fullstack Developer, Nuxt.js Expert, Microsoft Certified, Engineering Degree, Strapi Developer"
-ogImage:
-  component: "NuxtSeo"
-  props:
-    title: "About Anthony Lorendeaux"
-    description: "Engineering Degree • Microsoft Certified • Fullstack Dev"
-    theme: "#00DC82"
-    icon: "i-heroicons-user-circle"
-
-title: "About me."
-description: "Why choose me and my stack"
-bio: |
-  I am a full-stack web developer with experience in building web applications that integrate both frontend and backend technologies. One of my key projects involved creating a full-stack application with **Strapi** as the CMS. I specialize in solving complex content management problems by utilizing modern tools and frameworks like **Nuxt.js**, **Tailwind CSS**, and **Node.js**.
-  With experience working both in teams and as a solo freelancer, I’ve had the opportunity to collaborate across various industries. I thrive on delivering results that enhance user engagement and conversion rates, utilizing **SEO plugins** and **content management systems**.
-  In addition to my hands-on development experience, I use **GitLab** and **GitHub Actions** to manage projects. I’m particularly interested in further improving **Three.js** visualizations.
-  With an **engineering degree** and **Microsoft certification**, I have a strong technical foundation that allows me to approach problems from multiple disciplines.
-techStack:
-  title: "My Tech Stack"
-  description: "The tools I use to build robust applications."
-  categories:
-    - title: "Frontend Ecosystem"
-      description: "Building reactive interfaces."
-      icon: "i-heroicons-computer-desktop"
-      items: ["Nuxt.js", "Tailwind CSS", "Three.js", "Vue.js"]
-    - title: "Backend"
-      description: "Scalable server logic."
-      icon: "i-heroicons-server-stack"
-      items: ["Node.js", "Strapi", "PostgreSQL"]
-    - title: "DevOps & Tools"
-      description: "CI/CD and management."
-      icon: "i-heroicons-command-line"
-      items: ["GitLab", "GitHub Actions", "Jira"]
+title: À propos
+about:
+  image:
+    src: /tlse.jpg
+    alt: Anthony Lorendeaux - Développeur freelance Toulouse
+    loading: eager
+  headline: Développeur Freelance à Toulouse
+  title: Anthony Lorendeaux
+  description: |
+    Développeur web freelance basé à Toulouse depuis 2020, j'ai découvert ma passion pour le code il y a 10 ans en commençant par de petits projets open-source. 
+    Aujourd'hui je maîtrise Nuxt.js et Vue.js pour créer des applications modernes et performantes.
+contact:
+  headline: Votre projet web performant
+  title: Devis personnalisé gratuit 24h
+  description: Toulouse & Occitanie. Analyse technique incluse.
+  links:
+    - label: Obtenir mon devis
+      to: /contact
+      color: primary
+      variant: solid
+      icon: i-heroicons-arrow-path
+      target: _self
+description: Qui suis-je ?
+timeline:
+  headline: Mon parcours professionnel
+  title: Ingénieur & Freelance
+  description: Comment j'en suis arrivé là.
+  items:
+    - title: Formation ingénieur
+      description: Diplôme ingénieur logiciel 2023. Développement logiciel et web.
+      icon: i-lucide-graduation-cap
+      date: 2018-01-01
+    - title: Ingénieur Logiciel
+      description: Développeur fullstack entreprise. Projets techniques complexes.
+      icon: i-lucide-code-2
+      date: 2023-01-01
+    - title: Freelance Toulouse
+      description: "Projets indépendants : Alternative Strategies, Garage Bourgeois. SEO local Toulouse."
+      icon: i-lucide-briefcase
+      date: 2023-01-01
+values:
+  headline: Pourquoi moi ?
+  title: Tarifs fixes et résultats locaux
+  description: Transparence des résultats, performance mesurable.
+  features:
+    - title: Tarifs clairs
+      description: Des tarifs qui respectent vos besoins.
+      icon: i-lucide-euro
+      to: /services
+    - title: SEO à Toulouse
+      description: SEO locale et si besoin Google Business.
+      icon: i-lucide-map-pin
+      to: /services
+    - title: Performance prouvée
+      description: Core Web Vitals 99/100 et analytics inclus.
+      icon: i-lucide-trending-up
+      to: /projects

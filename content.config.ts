@@ -47,12 +47,11 @@ const createImageSchema = () => z.object({
     srcset: z.string().optional()
 })
 
-const createStackCategorySchema = () => z.object({
+const createTimelineSchema = () => z.object({
     title: z.string().nonempty(),
     description: z.string().nonempty(),
     icon: createIconString().nonempty(),
-    items: z.array(z.string().nonempty()),
-    class: z.string().optional()
+    date: z.date(),
 })
 
 const createPricingPlanSchema = () => z.object({
@@ -107,10 +106,15 @@ export default defineContentConfig({
             type: 'page',
             source: 'about.yml',
             schema: z.object({
-                title: z.string().nonempty(),
-                bio: z.string().nonempty(),
-                techStack: createBaseSectionSchema().extend({
-                    categories: z.array(createStackCategorySchema())
+                about: createBaseSectionSchema().extend({
+                    image: createImageSchema()
+                }),
+                timeline: createBaseSectionSchema().extend({ items: z.array(createTimelineSchema()), }),
+                values: createBaseSectionSchema().extend({
+                    features: z.array(createFeatureSchema()),
+                }),
+                contact: createBaseSectionSchema().extend({
+                    links: z.array(createButtonSchema())
                 })
             })
         }),

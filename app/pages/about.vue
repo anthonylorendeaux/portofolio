@@ -18,16 +18,26 @@ useSeoMeta({
 </script>
 
 <template>
-    <UContainer class="py-12" v-if="page">
-        <h2 class="text-xl sm:text-3xl font-bold text-left mb-8">
-            {{ page.title }}
-        </h2>
+    <UContainer v-if="page">
+        <UPageHeader v-bind="page" />
 
-        <div class="prose dark:prose-invert max-w-none mb-16 text-justify">
-            <MDC :value="page.bio" tag="div" />
-        </div>
-
-        <TechStack v-if="page.techStack" :title="page.techStack.title" :description="page.techStack.description"
-            :categories="page.techStack.categories" />
+        <UPageBody>
+            <UPageSection v-if="page.about" :headline="page.about.headline" :title="page.about.title"
+                :description="page.about.description" orientation="horizontal">
+                <NuxtImg :src="page.about.image.src" :alt="page.about.image.alt" class="rounded-md" placeholder
+                    loading="lazy" />
+            </UPageSection>
+            <UPageSection :headline="page.timeline.headline" :title="page.timeline.title"
+                :description="page.timeline.description" v-if="page.timeline">
+                <UTimeline v-if="page.timeline" :items="page.timeline.items" :default-value="0" orientation="horizontal"
+                    :reverse="true" />
+            </UPageSection>
+            <UPageSection v-if="page.values" :headline="page.values.headline" :title="page.values.title"
+                :description="page.values.description" :features="page.values.features" />
+            <UPageSection v-if="page.contact">
+                <UPageCTA :title="page.contact.title" :description="page.contact.description"
+                    :links="page.contact.links" variant="soft" />
+            </UPageSection>
+        </UPageBody>
     </UContainer>
 </template>
