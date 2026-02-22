@@ -54,7 +54,7 @@ useSeoMeta({
                         sizes: '30vw',
                         format: 'webp',
                         quality: 80,
-                        loading: index > 0 ? 'lazy' : 'eager'
+                        loading: 'lazy',
                     }" :date="new Date(project.publishedAt).toLocaleDateString('en', {
                         year: 'numeric', month: 'short', day:
                             'numeric'

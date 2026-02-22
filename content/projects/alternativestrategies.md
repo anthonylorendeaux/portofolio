@@ -3,12 +3,12 @@ title: "Alternative Strategies : cabinet de recrutement"
 category: Site Vitrine
 description: "Alternative strategies est un cabiner de recrutement qui avait besoin d'un site moderne et fonctionnel avec une modification de contenu autonome."
 image:
-  src: "projects/alternativestrategies.png"
+  src: "/projects/alternativestrategies.png"
   alt: "Landing Alternative Strategies"
 publishedAt: 2025-05-04T00:00:00.000Z
 ---
 
-![Alternative Strategies hero](projects/alternativestrategies.png)
+![Alternative Strategies hero](/projects/alternativestrategies.png)
 
 Alternative Strategies connecte talents ambitieux et entreprises dynamiques dans la finance luxembourgeoise, avec un focus sur intégrité et excellence. J'ai développé leur site professionnel pour services recrutement et coaching.
 

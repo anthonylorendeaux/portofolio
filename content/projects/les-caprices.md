@@ -3,12 +3,12 @@ title: "Les Caprices : Site restaurant"
 category: Site Vitrine
 description: "Refonte complète restaurant toulousain : Nuxt 3, système réservation custom API, GSAP animations. Résultats : réservations x4, Lighthouse 97/100, design immersif."
 image:
-  src: "projects/lescaprices.png"
+  src: "/projects/lescaprices.png"
   alt: "Les Caprices : site restaurant Toulouse avec réservation en ligne"
 publishedAt: 2024-08-22T11:00:00.000Z
 ---
 
-![Les Caprices hero](projects/lescaprices.png)
+![Les Caprices hero](/projects/lescaprices.png)
 
 Les Caprices, restaurant toulousain dédié à la cuisine française traditionnelle, voulait un site vitrine moderne avec système de réservation en ligne ultra-simple. J'ai créé une expérience immersive mettant en valeur plats et ambiance.
 
