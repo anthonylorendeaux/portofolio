@@ -152,8 +152,8 @@ export default defineContentConfig({
             type: 'page',
             source: 'contact.yml',
             schema: createBaseSectionSchema().extend({
+                question: z.string().nonempty(),
                 intro: z.string().nonempty(),
-                email: z.string().nonempty(),
                 socials: z.array(createButtonSchema())
             })
         }),

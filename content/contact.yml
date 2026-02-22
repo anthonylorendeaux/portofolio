@@ -1,29 +1,24 @@
-seo:
-  title: "Contact Anthony Lorendeaux | Freelance Web Developer & Consultant"
-  description: "Ready to launch your web project? Let's discuss how I can help you build fast, responsive, and scalable applications with Nuxt and Strapi."
-  keywords: "Contact Web Developer, Hire Freelance Nuxt, Web Development Toulouse, Anthony Lorendeaux Contact"
-ogImage:
-  component: "NuxtSeo"
-  props:
-    title: "Let's Work Together"
-    description: "Start your project with Anthony Lorendeaux"
-    theme: "#00DC82"
-    icon: "i-heroicons-envelope"
-
 title: "Contact"
 description: "Discutons de votre projet."
+question: "Un site web ?"
 intro: |
-  You are seeking for a well-structured website that not only looks great but is also fast, responsive, and easy to maintain on your own?
-  I specialize in crafting modern web experiences using robust technologies like Nuxt, Strapi, and Tailwind CSS. Whether you're a business, a creative, or just someone with a bold idea — let’s build something that reflects your vision and performs at scale.
-  Feel free to reach out and let’s talk about how we can bring your project to life.
-email: "anthony.lorendeaux19@gmail.com"
+  Je suis spécialisé dans la création d'expériences web modernes avec des technologies robustes. 
+  Que vous soyez une entreprise, un créatif ou simplement quelqu'un avec une idée audacieuse, construisons ensemble un site qui reflète votre vision et performe à grande échelle.
+  N'hésitez pas à me contacter pour discuter de votre projet et le concrétiser.
 socials:
+  - label: "Email"
+    to: "mailto:anthony.lorendeaux19@gmail.com"
+    icon: "i-lucide-mail"
+    target: "_blank"
   - label: "LinkedIn"
     to: "https://linkedin.com/in/anthony-lorendeaux/"
+    icon: "i-lucide-linkedin"
     target: "_blank"
   - label: "Fiverr"
-    to: "https://www.fiverr.com/..." 
+    to: "https://www.fiverr.com/..."
+    icon: "i-lucide-shopping-bag"
     target: "_blank"
   - label: "GitHub"
     to: "https://github.com/anthonylorendeaux"
+    icon: "i-lucide-github"
     target: "_blank"
