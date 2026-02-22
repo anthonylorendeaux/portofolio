@@ -1,0 +1,79 @@
+title: Mes services
+description: Des solutions web adaptées à votre budget et à vos besoins. Devis gratuit sous 24h.
+faq:
+  title: Questions fréquentes
+  description: Réponses aux questions les plus courantes avant de lancer votre projet web.
+  items:
+    - label: Quels sont les délais de livraison ?
+      content: 14 jours pour un site vitrine • 21 jours pour un site e-commerce • 21j ou plus pour une application saas
+    - label: Comment se passe le paiement ?
+      content: Vous payez 50% d'avance • Le solde à la livraison • Le tout via Stripe 3D Secure
+    - label: Comment marche les modifications ?
+      content: Studio CMS illimité avec un support de 30j gratuit
+    - label: Où est hébergé mon site ?
+      content: Le site est hébergé sur cloudflare par mes soins.
+headline: ""
+pricing:
+  title: Choisissez votre solution
+  description: Tarifs HT • Devis personnalisé gratuit • Maintenance 30€/mois
+  plans:
+    - title: Site Vitrine
+      description: 5-10 pages responsive + SEO technique
+      price: 500€
+      features:
+        - Responsive Tailwind CSS
+        - SEO technique Toulouse
+        - Studio CMS admin
+        - Cloudflare Pages
+        - Analytics intégrés
+      button:
+        label: Devis gratuit
+        to: /contact
+      scale: false
+    - title: Site E-commerce
+      description: Boutique + paiement Stripe configuré
+      price: 800€
+      scale: true
+      features:
+        - Catalogue produits SEO
+        - Stripe paiements CB
+        - Panier + checkout
+        - Analytics ventes
+        - Gestion stocks
+      button:
+        label: Devis gratuit
+        to: /contact
+    - title: Application SaaS
+      description: Multi-tenant + database + paiements
+      price: 1200€
+      features:
+        - Nuxt 4 multi-tenant
+        - Database Supabase
+        - Stripe abonnements
+        - Authentification
+        - Admin dashboard
+      button:
+        label: Devis gratuit
+        to: /contact
+      scale: false
+  headline: "Prix "
+services:
+  headline: Technologies
+  title: Ma stack technique
+  description: Des outils modernes pour des sites ultra-rapides"
+  features:
+    - title: Nuxt 4
+      description: SSR + PWA + routing intelligent
+      icon: i-lucide-cpu
+    - title: Nuxt Content
+      description: CMS headless markdown intégré
+      icon: i-lucide-file-text
+    - title: Nuxt UI Pro
+      description: Design système Tailwind responsive
+      icon: i-lucide-palette
+    - title: Nuxt Studio
+      description: Édition visuelle drag & drop
+      icon: i-lucide-wand-sparkles
+    - title: Cloudflare Pages
+      description: Déploiement 1-clic + CDN global
+      icon: i-lucide-globe

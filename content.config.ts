@@ -55,6 +55,15 @@ const createStackCategorySchema = () => z.object({
     class: z.string().optional()
 })
 
+const createPricingPlanSchema = () => z.object({
+    title: z.string().nonempty(),
+    description: z.string().nonempty(),
+    price: z.string().nonempty(),
+    features: z.array(z.string().nonempty()),
+    button: createButtonSchema(),
+    scale: z.boolean().default(false),
+})
+
 const createFeatureSchema = () => z.object({
     title: z.string().nonempty(),
     description: z.string().nonempty().max(120),
@@ -103,6 +112,23 @@ export default defineContentConfig({
                 techStack: createBaseSectionSchema().extend({
                     categories: z.array(createStackCategorySchema())
                 })
+            })
+        }),
+
+        services: defineCollection({
+            type: 'page',
+            source: 'services.yml',
+            schema: createBaseSectionSchema().extend({
+                pricing: createBaseSectionSchema().extend({ plans: z.array(createPricingPlanSchema()) }),
+                services: createBaseSectionSchema().extend({
+                    features: z.array(createFeatureSchema()),
+                }),
+                faq: createBaseSectionSchema().extend({
+                    items: z.array(z.object({
+                        label: z.string().nonempty(),
+                        content: z.string().nonempty()
+                    }))
+                }),
             })
         }),
 

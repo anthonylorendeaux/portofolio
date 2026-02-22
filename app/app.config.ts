@@ -2,6 +2,7 @@
 let navigation = [
     { label: 'Accueil', to: '/' },
     { label: 'À propos', to: '/about' },
+    { label: 'Services', to: '/services' },
     { label: 'Portfolio', to: '/projects' },
     { label: 'Blog', to: '/blog' },
     { label: 'Contact', to: '/contact' }
