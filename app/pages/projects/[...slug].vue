@@ -1,8 +1,13 @@
-<script setup>
+<script setup lang="ts">
 const route = useRoute()
 
-const { data: post } = await useAsyncData(route.path, () =>
-    queryCollection('projects_articles').path(route.path).first());
+const { data: post } = await useAsyncData(route.path, () => queryCollection('projects_articles').path(route.path).first());
+if (!post.value) {
+    throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+}
+const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
+    queryCollectionItemSurroundings('projects_articles', route.path)
+)
 
 const title = post.value?.seo?.title || post.value?.title
 const description = post.value?.seo?.description || post.value?.description
@@ -17,6 +22,20 @@ useSeoMeta({
 
 <template>
     <UContainer>
-        <ContentRenderer :value="post" />
+        <UPage v-if="post">
+            <UPageHeader :title="post.title" />
+
+            <UPageBody>
+                <ContentRenderer v-if="post.body" :value="post" />
+
+                <USeparator v-if="surround?.filter(Boolean).length" />
+
+                <UContentSurround :surround="(surround as any)" />
+            </UPageBody>
+
+            <template v-if="post?.body?.toc?.links?.length" #right>
+                <UContentToc :links="post.body.toc.links" title="Sur cette page" />
+            </template>
+        </UPage>
     </UContainer>
 </template>

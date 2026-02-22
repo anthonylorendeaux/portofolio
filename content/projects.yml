@@ -1,15 +1,2 @@
-title: "My Projects"
-description: "A selection of my best work."
-
-seo:
-  title: "Portfolio | Anthony Lorendeaux - Nuxt & Vue.js Projects"
-  description: "Discover my latest web projects: SaaS applications, showcase sites, and custom tools built with Nuxt, TypeScript, and Docker."
-  keywords: "Web Developer Portfolio, Nuxt.js Projects, Vue.js Case Studies, Freelance Work, SaaS Builder"
-
-ogImage:
-  component: "NuxtSeo"
-  props:
-    title: "My Portfolio"
-    description: "Check out my latest work"
-    theme: "#00DC82"
-    icon: "i-heroicons-presentation-chart-bar"
+title: "Projets"
+description: "Une sélection de mes meilleurs projets"

@@ -1,12 +1,8 @@
 <script setup lang="ts">
-const types = ['All', 'Website', 'Application', 'Game'];
-const selectedType = ref('All');
+const route = useRoute()
 
-const key = computed(() => `projects-list-${selectedType.value}`);
-
-const { data: page } = await useAsyncData('project', () => {
-    return queryCollection('projects').first()
-})
+const { data: page } = await useAsyncData('projects', () => queryCollection('projects').first())
+const { data: posts } = await useAsyncData('projects_articles', () => queryCollection('projects_articles').all())
 
 if (!page.value) throw createError({ statusCode: 404 })
 
@@ -19,38 +15,20 @@ useSeoMeta({
     description,
     ogDescription: description
 })
-
-const { data: projects, refresh } = await useAsyncData(key, () => {
-    const query = queryCollection('projects_articles')
-        .select("title", "description", "image", "category", "publishedAt", "path")
-        .order('publishedAt', 'DESC')
-        .limit(6);
-
-    if (selectedType.value !== 'All') {
-        query.where("type", "=", selectedType.value);
-    }
-
-    return query.all();
-});
-
-watch(selectedType, () => {
-    refresh();
-});
 </script>
 
 <template>
-    <UContainer v-if="page">
-        <h2 class="text-xl sm:text-3xl font-bold text-left"> {{ page.title }} </h2>
+    <UContainer>
+        <UPageHeader v-bind="page" />
 
-        <div class="flex flex-wrap gap-2 sm:justify-center my-4">
-            <UButton v-for="type in types" :key="type" :label="type"
-                :color="selectedType === type ? 'primary' : 'neutral'" @click="selectedType = type" variant="soft"
-                size="sm" />
-        </div>
-
-        <div class="flex flex-wrap justify-center gap-6">
-            <Card v-for="(project, index) in projects" :key="index" :project="project"
-                class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)]" />
-        </div>
+        <UPageBody>
+            <UBlogPosts orientation="vertical">
+                <UBlogPost v-for="(post, index) in posts" :key="index" :to="post.path" :title="post.title"
+                    :description="post.description" :image="post.image"
+                    :date="new Date(post.publishedAt).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })"
+                    :badge="{ label: post.category, variant: 'soft', color: 'primary' }" orientation="horizontal"
+                    variant="soft" />
+            </UBlogPosts>
+        </UPageBody>
     </UContainer>
 </template>

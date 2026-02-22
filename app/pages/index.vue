@@ -58,7 +58,7 @@ useSeoMeta({
                     }" :date="new Date(project.publishedAt).toLocaleDateString('en', {
                         year: 'numeric', month: 'short', day:
                             'numeric'
-                    })" :badge="{ label: project.type, variant: 'solid' }" variant="outline" />
+                    })" :badge="{ label: project.category, variant: 'solid' }" variant="outline" />
             </UBlogPosts>
         </UPageSection>
         <UPageSection v-if="page.about" :headline="page.about.headline" :title="page.about.title"

@@ -56,10 +56,10 @@ const createStackCategorySchema = () => z.object({
 })
 
 const createFeatureSchema = () => z.object({
-  title: z.string().nonempty(),
-  description: z.string().nonempty().max(120),
-  icon: createIconString().nonempty(),
-  to: z.string(),
+    title: z.string().nonempty(),
+    description: z.string().nonempty().max(120),
+    icon: createIconString().nonempty(),
+    to: z.string(),
 })
 
 
@@ -134,7 +134,7 @@ export default defineContentConfig({
                 source: 'projects/*.md',
                 schema: z.object({
                     publishedAt: z.string().nonempty(),
-                    type: z.string().nonempty(),
+                    category: z.string().nonempty(),
                     image: createImageSchema(),
                 })
             })
