@@ -46,7 +46,16 @@ useSeoMeta({
             :headline="page.projects.headline">
             <UBlogPosts>
                 <UBlogPost v-for="(project, index) in projects" :key="index" :to="project.path" :title="project.title"
-                    :description="project.description" :image="project.image" :date="new Date(project.publishedAt).toLocaleDateString('en', {
+                    :description="project.description" :image="{
+                        src: project.image.src,
+                        alt: project.image.alt,
+                        width: 384,
+                        height: 220,
+                        sizes: '30vw',
+                        format: 'webp',
+                        quality: 80,
+                        loading: index > 0 ? 'lazy' : 'eager'
+                    }" :date="new Date(project.publishedAt).toLocaleDateString('en', {
                         year: 'numeric', month: 'short', day:
                             'numeric'
                     })" :badge="{ label: project.type, variant: 'solid' }" variant="outline" />
@@ -54,7 +63,8 @@ useSeoMeta({
         </UPageSection>
         <UPageSection v-if="page.about" :headline="page.about.headline" :title="page.about.title"
             :description="page.about.description" :links="page.about.links" orientation="horizontal" :reverse="true">
-            <NuxtImg :src="page.about.image.src" :alt="page.about.image.alt" class="rounded-md" placeholder />
+            <NuxtImg :src="page.about.image.src" :alt="page.about.image.alt" class="rounded-md" placeholder
+                loading="lazy" />
         </UPageSection>
         <UPageSection v-if="page.services" :headline="page.services.headline" :title="page.services.title"
             :description="page.services.description" :features="page.services.features" />
