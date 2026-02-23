@@ -171,7 +171,7 @@ Je ne base pas mes stratégies sur de vagues recommandations. Je les base sur de
 
 Voici le résultat pur d'un audit de production : un Lighthouse à 100/100 inébranlable, sur PC comme sur Mobile.
 
-![Screenshot réel du 100/100 sur Lighthouse](/blog/lighthouse-100.png)
+![Screenshot réel du 100/100 sur Lighthouse](/blog/lighthouse.png)
 
 Atteindre ces métriques demande du soin, de la méthode, et une maîtrise fine de l'écosystème Vue.js. C'est l'exigence que j'applique à chaque mission.
 
