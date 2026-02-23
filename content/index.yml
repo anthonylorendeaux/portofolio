@@ -43,7 +43,7 @@ hero:
       icon: ""
       trailing: false
     - label: Mon Portfolio
-      to: "#projects"
+      to: "/projects"
       color: neutral
       variant: outline
       trailing: true

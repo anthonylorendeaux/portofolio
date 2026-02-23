@@ -10,9 +10,7 @@ const mouse = { x: null, y: null }
 const points = []
 
 let ctx, width, height, animationFrameId
-
-const hiddenCanvas = document.createElement('canvas')
-const hiddenCtx = hiddenCanvas.getContext('2d')
+let hiddenCanvas, hiddenCtx
 
 class Point {
   constructor(x, y, color) {
@@ -124,6 +122,9 @@ function clearMouse() {
 }
 
 onMounted(() => {
+  hiddenCanvas = document.createElement('canvas')
+  hiddenCtx = hiddenCanvas.getContext('2d')
+
   const img = new Image()
   img.crossOrigin = 'anonymous'
   img.src = '/contact_head.png'

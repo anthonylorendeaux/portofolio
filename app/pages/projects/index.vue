@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const route = useRoute()
-
 const { data: page } = await useAsyncData('projects', () => queryCollection('projects').first())
 const { data: posts } = await useAsyncData('projects_articles', () => queryCollection('projects_articles').all())
 
@@ -25,7 +23,7 @@ useSeoMeta({
             <UBlogPosts orientation="vertical">
                 <UBlogPost v-for="(post, index) in posts" :key="index" :to="post.path" :title="post.title"
                     :description="post.description" :image="post.image"
-                    :date="new Date(post.publishedAt).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })"
+                    :date="new Date(post.publishedAt).toLocaleDateString('fr', { year: 'numeric', month: 'short', day: 'numeric' })"
                     :badge="{ label: post.category, variant: 'soft', color: 'primary' }" orientation="horizontal"
                     variant="soft" />
             </UBlogPosts>

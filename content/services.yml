@@ -60,7 +60,7 @@ pricing:
 services:
   headline: Technologies
   title: Ma stack technique
-  description: Des outils modernes pour des sites ultra-rapides"
+  description: Des outils modernes pour des sites ultra-rapides
   features:
     - title: Nuxt 4
       description: SSR + PWA + routing intelligent

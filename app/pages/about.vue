@@ -29,11 +29,19 @@ useSeoMeta({
             </UPageSection>
             <UPageSection :headline="page.timeline.headline" :title="page.timeline.title"
                 :description="page.timeline.description" v-if="page.timeline">
-                <UTimeline v-if="page.timeline" :items="page.timeline.items" :default-value="0" orientation="horizontal"
-                    :reverse="true" />
+                <div class="max-w-2xl mx-auto">
+                    <UTimeline v-if="page.timeline" :items="page.timeline.items" :default-value="0"
+                        orientation="vertical" :reverse="true" />
+                </div>
             </UPageSection>
             <UPageSection v-if="page.values" :headline="page.values.headline" :title="page.values.title"
-                :description="page.values.description" :features="page.values.features" />
+                :description="page.values.description">
+                <UPageGrid>
+                    <UPageCard v-for="(feature, index) in page.values.features" :key="index" :title="feature.title"
+                        :description="feature.description" :icon="feature.icon" :to="feature.to" variant="subtle"
+                        spotlight spotlight-color="primary" />
+                </UPageGrid>
+            </UPageSection>
             <UPageSection v-if="page.contact">
                 <UPageCTA :title="page.contact.title" :description="page.contact.description"
                     :links="page.contact.links" variant="soft" />

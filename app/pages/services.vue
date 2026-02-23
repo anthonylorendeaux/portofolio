@@ -27,7 +27,13 @@ useSeoMeta({
                 <UPricingPlans v-if="page.pricing" :plans="page.pricing.plans" />
             </UPageSection>
             <UPageSection v-if="page.services" :headline="page.services.headline" :title="page.services.title"
-                :description="page.services.description" :features="page.services.features" />
+                :description="page.services.description">
+                <UPageGrid>
+                    <UPageCard v-for="(feature, index) in page.services.features" :key="index" :title="feature.title"
+                        :description="feature.description" :icon="feature.icon" variant="subtle" spotlight
+                        spotlight-color="primary" />
+                </UPageGrid>
+            </UPageSection>
             <UPageSection v-if="page.faq" :title="page.faq.title" :description="page.faq.description">
                 <UAccordion :items="page.faq.items" />
             </UPageSection>

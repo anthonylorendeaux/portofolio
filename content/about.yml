@@ -40,18 +40,18 @@ timeline:
       date: 2023-01-01
 values:
   headline: Pourquoi moi ?
-  title: Tarifs fixes et résultats locaux
-  description: Transparence des résultats, performance mesurable.
+  title: Tarifs fixes et résultats concrets
+  description: Une approche transparente, des résultats mesurables et un accompagnement sur-mesure pour chaque projet.
   features:
-    - title: Tarifs clairs
-      description: Des tarifs qui respectent vos besoins.
+    - title: Tarifs transparents
+      description: Devis détaillé sans surprise. Forfaits adaptés à votre budget avec un suivi clair à chaque étape du projet.
       icon: i-lucide-euro
       to: /services
-    - title: SEO à Toulouse
-      description: SEO locale et si besoin Google Business.
+    - title: Expertise SEO locale
+      description: Optimisation pour le référencement local à Toulouse et en Occitanie. Stratégie Google Business Profile incluse.
       icon: i-lucide-map-pin
       to: /services
-    - title: Performance prouvée
-      description: Core Web Vitals 99/100 et analytics inclus.
+    - title: Performance garantie
+      description: Sites optimisés avec un score Core Web Vitals supérieur à 95/100. Tableau de bord analytics pour suivre vos résultats.
       icon: i-lucide-trending-up
       to: /projects

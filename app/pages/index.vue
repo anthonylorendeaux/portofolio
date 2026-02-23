@@ -55,7 +55,7 @@ useSeoMeta({
                         format: 'webp',
                         quality: 80,
                         loading: 'lazy',
-                    }" :date="new Date(project.publishedAt).toLocaleDateString('en', {
+                    }" :date="new Date(project.publishedAt).toLocaleDateString('fr', {
                         year: 'numeric', month: 'short', day:
                             'numeric'
                     })" :badge="{ label: project.category, variant: 'solid' }" variant="outline" />

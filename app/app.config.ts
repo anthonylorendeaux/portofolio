@@ -12,7 +12,7 @@ export default defineAppConfig({
     ui: {
         colors: {
             primary: 'blue',
-            neutral: 'zinc'
+            neutral: 'stone'
         },
         colorMode: 'light',
     },
@@ -46,7 +46,7 @@ export default defineAppConfig({
             { icon: 'i-ri-github-fill', to: 'https://github.com/anthonylorendeaux' },
             { icon: 'i-ri-linkedin-fill', to: 'https://linkedin.com/in/anthony-lorendeaux/' },
             { icon: 'i-ri-fiverr-fill', to: 'https://www.fiverr.com/antho_lor' },
-            { icon: 'i-lucide-mail', to: 'mailto:anthony.lorendeaux@icloud.com' }
+            { icon: 'i-lucide-mail', to: 'mailto:anthony.lorendeaux19@gmail.com' }
         ]
     }
 })

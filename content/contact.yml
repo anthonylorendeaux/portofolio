@@ -15,7 +15,7 @@ socials:
     icon: "i-lucide-linkedin"
     target: "_blank"
   - label: "Fiverr"
-    to: "https://www.fiverr.com/..."
+    to: "https://www.fiverr.com/sellers/antho_lor/"
     icon: "i-lucide-shopping-bag"
     target: "_blank"
   - label: "GitHub"
