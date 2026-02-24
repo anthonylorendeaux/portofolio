@@ -127,7 +127,7 @@ onMounted(() => {
 
   const img = new Image()
   img.crossOrigin = 'anonymous'
-  img.src = '/contact_head.png'
+  img.src = 'contact_head.png'
   img.onload = () => {
     initCanvas(img)
     animate()
