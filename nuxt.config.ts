@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     },
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/sitemap.xml']
+      routes: ['/', '/sitemap.xml', '/blog', '/projects']
     },
   },
   site: {
