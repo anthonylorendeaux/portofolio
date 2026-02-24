@@ -10,7 +10,7 @@ about:
   title: Qui je suis ?
   description: Ingénieur logiciel (backend Java), passionné frontend Nuxt/Vue.js. Je développe des sites fullstack qui convertissent pour indépendants et PME. Microsoft & Google certifié je fais des projets freelance en soirée & le week-end.
   image:
-    src: /tlse.jpg
+    src: tlse.jpg
     alt: Toulouse
     loading: lazy
 contact:
@@ -49,7 +49,7 @@ hero:
       trailing: true
       icon: i-lucide-arrow-right
   image:
-    src: /contact_head.png
+    src: contact_head.png
     alt: Anthony
     loading: eager
 projects:

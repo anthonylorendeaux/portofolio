@@ -4,8 +4,7 @@ export default defineNuxtConfig({
       routes: [
         '/',
       ],
-      crawlLinks: true,
-      ignore: ['/_vercel']
+      crawlLinks: true
     }
   },
   site: {
