@@ -6,6 +6,7 @@ image:
   src: /blog/moltbook.png
   alt: "Illustration Moltbook : réseau social pour agents IA"
 publishedAt: 2026-02-04T00:00:00.000Z
+summary: "Étude de cas sur le développement d'un outil de documentation technique interactif avec Nuxt 4 et Nuxt Studio, mettant l'accent sur l'expérience développeur (DX)."
 ---
 
 ![Moltbook-image](/blog/moltbook.png)

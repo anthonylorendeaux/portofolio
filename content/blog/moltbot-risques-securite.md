@@ -6,6 +6,7 @@ image:
     alt: "Illustration des risques liés à Moltbot et Moltbook"
 category: "IA"
 publishedAt: 2026-02-03
+summary: "Analyse des risques de sécurité liés aux bots IA et stratégies de protection pour les applications Nuxt 4 utilisant Cloudflare et les en-têtes de sécurité."
 ---
 
 ![Moltbot-image](/blog/molt.png)

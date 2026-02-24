@@ -6,6 +6,7 @@ image:
   src: "/projects/alternativestrategies.png"
   alt: "Landing Alternative Strategies"
 publishedAt: 2025-05-04T00:00:00.000Z
+summary: "Refonte SEO et technique d'un site de conseil, améliorant le temps de chargement et la conversion grâce à une architecture Nuxt 3 moderne."
 ---
 
 ![Alternative Strategies hero](/projects/alternativestrategies.png)

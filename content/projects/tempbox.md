@@ -6,6 +6,7 @@ image:
   src: "/projects/tempbox.png"
   alt: "Tempbox : emails temporaires sécurisés 1 heure"
 publishedAt: 2025-04-22T12:00:00.000Z
+summary: "Service d'emails temporaires sécurisés avec Nuxt 3 et Python, gérant des millions d'emails avec une interface mobile-first et une inbox temps réel."
 ---
 
 ![Tempbox hero](/projects/tempbox.png)

@@ -6,6 +6,7 @@ image:
   src: "/projects/lescaprices.png"
   alt: "Les Caprices : site restaurant Toulouse avec réservation en ligne"
 publishedAt: 2024-08-22T11:00:00.000Z
+summary: "Création d'un site e-commerce performant pour un restaurant/traiteur, avec gestion de menu dynamique et SEO local optimisé."
 ---
 
 ![Les Caprices hero](/projects/lescaprices.png)

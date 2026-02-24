@@ -166,6 +166,7 @@ export default defineContentConfig({
                     publishedAt: z.string().nonempty(),
                     category: z.string().nonempty(),
                     image: createImageSchema(),
+                    summary: z.string().nonempty().describe('AI snippet for LLM indexing')
                 })
             })
         ),
@@ -177,7 +178,8 @@ export default defineContentConfig({
                 schema: z.object({
                     category: z.string().nonempty(),
                     publishedAt: z.date(),
-                    image: createImageSchema()
+                    image: createImageSchema(),
+                    summary: z.string().nonempty().describe('AI snippet for LLM indexing')
                 })
             })
         ),

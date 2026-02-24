@@ -14,6 +14,15 @@ export default defineNuxtConfig({
     description: 'Sites web Nuxt/Vue.js qui convertissent • SEO-first • Devis gratuit 24h',
     defaultLocale: 'fr'
   },
+  robots: {
+    groups: [
+      {
+        userAgent: ['*', 'GPTBot', 'ChatGPT-User', 'PerplexityBot', 'Claude-Web', 'ClaudeBot'],
+        allow: ['/'],
+        disallow: ['/_nuxt/', '/_vercel/', '/admin/']
+      }
+    ]
+  },
   compatibilityDate: '2025-05-15',
   devServer: {
     host: '0.0.0.0',

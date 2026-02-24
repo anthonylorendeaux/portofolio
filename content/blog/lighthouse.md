@@ -6,6 +6,7 @@ image:
     alt: "Screenshot réel d'un Lighthouse à 100/100"
 category: "Frontend"
 publishedAt: 2026-02-23
+summary: "Guide technique pour atteindre 100/100 sur Lighthouse avec Nuxt 4, couvrant l'optimisation des images, le rendu hybride et les performances sur Cloudflare."
 ---
 
 L'**optimisation de la performance Nuxt 4** n'est plus une option en 2026. C'est une absolue nécessité commerciale. Si vous vous demandez encore pourquoi vos concurrents vous battent sur Google malgré un design plus daté, la réponse tient souvent en trois lettres : V-I-T-E-S-S-E.
