@@ -19,7 +19,7 @@ export default defineNuxtConfig({
       {
         userAgent: ['*', 'GPTBot', 'ChatGPT-User', 'PerplexityBot', 'Claude-Web', 'ClaudeBot'],
         allow: ['/'],
-        disallow: ['/_nuxt/', '/_vercel/', '/admin/']
+        disallow: ['/_vercel/']
       }
     ]
   },
@@ -42,7 +42,13 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/content',
     'nuxt-studio',
+    '@nuxt/fonts',
   ],
+  fonts: {
+    families: [
+      { name: 'DM Sans', provider: 'google' }
+    ]
+  },
   css: ['~/assets/css/main.css'],
   studio: {
     repository: {

@@ -5,7 +5,7 @@ const appConfig = useAppConfig();
 <template>
     <UHeader to="/">
         <template #title>
-            <h1 class="text-primary"> AL </h1>
+            <h1 class="text-primary font-bold italic"> AL </h1>
         </template>
 
         <UNavigationMenu :items="appConfig.navigation" variant="link" />
