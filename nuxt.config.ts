@@ -1,7 +1,8 @@
 export default defineNuxtConfig({
   nitro: {
-    // Configuré pour le déploiement sur Netlify
-    preset: 'netlify',
+    experimental: {
+      wasm: true
+    },
     prerender: {
       crawlLinks: true,
       routes: ['/', '/sitemap.xml', '/blog', '/projects']
@@ -19,6 +20,12 @@ export default defineNuxtConfig({
     port: process.env.PORT ? Number(process.env.PORT) : 3000
   },
   devtools: { enabled: true },
+  vite: {
+    build: {
+      // Désactiver les sourcemaps en production réduit drastiquement l'usage mémoire
+      sourcemap: false
+    }
+  },
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
@@ -27,10 +34,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'nuxt-studio',
   ],
-  image: {
-    // Utilise le CDN d'images de Netlify en production pour optimiser les images
-    provider: process.env.NODE_ENV === 'production' ? 'netlify' : 'ipx',
-  },
   css: ['~/assets/css/main.css'],
   studio: {
     repository: {
