@@ -4,6 +4,7 @@ export default defineNuxtConfig({
       wasm: true
     },
     prerender: {
+      autoSubfolderIndex: false,
       crawlLinks: true,
       routes: ['/', '/sitemap.xml', '/blog', '/projects']
     },
