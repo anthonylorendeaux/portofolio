@@ -1,10 +1,7 @@
 export default defineNuxtConfig({
   nitro: {
-    // preset: "cloudflare_pages",
-    // cloudflare: {
-    //   deployConfig: true,
-    //   nodeCompat: true
-    // },
+    // Configuré pour le déploiement sur Netlify
+    preset: 'netlify',
     prerender: {
       crawlLinks: true,
       routes: ['/', '/sitemap.xml', '/blog', '/projects']
@@ -30,6 +27,10 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'nuxt-studio',
   ],
+  image: {
+    // Utilise le CDN d'images de Netlify en production pour optimiser les images
+    provider: process.env.NODE_ENV === 'production' ? 'netlify' : 'ipx',
+  },
   css: ['~/assets/css/main.css'],
   studio: {
     repository: {
