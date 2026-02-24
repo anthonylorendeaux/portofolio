@@ -1,13 +1,11 @@
 export default defineNuxtConfig({
   nitro: {
-    experimental: {
-      wasm: true
-    },
     prerender: {
-      autoSubfolderIndex: false,
-      crawlLinks: true,
-      routes: ['/', '/sitemap.xml', '/blog', '/projects']
-    },
+      routes: [
+        '/',
+      ],
+      crawlLinks: true
+    }
   },
   site: {
     url: 'https://anthony-lorendeaux.com',
