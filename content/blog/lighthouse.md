@@ -6,14 +6,14 @@ image:
     alt: "Screenshot réel d'un Lighthouse à 100/100"
 category: "Frontend"
 publishedAt: 2026-02-23
-summary: "Guide technique pour atteindre 100/100 sur Lighthouse avec Nuxt 4, couvrant l'optimisation des images, le rendu hybride et les performances sur Cloudflare."
+summary: "Guide technique pour atteindre 100/100 sur Lighthouse avec Nuxt 4, couvrant l'optimisation des images, le rendu hybride et les performances sur Vercel."
 ---
 
-L'**optimisation de la performance Nuxt 4** n'est plus une option en 2026. C'est une absolue nécessité commerciale. Si vous vous demandez encore pourquoi vos concurrents vous battent sur Google malgré un design plus daté, la réponse tient souvent en trois lettres : V-I-T-E-S-S-E.
+L'**optimisation de la performance Nuxt 4** n'est plus optionnelle en 2026. Si vous vous demandez pourquoi vos concurrents vous dépassent sur Google malgré un design plus daté, la réponse tient souvent en un seul mot : **vitesse**.
 
-Un **Nuxt Lighthouse 100** n'est pas qu'un trophée pour développeurs ego-centrés. C'est la garantie d'un taux de conversion maximal, de coûts d'acquisition client (CAC) réduits, et d'un signal fort envoyé aux algorithmes de Google qui privilégient de plus en plus l'expérience utilisateur réelle.
+Un score **Lighthouse à 100/100**, ce n'est pas juste un badge. C'est un taux de conversion plus élevé, des coûts d'acquisition client réduits, et un signal clair envoyé à Google qui privilégie de plus en plus l'expérience utilisateur réelle.
 
-Dans mon quotidien, je refuse de livrer un projet qui n'atteint pas l'excellence technique. Dans cet article "Pilier", je vais vous montrer exactement comment j'utilise l'écosystème **Nuxt 4** et l'infrastructure d'Edge Computing de **Cloudflare**, pour garantir ce fameux score de 100/100 à mes clients.
+Dans cet article, je vous montre exactement les techniques que j'applique sur chaque projet pour atteindre ce score de 100/100.
 
 ## Les 3 métriques Core Web Vitals à maîtriser en 2026
 
@@ -23,7 +23,7 @@ Google a affiné ses exigences. On ne mesure plus simplement le temps de répons
 2.  **INP (Interaction to Next Paint) :** Fini le FID. L'INP mesure la latence de l'interface complète après une action utilisateur (un clic, un tapotement). Une interface qui "freeze" pendant 300 millisecondes vous pénalise. L'objectif : **moins de 200ms**.
 3.  **CLS (Cumulative Layout Shift) :** Rien n'est plus frustrant qu'un texte qui décale d'un coup parce qu'une bannière publicitaire ou une police de caractères vient de charger. Le CLS mesure cette instabilité visuelle. Le score doit être quasi nul (**inférieur à 0.1**).
 
-Pour atteindre un 100/100 sur ces trois métriques avec un framework lourd en JavaScript comme Vue.js, il faut être méthodique.
+Pour atteindre un 100/100 sur ces trois métriques avec un framework riche comme Vue.js (qui embarque naturellement plus de JavaScript qu'une page statique), il faut être méthodique.
 
 ## LCP : Charger l'essentiel en moins d'une seconde
 
@@ -31,7 +31,7 @@ Pour atteindre un 100/100 sur ces trois métriques avec un framework lourd en Ja
 
 Le principal ennemi du LCP, c'est le navigateur qui découvre tardivement qu'il a besoin d'une grosse ressource pour afficher le haut de la page.
 
-Pour **améliorer LCP Nuxt**, le composant natif `@nuxt/image` est mon premier reflexe. Il s'occupe de la compression (WebP / AVIF) et génère le code HTML optimal. Mais cela ne suffit pas pour le plafond de verre des 100/100. Il faut guider le navigateur.
+Pour **améliorer le LCP sous Nuxt**, le composant natif `@nuxt/image` est mon premier réflexe. Il s'occupe de la compression (WebP / AVIF) et génère le code HTML optimal. Mais cela ne suffit pas pour le plafond de verre des 100/100. Il faut guider le navigateur.
 
 ```vue
 <template>
@@ -128,21 +128,21 @@ Prenez le réflexe de toujours fixer des largeurs fermes dans votre CSS (ici ave
 <Icon name="heroicons:light-bulb" class="w-5 h-5 flex-shrink-0" />
 ```
 
-## L'arme secrète : Le SSR Hybride et l'Edge sur Cloudflare
+## Le SSR Hybride et l'Edge sur Vercel
 
 Toutes les optimisations front-end du monde ne sauveront pas un serveur lent au démarrage.
 
-Rendre la page sur un serveur traditionnel en Node.js (un serveur VPS à Paris, par exemple) ajoute de la latence basique. Si votre visiteur est à Tokyo ou à New York, il attendra que la donnée traverse l'océan.
+Rendre la page sur un serveur traditionnel en Node.js (un VPS à Paris, par exemple) ajoute de la latence. Si votre visiteur est à Tokyo ou à New York, il attendra que la donnée traverse l'océan.
 
-C'est là que le combo **Nuxt 4 + Nitro + Cloudflare Pages** détruit littéralement la concurrence. En déployant sur l'infrastructure d'Edge Computing de Cloudflare, le code de votre serveur Nuxt (SSR) est décentralisé sur des centaines de datacenters à travers le monde. Votre site s'exécute à quelques kilomètres de votre utilisateur.
+C'est là que le combo **Nuxt 4 + Nitro + Vercel** change la donne. En déployant sur l'infrastructure Edge de Vercel, le code SSR de votre application est distribué sur des centaines de datacenters dans le monde. Votre site s'exécute à quelques kilomètres de votre utilisateur.
 
 Voici la configuration redoutable (et obligatoire) que j'utilise dans `nuxt.config.ts` :
 
 ```typescript
 export default defineNuxtConfig({
   nitro: {
-    // Active le déploiement mondial sur l'Edge Cloudflare
-    preset: 'cloudflare_pages',
+    // Active le déploiement mondial sur Vercel Edge
+    preset: 'vercel',
     prerender: {
       crawlLinks: true,
       routes: ['/']
@@ -150,7 +150,7 @@ export default defineNuxtConfig({
   },
   
   routeRules: {
-    // L'arme nucléaire du SSR: le Stale-While-Revalidate (SWR)
+    // Stale-While-Revalidate (SWR) : cache serveur intelligent
     '/blog/**': { swr: 3600 },
     // Cache statique brut pour les assets stricts
     '/assets/**': { headers: { 'cache-control': 's-maxage=31536000' } }
@@ -158,27 +158,25 @@ export default defineNuxtConfig({
 })
 ```
 
-La règle `swr: 3600` informe les datacenters Cloudflare : "Mets en cache cette page côté serveur pendant 1 heure. Si un utilisateur la demande, fournis-la instantanément (en quelques millisecondes). En coulisse, re-génère là de façon asynchrone si elle n'est plus à jour." 
+La règle `swr: 3600` informe les serveurs Edge de Vercel : "Mets en cache cette page côté serveur pendant 1 heure. Si un utilisateur la demande, fournis-la instantanément (en quelques millisecondes). En coulisse, re-génère là de façon asynchrone si elle n'est plus à jour." 
 
 Le visiteur ne subit jamais le temps de génération.
 
 Pour en savoir plus sur les raisons profondes de ce choix technologique qui bouleverse le secteur, je vous invite à lire mon essai détaillé : [Pourquoi j'ai choisi Nuxt 4](/blog/pourquoi-nuxt).
 
-## Le résultat : Benchmark "Avant / Après" avec screenshot réel du 100/100
+## Le résultat : un 100/100 en production
 
-Appliquer ces principes méticuleusement transforme littéralement une application web. Fini l'interface poussive, fini le "Jiggle" au chargement, fini les temps d'attente sur mobile en 3G.
+Appliquer ces principes sur chaque projet donne des résultats concrets. Plus d'interface qui rame, plus de layout qui saute au chargement, plus de temps d'attente sur mobile.
 
-Je ne base pas mes stratégies sur de vagues recommandations. Je les base sur des faits avérés et mesurés en conditions réelles.
-
-Voici le résultat pur d'un audit de production : un Lighthouse à 100/100 inébranlable, sur PC comme sur Mobile.
+Voici le résultat d'un audit de production récent : un Lighthouse à 100/100, sur PC comme sur mobile.
 
 ![Screenshot réel du 100/100 sur Lighthouse](/blog/lighthouse.png)
 
-Atteindre ces métriques demande du soin, de la méthode, et une maîtrise fine de l'écosystème Vue.js. C'est l'exigence que j'applique à chaque mission.
+Atteindre ces métriques demande du soin, de la méthode et une bonne connaissance de l'écosystème Vue.js. C'est le standard que j'applique à chaque projet.
 
 ---
 
-**Prêt à exploser les plafonds de verre de vos performances ?**  
-L'excellence technique n'est plus optionnelle en 2026. Si votre application peine à convertir ou si vos métriques Google s'effrondrent, il est temps de restructurer vos fondations web.  
-[👉 Découvrir mes services de développement sur-mesure et lancer votre refonte](/services)
+**Votre site est lent et vos conversions stagnent ?**  
+Un audit performance peut révéler des gains rapides. Je peux analyser votre application et vous proposer un plan d'optimisation concret.  
+[Demander un audit gratuit →](/contact)
 
