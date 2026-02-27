@@ -1,45 +1,45 @@
-# Portfolio - Nuxt 4 & Bun Application
+# Portfolio - Nuxt 4 Application
 
-Application full-stack développée avec **Nuxt 4**, optimisée pour tourner nativement sur **Bun**.
-Ce projet utilise Docker pour la production et profite de la rapidité de Bun pour le développement et le build.
+Application full-stack développée avec **Nuxt 4**, utilisant **pnpm** comme gestionnaire de paquets.
+Ce projet utilise Docker pour la production.
 
 Consultez la [documentation Nuxt](https://nuxt.com/docs/getting-started/introduction) pour en savoir plus.
 
 ## 🚀 Prérequis
 
-- [Bun](https://bun.sh/) (v1.0.0 ou supérieur)
+- [Node.js](https://nodejs.org/) (v20 ou supérieur recommandé)
+- [pnpm](https://pnpm.io/)
 - Docker (pour le déploiement)
 
 ## 🛠️ Installation & Développement
 
-Installez les dépendances ultra-rapidement avec Bun :
+Installez les dépendances avec pnpm :
 
 ```bash
-bun install
+pnpm install
+```
 
 Lancez le serveur de développement (HMR activé) sur http://localhost:3000 :
 
 ```bash
-bun run Dev
-# Ou pour forcer le runtime Bun natif (encore plus rapide) :
-bun --bun run dev
+pnpm run dev
 ```
 
 ## 📦 Production
 Compilez l'application pour la production (génère le dossier .output) :
 
 ```bash
-bun run build
+pnpm run build
 ```
 Pour prévisualiser le build de production localement :
 
 ```bash
-bun run preview
+pnpm run preview
 # Ou lancer directement le serveur de prod :
-bun .output/server/index.mjs
+node .output/server/index.mjs
 ```
 ## 🐳 Docker (Déploiement)
-Le projet est conteneurisé avec une image multi-stage optimisée (base Alpine).
+Le projet est conteneurisé avec une image multi-stage optimisée (base Node Alpine).
 
 Construire l'image
 
@@ -54,7 +54,7 @@ docker run --rm -p 3000:80 --name portfolio mon-Portfolio
 ```
 ## 🏗️ Architecture Technique
 - Framework : Nuxt 4
-- Runtime : Bun (Dev & Prod via Nitro Preset)
+- Runtime : Node.js (Dev & Prod via Nitro Preset)
 - UI Library : Nuxt UI
 - Content : Nuxt Content (v2/v3)
-- Base de données : SQLite (via bun:sqlite natif en prod)
+- Base de données : SQLite

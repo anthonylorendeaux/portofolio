@@ -163,7 +163,7 @@ export default defineContentConfig({
                 type: 'page',
                 source: 'projects/*.md',
                 schema: z.object({
-                    publishedAt: z.string().nonempty(),
+                    publishedAt: z.date(),
                     category: z.string().nonempty(),
                     image: createImageSchema(),
                     summary: z.string().nonempty().describe('AI snippet for LLM indexing')
