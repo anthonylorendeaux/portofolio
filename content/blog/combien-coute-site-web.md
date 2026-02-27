@@ -2,7 +2,7 @@
 title: "Combien coûte un site web en 2026 ? Guide complet des tarifs"
 description: "Découvrez les vrais prix d'un site web en 2026 : site vitrine, e-commerce, application SaaS. Tarifs freelance transparents, comparatif agence vs freelance, et ce qui fait varier le prix."
 image:
-    src: /blog/combien-coute-site-web.webp
+    src: /blog/cout-site.png
     alt: "Guide des tarifs de création de site web en 2026"
 category: "Business"
 publishedAt: 2026-02-27
