@@ -126,7 +126,38 @@ Prenez le réflexe de toujours fixer des largeurs fermes dans votre CSS (ici ave
 
 <!-- Bon -->
 <Icon name="heroicons:light-bulb" class="w-5 h-5 flex-shrink-0" />
+<!-- Bon -->
+<Icon name="heroicons:light-bulb" class="w-5 h-5 flex-shrink-0" />
 ```
+
+### 3. Désactiver les effets lourds sur mobile
+
+Les animations canvas, les particules et les effets visuels spectaculaires qui fonctionnent parfaitement sur desktop peuvent transformer votre site en diaporama glacial sur mobile. Le CPU des appareils mobiles n'a pas la puissance de calcul d'un laptop, et votre INP en pâtit directement.
+
+La solution : une détection ciblée qui désactive ces effets cuando ils ne peuvent pas s'exprimer correctement.
+
+```vue
+<script setup>
+onMounted(() => {
+  // Détecter le contexte mobile
+  const isMobile = window.innerWidth < 768
+  
+  // Respecter les préférences d'accessibilité utilisateur
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  
+  if (isMobile || prefersReducedMotion) {
+    // Arrêter les animations coûteuses
+    return
+  }
+  
+  // Initialiser l'effet canvas...
+})
+</script>
+```
+
+Pour les systèmes de particules (type étoilesAnimated ou confettis), je vais plus loin : je réduis drastiquement le nombre d'éléments sur mobile. 300 étoiles sur desktop, 80 sur mobile. L'œil humain ne fait pas la différence, mais le GPU oui.
+
+Cette optimisation peut représenter **10 à 20 points de score Lighthouse** sur mobile.
 
 ## Le SSR Hybride et l'Edge sur Vercel
 
