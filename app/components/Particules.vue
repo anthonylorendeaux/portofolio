@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
+
 interface Star {
     x: number
     y: number
@@ -17,6 +19,16 @@ const props = withDefaults(defineProps<{
     size: { min: 1, max: 3 }
 })
 
+// Détecter si mobile pour réduire le nombre d'étoiles
+const isMobile = ref(false)
+
+onMounted(() => {
+    isMobile.value = typeof window !== 'undefined' && window.innerWidth < 768
+})
+
+// Nombre d'étoiles réduit sur mobile (80 au lieu de 300)
+const effectiveStarCount = computed(() => isMobile.value ? 80 : props.starCount)
+
 const generateStars = (count: number): Star[] => {
     return Array.from({ length: count }, () => ({
         x: Math.random() * 2000,
@@ -31,10 +43,11 @@ const speedMap = {
     fast: { duration: 100, opacity: 1, ratio: 0.4 }
 }
 
+// Utiliser effectiveStarCount au lieu de props.starCount
 const stars = useState<{ slow: Star[], normal: Star[], fast: Star[] }>('stars', () => ({
-    slow: generateStars(Math.floor(props.starCount * speedMap.slow.ratio)),
-    normal: generateStars(Math.floor(props.starCount * speedMap.normal.ratio)),
-    fast: generateStars(Math.floor(props.starCount * speedMap.fast.ratio))
+    slow: generateStars(Math.floor(effectiveStarCount.value * speedMap.slow.ratio)),
+    normal: generateStars(Math.floor(effectiveStarCount.value * speedMap.normal.ratio)),
+    fast: generateStars(Math.floor(effectiveStarCount.value * speedMap.fast.ratio))
 }))
 
 const starLayers = computed(() => [

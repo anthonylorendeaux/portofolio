@@ -6,7 +6,12 @@ export default defineNuxtConfig({
       ],
       crawlLinks: true,
       ignore: ['/_vercel']
-    }
+    },
+    compressPublicAssets: true
+  },
+  experimental: {
+    payloadExtraction: true,
+    inlineSSRStyles: false
   },
   site: {
     url: 'https://anthony-lorendeaux.com',

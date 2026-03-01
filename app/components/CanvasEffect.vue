@@ -122,6 +122,14 @@ function clearMouse() {
 }
 
 onMounted(() => {
+  // Désactiver sur mobile et pour les utilisateurs qui préfèrent moins d'animations
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  if (isMobile || prefersReducedMotion) return
+
+  hiddenCanvas = document.createElement('canvas')
+  hiddenCtx = hiddenCanvas.getContext('2d')
   hiddenCanvas = document.createElement('canvas')
   hiddenCtx = hiddenCanvas.getContext('2d')
 
