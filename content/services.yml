@@ -27,8 +27,8 @@ pricing:
         - Cloudflare Pages
         - Analytics intégrés
       button:
-        label: Devis gratuit
-        to: /contact
+        label: Voir les détails
+        to: /services/site-vitrine-nuxt
       scale: false
     - title: Site E-commerce
       description: Boutique + paiement Stripe configuré
@@ -41,8 +41,8 @@ pricing:
         - Analytics ventes
         - Gestion stocks
       button:
-        label: Devis gratuit
-        to: /contact
+        label: Voir les détails
+        to: /services/integration-api-stripe
     - title: Application SaaS
       description: Multi-tenant + database + paiements
       price: 1200€
@@ -53,27 +53,24 @@ pricing:
         - Authentification
         - Admin dashboard
       button:
-        label: Devis gratuit
-        to: /contact
+        label: Voir les détails
+        to: /services/developpement-fullstack
       scale: false
   headline: "Prix "
 services:
-  headline: Technologies
-  title: Ma stack technique
-  description: Des outils modernes pour des sites ultra-rapides
+  headline: Services
+  title: Mes différents services web
+  description: Des sites vitrines aux applications web complexes, je vous accompagne dans vos projets.
   features:
-    - title: Nuxt 4
-      description: SSR + PWA + routing intelligent
+    - title: Site Vitrine
+      description: 5-10 pages responsive + SEO technique. Solution administrable (CMS headless). Dès 500€.
+      icon: i-lucide-layout
+      to: /services/site-vitrine-nuxt
+    - title: Site E-commerce
+      description: Boutique complète, paiement Stripe sécurisé, SEO produits et analytics. Dès 800€.
+      icon: i-lucide-shopping-cart
+      to: /services/integration-api-stripe
+    - title: Application SaaS
+      description: Développement SaaS multi-tenant, base de données, authentification et paiement. Dès 1200€.
       icon: i-lucide-cpu
-    - title: Nuxt Content
-      description: CMS headless markdown intégré
-      icon: i-lucide-file-text
-    - title: Nuxt UI Pro
-      description: Design système Tailwind responsive
-      icon: i-lucide-palette
-    - title: Nuxt Studio
-      description: Édition visuelle drag & drop
-      icon: i-lucide-wand-sparkles
-    - title: Cloudflare Pages
-      description: Déploiement 1-clic + CDN global
-      icon: i-lucide-globe
+      to: /services/developpement-fullstack

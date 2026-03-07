@@ -1,40 +1,9 @@
-title: Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.js
-about:
-  links:
-    - label: En Savoir plus
-      to: /about
-      icon: i-lucide-arrow-right
-      variant: subtle
-      color: neutral
-      trailing: true
-  title: Qui je suis ?
-  description: Ingénieur logiciel (backend Java), passionné frontend Nuxt/Vue.js. Je développe des sites fullstack qui convertissent pour indépendants et PME. Microsoft & Google certifié je fais des projets freelance en soirée & le week-end.
-  image:
-    src: tlse.jpg
-    alt: Toulouse
-    loading: lazy
-contact:
-  title: Discutons de votre projet
-  description: Devis gratuit sous 24h. Aucun engagement. Je réponds à toutes vos questions technique et budget.
-  links:
-    - label: Prendre RDV
-      to: /contact
-      color: primary
-description: Développeur Freelance Nuxt/Vue.js à Toulouse • Sites web haute performance • SEO-first • Expert Fullstack France
-faq:
-  title: Questions fréquentes
-  description: Tout ce que vous devez savoir avant de lancer votre projet
-  items:
-    - label: Combien de temps pour un site ?
-      content: "Vitrine : 2-3 semaines | E-commerce : 4-6 semaines. Devis détaillé sous 24h."
-    - label: Maintenance incluse ?
-      content: "Forfaits dès 30€/mois : mises à jour, SEO continu, backups automatiques."
-    - label: WordPress ou Nuxt ?
-      content: "Nuxt/Vue.js uniquement : 10x plus rapide, SEO supérieur, maintenance simplifiée."
+title: Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.js Toulouse
+description: Développeur Freelance Nuxt/Vue.js basé à Toulouse • Sites web haute performance • SEO-first • Expert Fullstack France
 hero:
   badge: true
   title: Développeur Freelance Nuxt/Vue.js
-  description: Je crée des sites modernes qui attirent du trafic qualifié et convertissent vos visiteurs en clients.
+  description: Je crée des sites modernes qui attirent du trafic qualifié et convertissent vos visiteurs en clients. Spécialiste Vue.js et Nuxt.js à Toulouse.
   links:
     - label: Devis gratuit 24h
       to: /contact
@@ -50,26 +19,57 @@ hero:
       icon: i-lucide-arrow-right
   image:
     src: contact_head.png
-    alt: Anthony
+    alt: Anthony Lorendeaux Développeur Nuxt Vue.js Toulouse
     loading: eager
+about:
+  links:
+    - label: En Savoir plus
+      to: /about
+      icon: i-lucide-arrow-right
+      variant: subtle
+      color: neutral
+      trailing: true
+  title: Qui je suis ?
+  description: Ingénieur logiciel, passionné frontend Nuxt/Vue.js basé à Toulouse. Je développe des sites fullstack qui convertissent pour indépendants, PME et startups. Microsoft & Google certifié, je déploie des architectures web robustes et évolutives.
+  image:
+    src: pfp.webp
+    alt: Développeur web Toulouse
+    loading: lazy
 projects:
   title: Découvrez mes dernières réalisations
-  description: Chaque projet reflète ma passion pour l'innovation et mon engagement à livrer des résultats de haute qualité.
-  headline: Portofolio
+  description: Chaque projet reflète mon expertise technique sur la stack JavaScript, mon souci du détail (UI/UX) et ma volonté d'optimiser les performances Web Vitals.
+  headline: Portfolio
 services:
   headline: Services
-  title: Mes différents services
-  description: Des sites vitrines aux applications web complexes je vous accompagne dans vos projets.
+  title: Mes différents services web
+  description: Des sites vitrines aux applications web complexes, je vous accompagne dans vos projets de transformation digitale avec les meilleures technologies du marché.
   features:
-    - title: Site Vitrine
-      description: Site 5-10 pages responsive avec une mise en place de SEO technique. Administration incluse. Dès 500€.
+    - title: Site Vitrine Sur Mesure
+      description: Création de site 5-10 pages responsive avec une mise en place de SEO technique avancé. Solution administrable (CMS headless). Dès 500€.
       icon: i-lucide-layout
-      to: ""
-    - title: Site E-commerce
-      description: Boutique complète avec paiement configuré. SEO produits et analytics. Dès 800€.
+      to: /services/site-vitrine-nuxt
+    - title: Plateforme E-commerce
+      description: Boutique complète avec tunnel d'achat optimisé, paiement Stripe sécurisé, SEO produits et analytics avancés. Dès 800€.
       icon: i-lucide-shopping-cart
-      to: ""
-    - title: Application SaaS
-      description: SaaS multi-tenant Nuxt avec database incluse, et paiement configuré. Dès 1200€.
+      to: /services/integration-api-stripe
+    - title: Application Web (SaaS)
+      description: Développement de SaaS multi-tenant avec Nuxt 3, base de données (MongoDB/PostgreSQL), authentification et paiement configuré. Dès 1200€.
       icon: i-lucide-cpu
-      to: ""
+      to: /services/developpement-fullstack
+faq:
+  title: Questions fréquentes
+  description: Tout ce que vous devez savoir avant de lancer votre projet de développement web.
+  items:
+    - label: Combien de temps faut-il pour concevoir un site web professionnel ?
+      content: "Pour un site vitrine professionnel de taille standard, prévoyez entre 2 et 3 semaines, incluant l'itération design et le déploiement. S'il s'agit d'une plateforme e-commerce ou d'une application SaaS complexe impliquant une base de données sur-mesure et des espaces membres, le délai s'étend de 4 à 6 semaines en moyenne. Je m'engage à fournir un rétroplanning très détaillé dès l'étape du devis initial, que je vous retourne systématiquement sous 24h ouvrées."
+    - label: Proposez-vous la maintenance applicative une fois le site en ligne ?
+      content: "Absolument. La pérennité d'un outil digital est essentielle. Je propose des forfaits mensuels de tierce maintenance applicative (TMA) accessibles (à partir de 30€/mois). Ce service couvre les correctifs et mises à jour de sécurité de vos modules Vue.js et Nuxt, le suivi et l'optimisation continue de vos métriques SEO (Search Engine Optimization), les sauvegardes (backups) automatiques de votre base de données, ainsi qu'un monitoring constant garantissant que votre site reste toujours en ligne (uptime)."
+    - label: Pourquoi privilégier une solution comme Nuxt.js plutôt qu'un CMS traditionnel comme WordPress ?
+      content: "L'écosystème Nuxt/Vue.js s'inscrit dans l'approche de pointe appelée Jamstack. Concrètement, cela permet d'obtenir des performances de vitesse d'affichage jusqu'à 10 fois supérieures par rapport à un WordPress classique. De plus, l'architecture dite 'headless' désolidarise le front-end (l'interface visuelle) du back-end (le moteur et la base de données), réduisant drastiquement les vecteurs de cyberattaques. Enfin, sur le plan du référencement naturel, la capacité fine de SSR de Nuxt offre un contrôle chirurgical et total de l'HTML transmis aux robots de Google, surpassant très largement les plugins généralistes."
+contact:
+  title: Discutons de votre projet à Toulouse ou à distance
+  description: Demandez un devis gratuit et exhaustif sous 24h. L'échange est sans aucun engagement. Je me tiens à votre entière disposition pour auditer techniquement vos problématiques et définir l'architecture ainsi que le budget les plus adaptés.
+  links:
+    - label: Planifier un appel découverte
+      to: /contact
+      color: primary

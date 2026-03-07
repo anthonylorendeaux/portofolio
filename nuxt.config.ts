@@ -3,6 +3,7 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/',
+        '/sitemap.xml',
       ],
       crawlLinks: true,
       ignore: ['/_vercel']
@@ -11,13 +12,13 @@ export default defineNuxtConfig({
   },
   experimental: {
     payloadExtraction: true,
-    inlineSSRStyles: false
   },
   site: {
     url: 'https://anthony-lorendeaux.com',
-    name: 'Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.js',
-    description: 'Sites web Nuxt/Vue.js qui convertissent • SEO-first • Devis gratuit 24h',
-    defaultLocale: 'fr'
+    name: 'Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.js Toulouse',
+    description: 'Création de sites web ultra-rapides et applications web sur-mesure à Toulouse. Expert Nuxt 3 & Vue.js • Devis gratuit 24h',
+    defaultLocale: 'fr',
+    trailingSlash: false
   },
   robots: {
     groups: [
@@ -36,7 +37,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   vite: {
     build: {
-      // Désactiver les sourcemaps en production réduit drastiquement l'usage mémoire
       sourcemap: false
     }
   },
@@ -46,21 +46,36 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/seo',
     '@nuxt/content',
-    'nuxt-studio',
     '@nuxt/fonts',
+    'nuxt-schema-org',
   ],
+  sitemap: {
+    cacheMaxAgeSeconds: 3600,
+    strictNuxtContentPaths: true
+  },
+  seo: {
+    fallbackTitle: false,
+  },
+  routeRules: {
+    // Stale-While-Revalidate (SWR) : cache serveur intelligent
+    '/blog/**': { swr: 3600 },
+    '/projects/**': { swr: 3600 },
+    // Cache statique pour les assets
+    '/assets/**': { headers: { 'cache-control': 's-maxage=31536000' } }
+  },
+  $production: {
+    modules: [
+      '@nuxt/ui',
+      '@nuxt/image',
+      '@nuxtjs/seo',
+      '@nuxt/content',
+      '@nuxt/fonts',
+    ]
+  },
   fonts: {
     families: [
       { name: 'DM Sans', provider: 'google' }
     ]
   },
-  css: ['~/assets/css/main.css'],
-  studio: {
-    repository: {
-      provider: 'github',
-      owner: 'anthonylorendeaux',
-      repo: 'portofolio',
-      branch: 'master'
-    }
-  }
+  css: ['~/assets/css/main.css']
 })

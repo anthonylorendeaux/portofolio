@@ -30,8 +30,8 @@ useSeoMeta({
                 :description="page.services.description">
                 <UPageGrid>
                     <UPageCard v-for="(feature, index) in page.services.features" :key="index" :title="feature.title"
-                        :description="feature.description" :icon="feature.icon" variant="subtle" spotlight
-                        spotlight-color="primary" />
+                        :description="feature.description" :icon="feature.icon" :to="feature.to" variant="outline"
+                        spotlight spotlight-color="primary" />
                 </UPageGrid>
             </UPageSection>
             <UPageSection v-if="page.faq" :title="page.faq.title" :description="page.faq.description">

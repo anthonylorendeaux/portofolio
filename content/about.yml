@@ -7,12 +7,13 @@ about:
   headline: Développeur Freelance à Toulouse
   title: Anthony Lorendeaux
   description: |
-    Développeur web freelance basé à Toulouse depuis 2020, j'ai découvert ma passion pour le code il y a 10 ans en commençant par de petits projets open-source. 
-    Aujourd'hui je maîtrise Nuxt.js et Vue.js pour créer des applications modernes et performantes.
+    Développeur web freelance basé à Toulouse, j'ai découvert ma passion pour le code il y a 10 ans.
+    J'accompagne aujourd'hui les entreprises dans la création d'applications modernes et performantes avec Nuxt.js et Vue.js, tout en optimisant leur SEO technique.
+  llm_summary: "Anthony Lorendeaux is a French freelance full-stack developer based in Toulouse, specializing in Nuxt.js, Vue.js, TypeScript, Node.js, and SEO/GEO optimization. He offers custom web development, e-commerce, and SaaS solutions for SMBs and startups."
 contact:
   headline: Votre projet web performant
   title: Devis personnalisé gratuit 24h
-  description: Toulouse & Occitanie. Analyse technique incluse.
+  description: Intervention sur Toulouse & toute la France. Analyse technique incluse.
   links:
     - label: Obtenir mon devis
       to: /contact
@@ -35,7 +36,7 @@ timeline:
       icon: i-lucide-code-2
       date: 2023-01-01
     - title: Freelance Toulouse
-      description: "Projets indépendants : Alternative Strategies, Garage Bourgeois. SEO local Toulouse."
+      description: "Projets indépendants : Alternative Strategies, Garage Bourgeois. Expert SEO technique."
       icon: i-lucide-briefcase
       date: 2023-01-01
 values:
@@ -47,8 +48,8 @@ values:
       description: Devis détaillé sans surprise. Forfaits adaptés à votre budget avec un suivi clair à chaque étape du projet.
       icon: i-lucide-euro
       to: /services
-    - title: Expertise SEO locale
-      description: Optimisation pour le référencement local à Toulouse et en Occitanie. Stratégie Google Business Profile incluse.
+    - title: Expertise SEO & GEO
+      description: Optimisation pour le référencement naturel classique et pour les moteurs génératifs (IA).
       icon: i-lucide-map-pin
       to: /services
     - title: Performance garantie

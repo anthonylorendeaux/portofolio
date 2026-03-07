@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Analytics } from '@vercel/analytics/nuxt'
+import { Analytics } from '@vercel/analytics/nuxt';
 
 useHead({
   htmlAttrs: { lang: 'fr' },
@@ -24,6 +24,9 @@ useSchemaOrg([
       'https://www.fiverr.com/antho_lor'
     ],
     jobTitle: 'Développeur Freelance Nuxt/Vue.js',
+    worksFor: {
+      name: 'Freelance'
+    },
     knowsAbout: ['Nuxt.js', 'Vue.js', 'TypeScript', 'SEO', 'Tailwind CSS', 'Cloudflare'],
     description: 'Ingénieur logiciel spécialisé dans le développement d\'applications web performantes et optimisées pour le SEO avec Nuxt 4.'
   }),

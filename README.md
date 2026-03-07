@@ -1,5 +1,7 @@
 # Portfolio - Nuxt 4 Application
 
+🌍 **Site en ligne** : [https://anthony-lorendeaux.com](https://anthony-lorendeaux.com)
+
 Application full-stack développée avec **Nuxt 4**, utilisant **pnpm** comme gestionnaire de paquets.
 Ce projet utilise Docker pour la production.
 

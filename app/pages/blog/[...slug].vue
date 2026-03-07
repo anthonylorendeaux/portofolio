@@ -18,6 +18,19 @@ useSeoMeta({
     description,
     ogDescription: description
 })
+
+useSchemaOrg([
+    defineArticle({
+        headline: title,
+        description: description,
+        datePublished: post.value?.publishedAt ? new Date(post.value.publishedAt).toISOString() : undefined,
+        image: post.value?.image?.src || undefined,
+        author: {
+            name: 'Anthony Lorendeaux',
+            url: 'https://anthony-lorendeaux.com'
+        }
+    })
+])
 </script>
 
 <template>

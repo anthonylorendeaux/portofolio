@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref } from 'vue';
 
 interface Star {
     x: number
@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<{
     starCount: 300,
     color: 'var(--ui-primary)',
     speed: 'normal',
-    size: { min: 1, max: 3 }
+    size: () => ({ min: 1, max: 3 })
 })
 
 // Détecter si mobile pour réduire le nombre d'étoiles

@@ -90,6 +90,7 @@ export default defineContentConfig({
                 services: createBaseSectionSchema().extend({
                     features: z.array(createFeatureSchema()),
                 }),
+
                 faq: createBaseSectionSchema().extend({
                     items: z.array(z.object({
                         label: z.string().nonempty(),
@@ -168,6 +169,14 @@ export default defineContentConfig({
                     image: createImageSchema(),
                     summary: z.string().nonempty().describe('AI snippet for LLM indexing')
                 })
+            })
+        ),
+
+        services_articles: defineCollection(
+            asSeoCollection({
+                type: 'page',
+                source: 'services/*.md',
+                schema: z.object({})
             })
         ),
 
