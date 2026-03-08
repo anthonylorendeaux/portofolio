@@ -47,10 +47,11 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/content',
     '@nuxt/fonts',
-    'nuxt-schema-org',],
+    'nuxt-schema-org',
+    // 'nuxt-studio'
+  ],
   sitemap: {
-    cacheMaxAgeSeconds: 3600,
-    strictNuxtContentPaths: true
+    cacheMaxAgeSeconds: 3600
   },
   seo: {
     fallbackTitle: false,
