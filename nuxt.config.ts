@@ -2,12 +2,12 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'cloudflare_module',
     prerender: {
-      routes: [
-        '/',
-        '/sitemap.xml',
-      ],
+      routes: ['/', '/sitemap.xml', '/blog/**', '/projects/**'], // liste wildcards ou génère via API
       crawlLinks: true,
-      ignore: ['/_vercel']
+    },
+    routeRules: {
+      '/**': { prerender: false, ssr: true }, // force SSR toutes (pas statique)
+      '/blog/**': { swr: true } // cache + ISR si besoin
     },
     compressPublicAssets: true
   },
