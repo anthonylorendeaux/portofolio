@@ -1,13 +1,12 @@
 export default defineNuxtConfig({
   nitro: {
-    preset: 'cloudflare_module',
     prerender: {
-      routes: ['/', '/sitemap.xml', '/blog/**', '/projects/**'], // liste wildcards ou génère via API
+      routes: [
+        '/',
+        '/sitemap.xml',
+      ],
       crawlLinks: true,
-    },
-    routeRules: {
-      '/**': { prerender: false, ssr: true }, // force SSR toutes (pas statique)
-      '/blog/**': { swr: true } // cache + ISR si besoin
+      ignore: ['/_vercel']
     },
     compressPublicAssets: true
   },
@@ -48,8 +47,7 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/content',
     '@nuxt/fonts',
-    'nuxt-schema-org',
-  ],
+    'nuxt-schema-org',],
   sitemap: {
     cacheMaxAgeSeconds: 3600,
     strictNuxtContentPaths: true
