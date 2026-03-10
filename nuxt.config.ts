@@ -48,6 +48,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/fonts',
     'nuxt-schema-org',
+    '@nuxtjs/i18n',
     // 'nuxt-studio'
   ],
   sitemap: {
@@ -55,6 +56,25 @@ export default defineNuxtConfig({
   },
   seo: {
     fallbackTitle: false,
+  },
+  i18n: {
+    locales: [
+      { code: 'en', name: 'English', language: 'en-US' },
+      { code: 'fr', name: 'Français', language: 'fr-FR' }
+    ],
+    strategy: 'prefix_except_default',
+    defaultLocale: 'fr',
+    customRoutes: 'config',
+    pages: {
+      about: { en: false },
+      contact: { en: false },
+      index: { en: false },
+      'legal/[...slug]': { en: false },
+      'projects/index': { en: false },
+      'projects/[...slug]': { en: false },
+      'services/index': { en: false },
+      'services/[...slug]': { en: false }
+    }
   },
   routeRules: {
     // Stale-While-Revalidate (SWR) : cache serveur intelligent

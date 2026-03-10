@@ -180,10 +180,23 @@ export default defineContentConfig({
             })
         ),
 
-        blog_articles: defineCollection(
+        blog_articles_en: defineCollection(
             asSeoCollection({
                 type: 'page',
-                source: 'blog/*.md',
+                source: 'blog/en/**/*.md',
+                schema: z.object({
+                    category: z.string().nonempty(),
+                    publishedAt: z.date(),
+                    image: createImageSchema(),
+                    summary: z.string().nonempty().describe('AI snippet for LLM indexing')
+                })
+            })
+        ),
+
+        blog_articles_fr: defineCollection(
+            asSeoCollection({
+                type: 'page',
+                source: 'blog/fr/**/*.md',
                 schema: z.object({
                     category: z.string().nonempty(),
                     publishedAt: z.date(),

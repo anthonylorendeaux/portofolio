@@ -34,8 +34,7 @@ pnpm postinstall          # Regenerate .nuxt types
 │   ├── app.config.ts           # App configuration (navigation, footer)
 │   ├── components/             # Vue components
 │   │   ├── AppHeader.vue       # Global header
-│   │   ├── AppFooter.vue       # Global footer
-│   │   └── content/            # Content components (for markdown)
+│   │   └── AppFooter.vue       # Global footer
 │   ├── layouts/default.vue     # Default layout
 │   └── pages/                  # File-based routing
 ├── content/                    # Nuxt Content files (YAML/Markdown)
@@ -170,17 +169,6 @@ useSeoMeta({
 - Use Nuxt UI components: `UButton`, `UPage`, `UContainer`, `UPageHero`, etc.
 - Leverage component props for styling over custom CSS
 - Use `v-if` guards for template sections with optional data
-
-### Content Components
-
-Content components (in `app/components/content/`) are used in Markdown files:
-```vue
-<script setup>
-// Use defineProps array syntax for simplicity in content components
-defineProps(['img'])
-</script>
-```
-
 ### Lazy Loading
 
 - Use `Lazy` prefix for heavy components: `<LazyParticules />`

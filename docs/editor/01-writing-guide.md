@@ -79,50 +79,6 @@ Only `title` and `description` are required in the frontmatter.
 
 ---
 
-## Built-in Markdown Components
-
-These Vue components (in `app/components/content/`) can be used directly within the Markdown files:
-
-### `<Showcase>`
-
-Displays a full-width image.
-
-```md
-:showcase{img="/projects/capture.png"}
-```
-
-### `<ArticleHeader>`
-
-Header with title + external link.
-
-```md
-::article-header{url="https://example.com"}
-Project Title
-
-#description
-Short description here.
-::
-```
-
-### `<Infos>`
-
-Metadata bar (price, duration, stack).
-
-```md
-::infos
-#price
-1200€
-
-#duration
-3 weeks
-
-#technos
-Nuxt 3, Stripe, Tailwind
-::
-```
-
----
-
 ## Modify Static Pages
 
 The home, about, services, contact, and blog pages are driven by YAML files at the root of `content/`:
