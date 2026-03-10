@@ -41,6 +41,24 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, async ()
         const fallbackPath = `/blog/fr/${slugValue.value}`;
         surroundData = await queryCollectionItemSurroundings('blog_articles_fr', fallbackPath);
     }
+
+    if (surroundData) {
+        surroundData = surroundData.map(item => {
+            if (item) {
+                const parts = item.path.split('/');
+                const slug = parts[parts.length - 1];
+                const fixedPath = locale.value === 'fr' ? `/blog/${slug}` : `/en/blog/${slug}`;
+                return {
+                    title: item.title,
+                    description: item.description,
+                    path: fixedPath,
+                    _path: fixedPath
+                };
+            }
+            return item;
+        }) as any;
+    }
+
     return surroundData;
 })
 
