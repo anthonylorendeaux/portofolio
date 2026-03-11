@@ -32,7 +32,7 @@ about:
   title: Qui je suis ?
   description: Ingénieur logiciel, passionné frontend Nuxt/Vue.js basé à Toulouse. Je développe des sites fullstack qui convertissent pour indépendants, PME et startups. Microsoft & Google certifié, je déploie des architectures web robustes et évolutives.
   image:
-    src: /favicon.png
+    src: /tlse.jpg
     alt: Développeur web Toulouse
     loading: lazy
 projects:
