@@ -12,7 +12,11 @@ useSeoMeta({
     title,
     ogTitle: title,
     description,
-    ogDescription: description
+    ogDescription: description,
+    ogImage: 'https://anthony-lorendeaux.com/contact_head.png',
+    ogImageAlt: 'Contacter Anthony Lorendeaux - Développeur Nuxt/Vue.js Toulouse',
+    twitterCard: 'summary_large_image',
+    twitterImage: 'https://anthony-lorendeaux.com/contact_head.png',
 })
 </script>
 

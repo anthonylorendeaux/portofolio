@@ -11,7 +11,11 @@ useSeoMeta({
     title,
     ogTitle: title,
     description,
-    ogDescription: description
+    ogDescription: description,
+    ogImage: 'https://anthony-lorendeaux.com/contact_head.png',
+    ogImageAlt: 'Portfolio de projets web - Anthony Lorendeaux Développeur Nuxt/Vue.js',
+    twitterCard: 'summary_large_image',
+    twitterImage: 'https://anthony-lorendeaux.com/contact_head.png',
 })
 </script>
 

@@ -69,7 +69,11 @@ useSeoMeta({
     title,
     ogTitle: title,
     description,
-    ogDescription: description
+    ogDescription: description,
+    ogImage: post.value?.image?.src ? `https://anthony-lorendeaux.com${post.value.image.src}` : 'https://anthony-lorendeaux.com/contact_head.png',
+    ogImageAlt: post.value?.image?.alt || title,
+    twitterCard: 'summary_large_image',
+    twitterImage: post.value?.image?.src ? `https://anthony-lorendeaux.com${post.value.image.src}` : 'https://anthony-lorendeaux.com/contact_head.png',
 })
 
 useSchemaOrg([
@@ -77,7 +81,8 @@ useSchemaOrg([
         headline: title,
         description: description,
         datePublished: post.value?.publishedAt ? new Date(post.value.publishedAt).toISOString() : undefined,
-        image: post.value?.image?.src || undefined,
+        dateModified: post.value?.updatedAt ? new Date(post.value.updatedAt).toISOString() : (post.value?.publishedAt ? new Date(post.value.publishedAt).toISOString() : undefined),
+        image: post.value?.image?.src ? `https://anthony-lorendeaux.com${post.value.image.src}` : undefined,
         author: {
             name: 'Anthony Lorendeaux',
             url: 'https://anthony-lorendeaux.com'

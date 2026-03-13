@@ -5,10 +5,12 @@ const appConfig = useAppConfig();
 <template>
     <UHeader to="/">
         <template #title>
-            <h1 class="text-primary font-bold italic"> AL </h1>
+            <span class="text-primary font-bold tracking-tighter text-xl uppercase">AL</span>
         </template>
 
-        <UNavigationMenu :items="appConfig.navigation" variant="link" />
+        <template #default>
+            <UNavigationMenu :items="appConfig.navigation" variant="link" />
+        </template>
 
         <template #right>
             <UColorModeButton />

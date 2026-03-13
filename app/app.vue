@@ -11,7 +11,16 @@ useHead({
 useSeoMeta({
   titleTemplate: '%s | Anthony Lorendeaux',
   ogSiteName: 'Anthony Lorendeaux',
-  author: 'Anthony Lorendeaux'
+  author: 'Anthony Lorendeaux',
+  ogType: 'website',
+  ogLocale: 'fr_FR',
+  ogImage: 'https://anthony-lorendeaux.com/contact_head.png',
+  ogImageAlt: 'Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.js Toulouse',
+  ogImageWidth: '1200',
+  ogImageHeight: '630',
+  twitterCard: 'summary_large_image',
+  twitterImage: 'https://anthony-lorendeaux.com/contact_head.png',
+  twitterImageAlt: 'Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.js Toulouse',
 });
 
 useSchemaOrg([

@@ -21,7 +21,7 @@ contact:
       variant: solid
       icon: i-heroicons-arrow-path
       target: _self
-description: Qui suis-je ?
+description: "Développeur freelance Nuxt/Vue.js basé à Toulouse. Ingénieur logiciel certifié Microsoft & Google, spécialisé en applications web performantes, SEO technique et architecture fullstack pour PME et startups."
 timeline:
   headline: Mon parcours professionnel
   title: Ingénieur & Freelance
