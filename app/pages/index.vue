@@ -17,8 +17,22 @@ useSeoMeta({
     title,
     ogTitle: title,
     description,
-    ogDescription: description
+    ogDescription: description,
 })
+
+useSchemaOrg([
+    defineWebPage({
+        '@type': 'FAQPage',
+        mainEntity: page.value?.faq?.items?.map(item => ({
+            '@type': 'Question',
+            name: item.label,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.content
+            }
+        }))
+    })
+])
 
 </script>
 
@@ -68,7 +82,8 @@ useSeoMeta({
         </UPageSection>
         <div class="bg-[var(--ui-bg-elevated)]">
             <UPageSection v-if="page.about" :headline="page.about.headline" :title="page.about.title"
-                :description="page.about.description" :links="page.about.links" orientation="horizontal" :reverse="true">
+                :description="page.about.description" :links="page.about.links" orientation="horizontal"
+                :reverse="true">
                 <NuxtImg :src="page.about.image.src" :alt="page.about.image.alt" class="rounded-md" placeholder
                     loading="lazy" />
             </UPageSection>

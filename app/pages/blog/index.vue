@@ -10,8 +10,6 @@ const { data: posts } = await useAsyncData(`blog_posts_${locale.value}`, async (
         const parts = article.path.split('/');
         const slug = parts[parts.length - 1];
 
-        console.log('[DEBUG INDEX]', article.path, '-> computed slug:', slug);
-
         return {
             ...article,
             path: locale.value === 'fr' ? `/blog/${slug}` : `/${locale.value}/blog/${slug}`
@@ -28,7 +26,8 @@ useSeoMeta({
     title,
     ogTitle: title,
     description,
-    ogDescription: description
+    ogDescription: description,
+    twitterCard: 'summary_large_image',
 })
 </script>
 

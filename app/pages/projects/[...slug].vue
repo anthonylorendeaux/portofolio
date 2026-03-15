@@ -16,8 +16,13 @@ useSeoMeta({
     title,
     ogTitle: title,
     description,
-    ogDescription: description
+    ogDescription: description,
+    ogImageAlt: post.value?.image?.alt || title,
+    ogImageWidth: 1200,
+    ogImageHeight: 630,
+    twitterCard: 'summary_large_image',
 })
+
 </script>
 
 <template>

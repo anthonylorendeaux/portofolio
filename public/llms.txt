@@ -1,0 +1,50 @@
+# Anthony Lorendeaux — Développeur Freelance Nuxt/Vue.js
+# https://anthony-lorendeaux.com
+
+> Anthony Lorendeaux est un développeur freelance full-stack basé à Toulouse (France),
+> spécialisé en Nuxt.js, Vue.js, TypeScript, SEO/GEO et déploiement Vercel/Cloudflare.
+> Il intervient pour des startups, PME et indépendants souhaitant un site web rapide,
+> bien référencé et facile à maintenir. Devis gratuit sous 24h.
+
+## Expertises
+
+- Framework : Nuxt 4, Vue 3, TypeScript
+- Styling : Tailwind CSS 4, Nuxt UI
+- CMS : Nuxt Content, Nuxt Studio
+- SEO/GEO : schema.org, sitemap, og:tags, llms.txt, @nuxtjs/seo
+- Déploiement : Vercel, Cloudflare Pages, Nitro
+- Base de données : MongoDB, PostgreSQL, Supabase
+- Paiement : Stripe
+
+## Services
+
+- [Site Vitrine](/services/site-vitrine) — À partir de 500€, livraison 2-3 semaines. Site ultra-rapide (Lighthouse 95+), SEO-ready, éditable sans développeur via Nuxt Studio.
+- [E-commerce](/services/e-commerce) — Boutique en ligne sur-mesure avec Nuxt + Stripe. Panier, paiement sécurisé, gestion produits.
+- [SaaS / Application Web](/services/developpement-fullstack) — À partir de 1200€. Application full-stack multi-tenant avec authentification, base de données et tableau de bord.
+
+## Projets réalisés
+
+- [Les Caprices](/projects/les-caprices) — Refonte site restaurant toulousain : réservations ×4, Lighthouse 97/100.
+- [Tempbox](/projects/tempbox) — Application SaaS de messagerie temporaire.
+- [Alternative Strategies](/projects/alternativestrategies) — Site vitrine cabinet de conseil.
+
+## Blog (FR)
+
+- [Pourquoi Nuxt 4 en 2026](/blog/pourquoi-nuxt)
+- [Comment obtenir un Lighthouse 100](/blog/lighthouse)
+- [Combien coûte un site web](/blog/combien-coute-site-web)
+- [Moltbook : retour d'expérience](/blog/moltbook)
+- [Risques sécurité Moltbot](/blog/moltbot-risques-securite)
+
+## Blog (EN)
+
+- [Why Nuxt 4 in 2026](/en/blog/why-nuxt)
+- [How to get Lighthouse 100](/en/blog/lighthouse)
+- [How much does a website cost](/en/blog/how-much-does-a-website-cost)
+
+## Contact
+
+- Page contact : [/contact](/contact)
+- Email : contact@anthony-lorendeaux.com
+- LinkedIn : https://linkedin.com/in/anthony-lorendeaux/
+- GitHub : https://github.com/anthonylorendeaux

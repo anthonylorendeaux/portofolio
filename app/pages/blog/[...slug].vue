@@ -10,8 +10,6 @@ const { data: post } = await useAsyncData(route.path, async () => {
     const collectionName = `blog_articles_${locale.value}` as 'blog_articles_en' | 'blog_articles_fr';
     const contentPath = `/blog/${locale.value}/${slugValue.value}`;
 
-    console.log('[DEBUG SLUG]', 'route.path:', route.path, 'slug:', slugValue.value, 'contentPath:', contentPath);
-
     let content = await queryCollection(collectionName).path(contentPath).first();
 
     if (!content && locale.value !== 'fr') {
@@ -72,8 +70,14 @@ useSeoMeta({
     ogDescription: description,
     ogImage: post.value?.image?.src ? `https://anthony-lorendeaux.com${post.value.image.src}` : 'https://anthony-lorendeaux.com/contact_head.png',
     ogImageAlt: post.value?.image?.alt || title,
+    ogImageWidth: 1200,
+    ogImageHeight: 630,
     twitterCard: 'summary_large_image',
     twitterImage: post.value?.image?.src ? `https://anthony-lorendeaux.com${post.value.image.src}` : 'https://anthony-lorendeaux.com/contact_head.png',
+    articlePublishedTime: post.value?.publishedAt ? new Date(post.value.publishedAt).toISOString() : undefined,
+    articleModifiedTime: post.value?.updatedAt ? new Date(post.value.updatedAt).toISOString() : (post.value?.publishedAt ? new Date(post.value.publishedAt).toISOString() : undefined),
+    articleSection: post.value?.category,
+    articleTag: post.value?.category ? [post.value.category] : undefined,
 })
 
 useSchemaOrg([

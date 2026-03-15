@@ -83,15 +83,6 @@ export default defineNuxtConfig({
     // Cache statique pour les assets
     '/assets/**': { headers: { 'cache-control': 's-maxage=31536000' } }
   },
-  $production: {
-    modules: [
-      '@nuxt/ui',
-      '@nuxt/image',
-      '@nuxtjs/seo',
-      '@nuxt/content',
-      '@nuxt/fonts',
-    ]
-  },
   fonts: {
     families: [
       { name: 'DM Sans', provider: 'google' },

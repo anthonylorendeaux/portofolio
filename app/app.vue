@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { Analytics } from '@vercel/analytics/nuxt';
 
+const { locale } = useI18n()
+
 useHead({
-  htmlAttrs: { lang: 'fr' },
+  htmlAttrs: { lang: locale },
   link: [
-    { rel: 'icon', type: 'image/png', href: '/favicon.png' }
+    { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }
   ]
 })
 
@@ -13,7 +17,7 @@ useSeoMeta({
   ogSiteName: 'Anthony Lorendeaux',
   author: 'Anthony Lorendeaux',
   ogType: 'website',
-  ogLocale: 'fr_FR',
+  ogLocale: computed(() => locale.value === 'en' ? 'en_US' : 'fr_FR'),
   ogImage: 'https://anthony-lorendeaux.com/contact_head.png',
   ogImageAlt: 'Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.js Toulouse',
   ogImageWidth: '1200',
@@ -41,6 +45,12 @@ useSchemaOrg([
   }),
   defineWebSite({
     name: 'Anthony Lorendeaux - Portfolio',
+  }),
+  defineLocalBusiness({
+    name: 'Anthony Lorendeaux — Développeur Freelance',
+    address: { addressLocality: 'Toulouse', addressCountry: 'FR' },
+    areaServed: ['Toulouse', 'France'],
+    priceRange: '€€'
   })
 ])
 
