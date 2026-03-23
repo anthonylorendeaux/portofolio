@@ -1,7 +1,7 @@
 ---
 title: "Alternative Strategies : cabinet de recrutement"
 category: Site Vitrine
-description: "Alternative strategies est un cabiner de recrutement qui avait besoin d'un site moderne et fonctionnel avec une modification de contenu autonome."
+description: "Alternative strategies est un cabinet de recrutement qui avait besoin d'un site moderne et fonctionnel avec une modification de contenu autonome."
 image:
   src: "/projects/alternativestrategies.png"
   alt: "Création de site vitrine Nuxt 3 pour le cabinet de recrutement Alternative Strategies au Luxembourg"
