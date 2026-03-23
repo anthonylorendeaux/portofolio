@@ -50,7 +50,7 @@ const createTimelineSchema = () => z.object({
     title: z.string().nonempty(),
     description: z.string().nonempty(),
     icon: createIconString().nonempty(),
-    date: z.date(),
+    date: z.coerce.date(),
 })
 
 const createPricingPlanSchema = () => z.object({
@@ -158,34 +158,40 @@ export default defineContentConfig({
             })
         }),
 
-        projects_articles: defineCollection({
-            type: 'page',
-            source: 'projects/*.md',
-            schema: z.object({
-                publishedAt: z.date(),
-                category: z.string().nonempty(),
-                image: createImageSchema(),
-                summary: z.string().nonempty().describe('AI snippet for LLM indexing')
+        projects_articles: defineCollection(
+            asSitemapCollection({
+                type: 'page',
+                source: 'projects/*.md',
+                schema: createBaseSchema().extend({
+                    publishedAt: z.coerce.date(),
+                    category: z.string().nonempty(),
+                    image: createImageSchema(),
+                    summary: z.string().nonempty().describe('AI snippet for LLM indexing')
+                })
             })
-        }),
+        ),
 
-        services_articles: defineCollection({
-            type: 'page',
-            source: 'services/*.md',
-            schema: z.object({})
-        }),
-
-        blog_articles_fr: defineCollection({
-            type: 'page',
-            source: 'blog/*.md',
-            schema: z.object({
-                category: z.string().nonempty(),
-                publishedAt: z.date(),
-                updatedAt: z.date().optional(),
-                image: createImageSchema(),
-                summary: z.string().nonempty().describe('AI snippet for LLM indexing')
+        services_articles: defineCollection(
+            asSitemapCollection({
+                type: 'page',
+                source: 'services/*.md',
+                schema: createBaseSchema()
             })
-        }),
+        ),
+
+        blog_articles: defineCollection(
+            asSitemapCollection({
+                type: 'page',
+                source: 'blog/*.md',
+                schema: createBaseSchema().extend({
+                    category: z.string().nonempty(),
+                    publishedAt: z.coerce.date(),
+                    updatedAt: z.coerce.date().optional(),
+                    image: createImageSchema(),
+                    summary: z.string().nonempty().describe('AI snippet for LLM indexing')
+                })
+            })
+        ),
 
         legal: defineCollection(
             asSitemapCollection({

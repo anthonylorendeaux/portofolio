@@ -23,7 +23,11 @@ export default defineNuxtConfig({
   robots: {
     groups: [
       {
-        userAgent: ['*', 'GPTBot', 'ChatGPT-User', 'PerplexityBot', 'Claude-Web', 'ClaudeBot'],
+        userAgent: ['GPTBot', 'ClaudeBot', 'PerplexityBot'],
+        allow: ['/']
+      },
+      {
+        userAgent: ['*'],
         allow: ['/'],
         disallow: ['/_vercel/']
       }
@@ -50,7 +54,8 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
   ],
   sitemap: {
-    cacheMaxAgeSeconds: 3600
+    cacheMaxAgeSeconds: 3600,
+    exclude: ['/legal/**']
   },
   routeRules: {
     // Stale-While-Revalidate (SWR) : cache serveur intelligent

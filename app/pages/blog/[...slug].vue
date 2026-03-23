@@ -7,7 +7,7 @@ const slugValue = computed(() => {
 
 const { data: post } = await useAsyncData(route.path, async () => {
     const contentPath = `/blog/${slugValue.value}`;
-    const content = await queryCollection('blog_articles_fr').path(contentPath).first();
+    const content = await queryCollection('blog_articles').path(contentPath).first();
 
     if (content) {
         content.path = route.path;
@@ -21,7 +21,7 @@ if (!post.value) {
 }
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
-    return queryCollectionItemSurroundings('blog_articles_fr', `/blog/${slugValue.value}`);
+    return queryCollectionItemSurroundings('blog_articles', `/blog/${slugValue.value}`);
 })
 
 const title = post.value?.seo?.title || post.value?.title
