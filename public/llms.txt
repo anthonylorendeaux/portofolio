@@ -36,12 +36,6 @@
 - [Moltbook : retour d'expérience](/blog/moltbook)
 - [Risques sécurité Moltbot](/blog/moltbot-risques-securite)
 
-## Blog (EN)
-
-- [Why Nuxt 4 in 2026](/en/blog/why-nuxt)
-- [How to get Lighthouse 100](/en/blog/lighthouse)
-- [How much does a website cost](/en/blog/how-much-does-a-website-cost)
-
 ## Contact
 
 - Page contact : [/contact](/contact)

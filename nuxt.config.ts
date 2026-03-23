@@ -58,15 +58,10 @@ export default defineNuxtConfig({
     exclude: ['/legal/**']
   },
   routeRules: {
-    // Stale-While-Revalidate (SWR) : cache serveur intelligent
     '/blog/**': { swr: 3600 },
     '/projects/**': { swr: 3600 },
-    // Cache statique pour les assets
     '/assets/**': { headers: { 'cache-control': 's-maxage=31536000' } },
-    // Pages légales : noindex
     '/legal/**': { robots: 'noindex, nofollow' },
-    // Redirections 301 pour les anciennes URLs EN
-    '/en/blog/**': { redirect: { to: '/blog', statusCode: 301 } }
   },
   fonts: {
     families: [
