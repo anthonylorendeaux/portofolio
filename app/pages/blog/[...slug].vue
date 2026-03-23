@@ -1,23 +1,14 @@
 <script setup lang="ts">
 const route = useRoute()
-const { locale } = useI18n()
 
 const slugValue = computed(() => {
     return Array.isArray(route.params.slug) ? route.params.slug.join('/') : route.params.slug;
 })
 
 const { data: post } = await useAsyncData(route.path, async () => {
-    const collectionName = `blog_articles_${locale.value}` as 'blog_articles_en' | 'blog_articles_fr';
-    const contentPath = `/blog/${locale.value}/${slugValue.value}`;
+    const contentPath = `/blog/${slugValue.value}`;
+    const content = await queryCollection('blog_articles').path(contentPath).first();
 
-    let content = await queryCollection(collectionName).path(contentPath).first();
-
-    if (!content && locale.value !== 'fr') {
-        const fallbackPath = `/blog/fr/${slugValue.value}`;
-        content = await queryCollection('blog_articles_fr').path(fallbackPath).first();
-    }
-
-    // Explicitly update the path so SEO module maps correctly if it relies on this object locally
     if (content) {
         content.path = route.path;
     }
@@ -29,35 +20,8 @@ if (!post.value) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-const { data: surround } = await useAsyncData(`${route.path}-surround`, async () => {
-    const collectionName = `blog_articles_${locale.value}` as 'blog_articles_en' | 'blog_articles_fr';
-    const contentPath = `/blog/${locale.value}/${slugValue.value}`;
-
-    let surroundData = await queryCollectionItemSurroundings(collectionName, contentPath);
-
-    if (!surroundData && locale.value !== 'fr') {
-        const fallbackPath = `/blog/fr/${slugValue.value}`;
-        surroundData = await queryCollectionItemSurroundings('blog_articles_fr', fallbackPath);
-    }
-
-    if (surroundData) {
-        surroundData = surroundData.map(item => {
-            if (item) {
-                const parts = item.path.split('/');
-                const slug = parts[parts.length - 1];
-                const fixedPath = locale.value === 'fr' ? `/blog/${slug}` : `/en/blog/${slug}`;
-                return {
-                    title: item.title,
-                    description: item.description,
-                    path: fixedPath,
-                    _path: fixedPath
-                };
-            }
-            return item;
-        }) as any;
-    }
-
-    return surroundData;
+const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
+    return queryCollectionItemSurroundings('blog_articles', `/blog/${slugValue.value}`);
 })
 
 const title = post.value?.seo?.title || post.value?.title
@@ -76,23 +40,10 @@ useSeoMeta({
     twitterImage: post.value?.image?.src ? `https://anthony-lorendeaux.com${post.value.image.src}` : 'https://anthony-lorendeaux.com/contact_head.png',
     articlePublishedTime: post.value?.publishedAt ? new Date(post.value.publishedAt).toISOString() : undefined,
     articleModifiedTime: post.value?.updatedAt ? new Date(post.value.updatedAt).toISOString() : (post.value?.publishedAt ? new Date(post.value.publishedAt).toISOString() : undefined),
+    ogType: 'article',
     articleSection: post.value?.category,
     articleTag: post.value?.category ? [post.value.category] : undefined,
 })
-
-useSchemaOrg([
-    defineArticle({
-        headline: title,
-        description: description,
-        datePublished: post.value?.publishedAt ? new Date(post.value.publishedAt).toISOString() : undefined,
-        dateModified: post.value?.updatedAt ? new Date(post.value.updatedAt).toISOString() : (post.value?.publishedAt ? new Date(post.value.publishedAt).toISOString() : undefined),
-        image: post.value?.image?.src ? `https://anthony-lorendeaux.com${post.value.image.src}` : undefined,
-        author: {
-            name: 'Anthony Lorendeaux',
-            url: 'https://anthony-lorendeaux.com'
-        }
-    })
-])
 </script>
 
 <template>

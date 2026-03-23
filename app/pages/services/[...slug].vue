@@ -11,13 +11,16 @@ if (!page.value) {
 
 const url = useRequestURL()
 
+const title = page.value?.seo?.title || page.value.title
+const description = page.value?.seo?.description || page.value.description
+
 useSeoMeta({
-    title: page.value.title,
-    description: page.value.description,
-    ogTitle: page.value.title,
-    ogDescription: page.value.description,
-    twitterTitle: page.value.title,
-    twitterDescription: page.value.description,
+    title,
+    description,
+    ogTitle: title,
+    ogDescription: description,
+    twitterTitle: title,
+    twitterDescription: description,
     ogUrl: url.href
 })
 

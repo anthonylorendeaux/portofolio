@@ -23,7 +23,11 @@ export default defineNuxtConfig({
   robots: {
     groups: [
       {
-        userAgent: ['*', 'GPTBot', 'ChatGPT-User', 'PerplexityBot', 'Claude-Web', 'ClaudeBot'],
+        userAgent: ['GPTBot', 'ClaudeBot', 'PerplexityBot'],
+        allow: ['/']
+      },
+      {
+        userAgent: ['*'],
         allow: ['/'],
         disallow: ['/_vercel/']
       }
@@ -44,44 +48,25 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/ui',
     '@nuxt/image',
-    '@nuxtjs/seo',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
     '@nuxt/content',
     '@nuxt/fonts',
-    'nuxt-schema-org',
-    '@nuxtjs/i18n',
-    // 'nuxt-studio'
   ],
   sitemap: {
-    cacheMaxAgeSeconds: 3600
-  },
-  seo: {
-    fallbackTitle: false,
-  },
-  i18n: {
-    locales: [
-      { code: 'en', name: 'English', language: 'en-US' },
-      { code: 'fr', name: 'Français', language: 'fr-FR' }
-    ],
-    strategy: 'prefix_except_default',
-    defaultLocale: 'fr',
-    customRoutes: 'config',
-    pages: {
-      about: { en: false },
-      contact: { en: false },
-      index: { en: false },
-      'legal/[...slug]': { en: false },
-      'projects/index': { en: false },
-      'projects/[...slug]': { en: false },
-      'services/index': { en: false },
-      'services/[...slug]': { en: false }
-    }
+    cacheMaxAgeSeconds: 3600,
+    exclude: ['/legal/**']
   },
   routeRules: {
     // Stale-While-Revalidate (SWR) : cache serveur intelligent
     '/blog/**': { swr: 3600 },
     '/projects/**': { swr: 3600 },
     // Cache statique pour les assets
-    '/assets/**': { headers: { 'cache-control': 's-maxage=31536000' } }
+    '/assets/**': { headers: { 'cache-control': 's-maxage=31536000' } },
+    // Pages légales : noindex
+    '/legal/**': { robots: 'noindex, nofollow' },
+    // Redirections 301 pour les anciennes URLs EN
+    '/en/blog/**': { redirect: { to: '/blog', statusCode: 301 } }
   },
   fonts: {
     families: [

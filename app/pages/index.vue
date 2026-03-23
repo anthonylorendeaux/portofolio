@@ -20,19 +20,6 @@ useSeoMeta({
     ogDescription: description,
 })
 
-useSchemaOrg([
-    defineWebPage({
-        '@type': 'FAQPage',
-        mainEntity: page.value?.faq?.items?.map(item => ({
-            '@type': 'Question',
-            name: item.label,
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: item.content
-            }
-        }))
-    })
-])
 
 </script>
 

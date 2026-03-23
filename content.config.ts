@@ -1,5 +1,4 @@
 import { defineCollection, defineContentConfig, property, z } from '@nuxt/content'
-import { asSeoCollection } from '@nuxtjs/seo/content'
 import { asSitemapCollection } from '@nuxtjs/sitemap/content'
 
 const createBaseSchema = () => z.object({
@@ -51,7 +50,7 @@ const createTimelineSchema = () => z.object({
     title: z.string().nonempty(),
     description: z.string().nonempty(),
     icon: createIconString().nonempty(),
-    date: z.date(),
+    date: z.coerce.date(),
 })
 
 const createPricingPlanSchema = () => z.object({
@@ -160,11 +159,11 @@ export default defineContentConfig({
         }),
 
         projects_articles: defineCollection(
-            asSeoCollection({
+            asSitemapCollection({
                 type: 'page',
                 source: 'projects/*.md',
-                schema: z.object({
-                    publishedAt: z.date(),
+                schema: createBaseSchema().extend({
+                    publishedAt: z.coerce.date(),
                     category: z.string().nonempty(),
                     image: createImageSchema(),
                     summary: z.string().nonempty().describe('AI snippet for LLM indexing')
@@ -173,35 +172,21 @@ export default defineContentConfig({
         ),
 
         services_articles: defineCollection(
-            asSeoCollection({
+            asSitemapCollection({
                 type: 'page',
                 source: 'services/*.md',
-                schema: z.object({})
+                schema: createBaseSchema()
             })
         ),
 
-        blog_articles_en: defineCollection(
-            asSeoCollection({
+        blog_articles: defineCollection(
+            asSitemapCollection({
                 type: 'page',
-                source: 'blog/en/**/*.md',
-                schema: z.object({
+                source: 'blog/*.md',
+                schema: createBaseSchema().extend({
                     category: z.string().nonempty(),
-                    publishedAt: z.date(),
-                    updatedAt: z.date().optional(),
-                    image: createImageSchema(),
-                    summary: z.string().nonempty().describe('AI snippet for LLM indexing')
-                })
-            })
-        ),
-
-        blog_articles_fr: defineCollection(
-            asSeoCollection({
-                type: 'page',
-                source: 'blog/fr/**/*.md',
-                schema: z.object({
-                    category: z.string().nonempty(),
-                    publishedAt: z.date(),
-                    updatedAt: z.date().optional(),
+                    publishedAt: z.coerce.date(),
+                    updatedAt: z.coerce.date().optional(),
                     image: createImageSchema(),
                     summary: z.string().nonempty().describe('AI snippet for LLM indexing')
                 })
