@@ -2,6 +2,27 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Working Principles
+
+### Planning
+- For any non-trivial task (≥ 3 steps or architectural decisions), plan first and confirm with the user before implementing.
+- If something goes wrong mid-task, stop and replan rather than pushing forward.
+
+### Code Quality
+- **Simplicity first**: every change should be as small and focused as possible. Minimal blast radius.
+- **No laziness**: find real root causes, not temporary workarounds. Aim for senior-engineer quality.
+- Before presenting a non-trivial fix, ask: "Is there a more elegant solution?" — but don't over-engineer obvious fixes.
+
+### Verification
+- Never mark a task done without proving it works: run the build/lint, read the output, demonstrate the fix.
+- Distinguish between expected vs. actual behavior and call out relevant differences.
+
+### Debugging
+- When given a bug report: fix it autonomously. Read the logs, trace the error, resolve it.
+- Zero back-and-forth on the same bug — drive to green without hand-holding.
+
+---
+
 ## Commands
 
 ```bash
@@ -51,9 +72,57 @@ server/                   # Nitro server APIs and middleware
 
 Collections are typed with Zod schemas. Key ones:
 - `index`, `about`, `services`, `contact`, `blog`, `projects` — page-level YAML data
-- `blog_articles_fr` / `blog_articles_en` — sourced from `content/blog/{fr,en}/**/*.md`
-- `projects_articles`, `services_articles` — wrapped with `asSeoCollection`
+- `blog_articles` — sourced from `content/blog/*.md` (unifié fr+en)
+- `projects_articles`, `services_articles` — wrapped with `asSitemapCollection`
 - `legal` — wrapped with `asSitemapCollection`
+
+**Helpers réutilisables dans `content.config.ts` :**
+- `createBaseSchema()` — `title` + `description` (requis)
+- `createBaseSectionSchema()` — + `headline`
+- `createLinkSchema()` — lien avec label, to, icon, color, variant, trailing
+- `createButtonSchema()` — bouton CTA avec defaults (color: primary, variant: solid)
+- `createImageSchema()` — src (media), alt, loading, srcset
+- `createFeatureSchema()` — title, description (max 120), icon, to
+- `createIconString()` — champ icône avec picker lucide/simple-icons
+- `createMediaString()` — champ media avec upload UI
+
+### index.yml — structure complète
+
+```yaml
+hero:
+  badge: boolean           # true = "Available for work" (ping vert), false = "Working on a project" (ping rouge)
+  title, description, links, image
+  socialProof:             # Bloc avatars + étoiles sous les CTAs dans le hero
+    text: string
+    rating: number (1–5)
+    avatars: [{ alt: string }]   # src optionnel — UAvatar affiche les initiales sans src
+
+projects:   # headline, title, description
+testimonials:              # Section masonry avec UPageColumns
+  headline, title, description
+  items: [{ quote, user: { name, description, avatar?: { src? } } }]
+about:      # headline, title, description, links, image
+services:   # headline, title, description, features[]
+faq:        # title, description, items[]
+contact:    # headline, title, description, links[]
+```
+
+### Home page sections (app/pages/index.vue)
+
+Ordre des sections :
+1. Hero (`UPageHero` horizontal, `LazyParticules` background, `CanvasEffect` desktop)
+2. `USeparator`
+3. Projects (`UBlogPosts` + `UBlogPost`)
+4. Testimonials (`UPageColumns` masonry `sm:columns-2 lg:columns-3 xl:columns-4`, `UPageCard` + `UUser`)
+5. About (bg-elevated, orientation horizontal)
+6. Services (`features` prop)
+7. FAQ (`UAccordion`)
+8. Contact (`UPageCTA`)
+
+### Icon conventions
+
+- **Toutes les icônes** : `i-lucide-*` (Lucide)
+- **Étoiles de notation uniquement** : `i-heroicons-star-20-solid` (Heroicons) — le seul cas où Heroicons est utilisé, car Lucide n'a pas d'icône étoile pleine native
 
 ### Blog/project frontmatter schema
 
@@ -78,3 +147,10 @@ Most pages are French-only. Only the blog is bilingual. Pages disabled for Engli
 - `/blog/**` and `/projects/**` use SWR caching (3600s)
 - Static assets use long-term cache headers
 - Prerendering crawls from `/` and `/sitemap.xml`
+
+### Cache dev Nuxt Content
+
+Quand `content.config.ts` est modifié (nouveau champ, nouvelle collection), la base SQLite dev devient obsolète → erreur SQL au hot-reload. Fix :
+```bash
+rm -rf .nuxt node_modules/.cache/nuxt && npm run dev
+```

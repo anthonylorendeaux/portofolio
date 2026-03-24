@@ -21,6 +21,14 @@ hero:
     src: contact_head.png
     alt: Anthony Lorendeaux Développeur Nuxt Vue.js Toulouse
     loading: eager
+  socialProof:
+    text: Noté 4.5/5 sur Fiverr
+    rating: 5
+    avatars:
+      - alt: Toby T.
+      - alt: A. D.
+      - alt: Rémi P.
+      - alt: Anthony V.
 about:
   links:
     - label: En Savoir plus
@@ -39,6 +47,39 @@ projects:
   title: Découvrez mes dernières réalisations
   description: Chaque projet reflète mon expertise technique sur la stack JavaScript, mon souci du détail (UI/UX) et ma volonté d'optimiser les performances Web Vitals.
   headline: Portfolio
+testimonials:
+  headline: Témoignages
+  title: Ce que disent mes clients
+  description: 7 avis 5 étoiles vérifiés sur Fiverr.
+  items:
+    - quote: "Excellente interventions pour design et set up d'un site web multi langues et multi activités. Au delà de mes attentes en termes de produit fini. Parfaite compréhension des exigences, conseils, et communication rapide et permanente."
+      user:
+        name: A. D.
+        description: France
+    - quote: Anthony was great to work with, assessed our stripe checkout property, suggested a fix, tested and implemented this quickly. He was proactive, polite and efficient, I would not hesitate to recommend him.
+      user:
+        name: Toby T.
+        description: Royaume-Uni
+    - quote: "Anthony est un vrai professionnel, il a su réaliser le travail demandé. C'était quelque chose de très compliqué à réaliser, tout est terminé parfaitement. Mille mercis."
+      user:
+        name: Rémi P.
+        description: France
+    - quote: Great communication easy to work with and a professional job!
+      user:
+        name: Anthony V.
+        description: États-Unis
+    - quote: "Anthony a réalisé un travail parfait, dans les temps. Vous pouvez lui faire une entière confiance pour mener à bien votre projet, c'est un vrai professionnel."
+      user:
+        name: Rémi P.
+        description: France
+    - quote: Anthony deliver a quick work with all my needs satisfied. Thanks for your professionalism I hope that I will work with you again.
+      user:
+        name: Elodie L.
+        description: France
+    - quote: Freelancer professionnel et à l'écoute.
+      user:
+        name: Maggie B.
+        description: France
 services:
   headline: Services
   title: Mes différents services web

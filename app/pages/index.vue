@@ -28,7 +28,7 @@ useSeoMeta({
         <div class="relative overflow-hidden">
             <LazyParticules :star-count="100" :size="{ min: 0.5, max: 1.5 }" />
             <UPageHero v-if="page.hero" :title="page.hero.title" :description="page.hero.description"
-                headline="page.hero.badge" :links="page.hero.links" orientation="horizontal">
+                headline="page.hero.badge" orientation="horizontal">
                 <template #headline>
                     <UBadge size="md" color="neutral" variant="outline">
                         <span class="relative flex w-2 h-2 mr-2">
@@ -40,7 +40,27 @@ useSeoMeta({
                         {{ page.hero.badge ? 'Available for work' : 'Working on a project' }}
                     </UBadge>
                 </template>
-                <div class="hidden md:block w-full aspect-[4/5] max-w-xs mx-auto">
+                <template #links>
+                    <div class="flex flex-col gap-5">
+                        <div class="flex flex-wrap gap-3">
+                            <UButton v-for="link in page.hero.links" :key="link.label" v-bind="link" />
+                        </div>
+                        <div v-if="page.hero.socialProof" class="flex items-center gap-3">
+                            <UAvatarGroup size="sm" :max="4">
+                                <UAvatar v-for="avatar in page.hero.socialProof.avatars" :key="avatar.src"
+                                    :src="avatar.src" :alt="avatar.alt" />
+                            </UAvatarGroup>
+                            <div class="flex flex-col gap-0.5">
+                                <span class="text-sm font-medium text-default">{{ page.hero.socialProof.text }}</span>
+                                <div class="flex items-center gap-0.5">
+                                    <UIcon v-for="i in page.hero.socialProof.rating" :key="i"
+                                        name="i-heroicons-star-20-solid" class="size-4 text-amber-400" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <div class="hidden md:block w-full aspect-4/5 max-w-xs mx-auto">
                     <CanvasEffect />
                 </div>
                 <NuxtImg :src="page.hero.image.src" :alt="page.hero.image.alt" class="md:hidden" placeholder
@@ -67,7 +87,19 @@ useSeoMeta({
                     })" :badge="{ label: project.category, variant: 'solid' }" variant="outline" />
             </UBlogPosts>
         </UPageSection>
-        <div class="bg-[var(--ui-bg-elevated)]">
+        <UPageSection v-if="page.testimonials" id="testimonials" :headline="page.testimonials.headline"
+            :title="page.testimonials.title" :description="page.testimonials.description">
+            <UPageColumns class="sm:columns-2 lg:columns-3 xl:columns-4">
+                <UPageCard v-for="(testimonial, index) in page.testimonials.items" :key="index" variant="subtle"
+                    :description="testimonial.quote"
+                    :ui="{ description: 'before:content-[open-quote] after:content-[close-quote]' }">
+                    <template #footer>
+                        <UUser v-bind="testimonial.user" :avatar="{ alt: testimonial.user.name }" size="lg" />
+                    </template>
+                </UPageCard>
+            </UPageColumns>
+        </UPageSection>
+        <div class="bg-elevated">
             <UPageSection v-if="page.about" :headline="page.about.headline" :title="page.about.title"
                 :description="page.about.description" :links="page.about.links" orientation="horizontal"
                 :reverse="true">
@@ -77,11 +109,11 @@ useSeoMeta({
         </div>
         <UPageSection v-if="page.services" :headline="page.services.headline" :title="page.services.title"
             :description="page.services.description" :features="page.services.features" />
-        <div class="bg-[var(--ui-bg-elevated)]">
-            <UPageSection v-if="page.faq" :title="page.faq.title" :description="page.faq.description">
-                <UAccordion :items="page.faq.items" />
-            </UPageSection>
-        </div>
+
+        <UPageSection v-if="page.faq" :title="page.faq.title" :description="page.faq.description">
+            <UAccordion :items="page.faq.items" />
+        </UPageSection>
+
         <UPageSection v-if="page.contact">
             <UPageCTA :title="page.contact.title" :description="page.contact.description" :links="page.contact.links"
                 variant="soft" />

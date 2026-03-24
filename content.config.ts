@@ -80,8 +80,28 @@ export default defineContentConfig({
                     badge: z.boolean(),
                     links: z.array(createLinkSchema()),
                     image: createImageSchema(),
+                    socialProof: z.object({
+                        text: z.string().nonempty(),
+                        rating: z.number().min(1).max(5),
+                        avatars: z.array(z.object({
+                            src: createMediaString(),
+                            alt: z.string().optional()
+                        }))
+                    }).optional(),
                 }),
                 projects: createBaseSectionSchema(),
+                testimonials: createBaseSectionSchema().extend({
+                    items: z.array(z.object({
+                        quote: z.string().nonempty(),
+                        user: z.object({
+                            name: z.string().nonempty(),
+                            description: z.string().nonempty(),
+                            avatar: z.object({
+                                src: createMediaString()
+                            })
+                        })
+                    }))
+                }).optional(),
                 about: createBaseSectionSchema().extend({
                     links: z.array(createLinkSchema()),
                     image: createImageSchema()
