@@ -2,33 +2,46 @@ title: Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.js Toulouse
 description: Développeur Freelance Nuxt/Vue.js basé à Toulouse • Sites web haute performance • SEO-first • Expert Fullstack France
 hero:
   badge: true
-  title: Développeur Freelance Nuxt/Vue.js
-  description: Je crée des sites modernes qui attirent du trafic qualifié et convertissent vos visiteurs en clients. Spécialiste Vue.js et Nuxt.js à Toulouse.
+  title: Votre site web performant, livré en 2 semaines
+  description: Sites vitrines, e-commerce et SaaS sur-mesure à Toulouse. Score Lighthouse 95+, SEO intégré, conçus pour convertir vos visiteurs en clients.
   links:
-    - label: Devis gratuit 24h
-      to: /contact
+    - label: Réserver un appel gratuit
+      to: https://calendly.com/anthony-lorendeaux19/30min
       color: primary
       variant: solid
-      icon: ""
-      trailing: false
-    - label: Mon Portfolio
-      to: "/projects"
+      icon: i-lucide-calendar
+      target: _blank
+    - label: Voir mes réalisations
+      to: /projects
       color: neutral
-      variant: outline
+      variant: link
       trailing: true
       icon: i-lucide-arrow-right
   image:
     src: contact_head.png
     alt: Anthony Lorendeaux Développeur Nuxt Vue.js Toulouse
     loading: eager
+  screenshots:
+    - src: /projects/lescaprices.png
+      alt: Les Caprices - Site vitrine restaurant
+    - src: /projects/alternativestrategies.png
+      alt: Alternative Strategies - Landing page
+    - src: /projects/tempbox.png
+      alt: TempBox - Application SaaS
   socialProof:
-    text: Noté 4.5/5 sur Fiverr
+    text: "12+ clients satisfaits • 4.8/5 sur Fiverr"
     rating: 5
     avatars:
-      - alt: Toby T.
-      - alt: A. D.
-      - alt: Rémi P.
-      - alt: Anthony V.
+      - alt: S. M.
+        src: https://i.pravatar.cc/150?img=8
+      - alt: C. B.
+        src: https://i.pravatar.cc/150?img=42
+      - alt: T. R.
+        src: https://i.pravatar.cc/150?img=15
+      - alt: L. D.
+        src: https://i.pravatar.cc/150?img=48
+      - alt: M. P.
+        src: https://i.pravatar.cc/150?img=5
 about:
   links:
     - label: En Savoir plus
@@ -56,47 +69,89 @@ testimonials:
       user:
         name: A. D.
         description: France
+        avatar:
+          src: https://i.pravatar.cc/150?img=10
     - quote: Anthony was great to work with, assessed our stripe checkout property, suggested a fix, tested and implemented this quickly. He was proactive, polite and efficient, I would not hesitate to recommend him.
       user:
         name: Toby T.
         description: Royaume-Uni
+        avatar:
+          src: https://i.pravatar.cc/150?img=7
     - quote: "Anthony est un vrai professionnel, il a su réaliser le travail demandé. C'était quelque chose de très compliqué à réaliser, tout est terminé parfaitement. Mille mercis."
       user:
         name: Rémi P.
         description: France
+        avatar:
+          src: https://i.pravatar.cc/150?img=14
     - quote: Great communication easy to work with and a professional job!
       user:
         name: Anthony V.
         description: États-Unis
+        avatar:
+          src: https://i.pravatar.cc/150?img=11
     - quote: "Anthony a réalisé un travail parfait, dans les temps. Vous pouvez lui faire une entière confiance pour mener à bien votre projet, c'est un vrai professionnel."
       user:
         name: Rémi P.
         description: France
+        avatar:
+          src: https://i.pravatar.cc/150?img=3
     - quote: Anthony deliver a quick work with all my needs satisfied. Thanks for your professionalism I hope that I will work with you again.
       user:
         name: Elodie L.
         description: France
+        avatar:
+          src: https://i.pravatar.cc/150?img=44
     - quote: Freelancer professionnel et à l'écoute.
       user:
         name: Maggie B.
         description: France
+        avatar:
+          src: https://i.pravatar.cc/150?img=47
 services:
   headline: Services
-  title: Mes différents services web
-  description: Des sites vitrines aux applications web complexes, je vous accompagne dans vos projets de transformation digitale avec les meilleures technologies du marché.
+  title: Des solutions web qui génèrent des résultats
+  description: Du site vitrine à l'application SaaS, chaque projet est conçu pour performer sur Google et convertir vos visiteurs en clients.
   features:
     - title: Site Vitrine Sur Mesure
-      description: Création de site 5-10 pages responsive avec une mise en place de SEO technique avancé. Solution administrable (CMS headless). Dès 500€.
+      description: Site responsive optimisé Lighthouse 95+, SEO technique intégré et CMS autonome pour gérer votre contenu.
       icon: i-lucide-layout
       to: /services/site-vitrine-nuxt
     - title: Plateforme E-commerce
-      description: Boutique complète avec tunnel d'achat optimisé, paiement Stripe sécurisé, SEO produits et analytics avancés. Dès 800€.
+      description: Boutique avec tunnel d'achat optimisé, paiement Stripe sécurisé et analytics de conversion intégrés.
       icon: i-lucide-shopping-cart
       to: /services/integration-api-stripe
     - title: Application Web (SaaS)
-      description: Développement de SaaS multi-tenant avec Nuxt 3, base de données (MongoDB/PostgreSQL), authentification et paiement configuré. Dès 1200€.
+      description: Architecture scalable multi-tenant, authentification sécurisée et facturation récurrente Stripe.
       icon: i-lucide-cpu
       to: /services/developpement-fullstack
+  links:
+    - label: Découvrir les offres
+      to: /services
+      icon: i-lucide-arrow-right
+      trailing: true
+      color: primary
+      variant: subtle
+process:
+  headline: Processus
+  title: Comment ça marche
+  description: Un accompagnement transparent en 4 étapes, du premier échange à la mise en ligne.
+  features:
+    - title: Appel découverte
+      description: 15 minutes pour comprendre votre projet, vos objectifs et vos contraintes.
+      icon: i-lucide-phone
+      to: /contact
+    - title: Devis sous 24h
+      description: Proposition détaillée avec périmètre, planning et budget. Sans engagement.
+      icon: i-lucide-file-text
+      to: /contact
+    - title: Développement itératif
+      description: Sprints courts avec vos retours intégrés à chaque étape. Zéro mauvaise surprise.
+      icon: i-lucide-code
+      to: /contact
+    - title: Livraison + support
+      description: Mise en production, formation CMS et 30 jours de support technique inclus.
+      icon: i-lucide-rocket
+      to: /contact
 faq:
   title: Questions fréquentes
   description: Tout ce que vous devez savoir avant de lancer votre projet de développement web.

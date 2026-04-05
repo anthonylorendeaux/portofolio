@@ -88,6 +88,14 @@ export default defineContentConfig({
                             alt: z.string().optional()
                         }))
                     }).optional(),
+                    stats: z.array(z.object({
+                        value: z.string().nonempty(),
+                        label: z.string().nonempty()
+                    })).optional(),
+                    screenshots: z.array(z.object({
+                        src: createMediaString(),
+                        alt: z.string().optional()
+                    })).optional(),
                 }),
                 projects: createBaseSectionSchema(),
                 testimonials: createBaseSectionSchema().extend({
@@ -108,7 +116,11 @@ export default defineContentConfig({
                 }),
                 services: createBaseSectionSchema().extend({
                     features: z.array(createFeatureSchema()),
+                    links: z.array(createLinkSchema()).optional(),
                 }),
+                process: createBaseSectionSchema().extend({
+                    features: z.array(createFeatureSchema()),
+                }).optional(),
 
                 faq: createBaseSectionSchema().extend({
                     items: z.array(z.object({
