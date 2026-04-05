@@ -16,11 +16,12 @@ export default defineNuxtConfig({
   site: {
     url: 'https://anthony-lorendeaux.com',
     name: 'Anthony Lorendeaux - Développeur Freelance Nuxt/Vue.js Toulouse',
-    description: 'Création de sites web ultra-rapides et applications web sur-mesure à Toulouse. Expert Nuxt 3 & Vue.js • Devis gratuit 24h',
+    description: 'Création de sites web ultra-rapides et applications web sur-mesure à Toulouse. Expert Nuxt 4 & Vue.js • Devis gratuit 24h',
     defaultLocale: 'fr',
     trailingSlash: false
   },
   robots: {
+    sitemap: 'https://anthony-lorendeaux.com/sitemap.xml',
     groups: [
       {
         userAgent: ['GPTBot', 'ClaudeBot', 'PerplexityBot'],

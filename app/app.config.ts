@@ -16,6 +16,13 @@ export default defineAppConfig({
         },
         colorMode: 'light',
     },
+    header: {
+        cta: {
+            label: 'Réserver un appel',
+            to: 'https://calendly.com/anthony-lorendeaux19/30min',
+            icon: 'i-lucide-calendar',
+        }
+    },
     navigation: navigation,
     footer: {
         columns: [
