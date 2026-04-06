@@ -33,15 +33,10 @@ hero:
     rating: 5
     avatars:
       - alt: S. M.
-        src: https://i.pravatar.cc/150?img=8
       - alt: C. B.
-        src: https://i.pravatar.cc/150?img=42
       - alt: T. R.
-        src: https://i.pravatar.cc/150?img=15
       - alt: L. D.
-        src: https://i.pravatar.cc/150?img=48
       - alt: M. P.
-        src: https://i.pravatar.cc/150?img=5
 about:
   links:
     - label: En Savoir plus

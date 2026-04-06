@@ -21,6 +21,14 @@ useSeoMeta({
 })
 
 useHead({
+    link: computed(() => {
+        const first = page.value?.hero?.screenshots?.[0]
+        if (!first) return []
+        return [{ rel: 'preload', as: 'image', href: first.src, fetchpriority: 'high', media: '(min-width: 1024px)' }]
+    })
+})
+
+useHead({
     script: computed(() => {
         const scripts = []
         if (page.value?.faq?.items?.length) {
@@ -68,7 +76,7 @@ useHead({
 <template>
     <UPage v-if="page">
         <div class="relative overflow-hidden">
-            <LazyParticules :star-count="200" :size="{ min: 1, max: 3 }" />
+            <ClientOnly><LazyParticules :star-count="200" :size="{ min: 1, max: 3 }" /></ClientOnly>
             <UPageHero v-if="page.hero" :title="page.hero.title" :description="page.hero.description"
                 orientation="horizontal">
                 <template #headline>
@@ -178,7 +186,7 @@ useHead({
                 :description="page.about.description" :links="page.about.links" orientation="horizontal"
                 :reverse="true">
                 <NuxtImg :src="page.about.image.src" :alt="page.about.image.alt" class="rounded-md" placeholder
-                    loading="lazy" />
+                    loading="lazy" width="560" height="315" format="webp" quality="80" />
             </UPageSection>
         </div>
 
