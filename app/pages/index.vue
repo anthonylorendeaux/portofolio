@@ -107,10 +107,6 @@ useHead({
                             <UButton v-for="link in page.hero.links" :key="link.label" v-bind="link" size="lg" />
                         </div>
                         <div v-if="page.hero.socialProof" class="flex items-center gap-3">
-                            <UAvatarGroup size="sm">
-                                <UAvatar v-for="(avatar, i) in page.hero.socialProof.avatars" :key="i" :src="avatar.src"
-                                    :alt="avatar.alt" />
-                            </UAvatarGroup>
                             <div class="flex flex-col">
                                 <div class="flex items-center gap-0.5">
                                     <UIcon v-for="n in page.hero.socialProof.rating" :key="n"

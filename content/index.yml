@@ -34,12 +34,6 @@ hero:
   socialProof:
     text: "12+ clients satisfaits • 4.8/5 sur Fiverr"
     rating: 5
-    avatars:
-      - alt: S. M.
-      - alt: C. B.
-      - alt: T. R.
-      - alt: L. D.
-      - alt: M. P.
 about:
   links:
     - label: En Savoir plus
