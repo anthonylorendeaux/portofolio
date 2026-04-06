@@ -52,7 +52,6 @@ useHead({
 })
 
 useSeoMeta({
-  titleTemplate: '%s | Anthony Lorendeaux',
   ogSiteName: 'Anthony Lorendeaux',
   author: 'Anthony Lorendeaux',
   ogType: 'website',
