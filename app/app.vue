@@ -9,7 +9,8 @@ useHead({
     { rel: 'canonical', href: `https://anthony-lorendeaux.com${route.path}` },
     { rel: 'icon', type: 'image/png', href: '/favicon.png' },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+    { rel: 'preconnect', href: 'https://i.pravatar.cc' }
   ]),
   script: [
     {
@@ -73,6 +74,8 @@ useSeoMeta({
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-    <Analytics />
+    <ClientOnly>
+      <Analytics />
+    </ClientOnly>
   </UApp>
 </template>
