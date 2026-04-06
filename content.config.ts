@@ -1,15 +1,22 @@
 import { defineCollection, defineContentConfig, property, z } from '@nuxt/content'
 import { asSitemapCollection } from '@nuxtjs/sitemap/content'
 
+const createSeoSchema = () => z.object({
+    title: z.string().optional(),
+    description: z.string().optional()
+}).optional()
+
 const createBaseSchema = () => z.object({
     title: z.string().nonempty(),
-    description: z.string().nonempty()
+    description: z.string().nonempty(),
+    seo: createSeoSchema()
 })
 
 const createBaseSectionSchema = () => z.object({
     headline: z.string(),
     title: z.string().nonempty(),
-    description: z.string().nonempty()
+    description: z.string().nonempty(),
+    seo: createSeoSchema()
 })
 
 const createIconString = () => property(z.string()).editor({
@@ -76,6 +83,7 @@ export default defineContentConfig({
             type: 'page',
             source: 'index.yml',
             schema: z.object({
+                seo: createSeoSchema(),
                 hero: createBaseSchema().extend({
                     badge: z.boolean(),
                     links: z.array(createLinkSchema()),
@@ -138,6 +146,7 @@ export default defineContentConfig({
             type: 'page',
             source: 'about.yml',
             schema: z.object({
+                seo: createSeoSchema(),
                 about: createBaseSectionSchema().extend({
                     image: createImageSchema()
                 }),

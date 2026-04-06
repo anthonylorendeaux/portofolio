@@ -3,13 +3,13 @@ title: "Alternative Strategies : cabinet de recrutement"
 category: Site Vitrine
 description: "Alternative strategies est un cabinet de recrutement qui avait besoin d'un site moderne et fonctionnel avec une modification de contenu autonome."
 image:
-  src: "/projects/alternativestrategies.png"
+  src: "/projects/alternativestrategies.webp"
   alt: "Création de site vitrine Nuxt 3 pour le cabinet de recrutement Alternative Strategies au Luxembourg"
 publishedAt: 2025-05-04T00:00:00.000Z
 summary: "Refonte SEO et technique d'un site de conseil, améliorant le temps de chargement et la conversion grâce à une architecture Nuxt 3 moderne."
 ---
 
-![Site web cabinet de recrutement Alternative Strategies développé en Nuxt 3](/projects/alternativestrategies.png)
+![Site web cabinet de recrutement Alternative Strategies développé en Nuxt 3](/projects/alternativestrategies.webp)
 
 Alternative Strategies connecte talents ambitieux et entreprises dynamiques dans la finance luxembourgeoise, avec un focus sur intégrité et excellence. J'ai développé leur site professionnel pour services recrutement et coaching.
 

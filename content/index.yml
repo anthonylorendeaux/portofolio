@@ -1,5 +1,8 @@
-title: "Site Web Toulouse dès 500 € – Devis Gratuit 24h"
-description: "Développeur web freelance à Toulouse pour PME & artisans. Site vitrine livré en 2 semaines, Lighthouse 95+. Devis gratuit sous 24h, réservez votre appel !"
+title: "Anthony Lorendeaux – Développeur Web Freelance Toulouse"
+description: "Développeur web freelance à Toulouse pour PME & artisans."
+seo:
+  title: "Site Web Toulouse dès 500 € – Devis Gratuit 24h"
+  description: "Développeur web freelance à Toulouse pour PME & artisans. Site vitrine livré en 2 semaines, Lighthouse 95+. Devis gratuit sous 24h, réservez votre appel !"
 hero:
   badge: true
   title: Votre site web performant, livré en 2 semaines
@@ -18,15 +21,15 @@ hero:
       trailing: true
       icon: i-lucide-arrow-right
   image:
-    src: contact_head.png
+    src: contact_head.webp
     alt: Anthony Lorendeaux Développeur Nuxt Vue.js Toulouse
     loading: eager
   screenshots:
-    - src: /projects/lescaprices.png
+    - src: /projects/lescaprices.webp
       alt: Les Caprices - Site vitrine restaurant
-    - src: /projects/alternativestrategies.png
+    - src: /projects/alternativestrategies.webp
       alt: Alternative Strategies - Landing page
-    - src: /projects/tempbox.png
+    - src: /projects/tempbox.webp
       alt: TempBox - Application SaaS
   socialProof:
     text: "12+ clients satisfaits • 4.8/5 sur Fiverr"

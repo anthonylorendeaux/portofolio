@@ -13,6 +13,22 @@ if (!page.value) throw createError({ statusCode: 404 })
 const title = page.value?.seo?.title || page.value?.title
 const description = page.value?.seo?.description || page.value?.description
 
+const img = useImage()
+
+useHead({
+    link: computed(() => {
+        const links = []
+        if (page.value?.hero?.image?.src) {
+            links.push({ rel: 'preload', as: 'image' as const, href: img(page.value.hero.image.src, { format: 'webp', quality: 85, width: 600 }), fetchpriority: 'high' as const, media: '(max-width: 1023px)' })
+        }
+        const first = page.value?.hero?.screenshots?.[0]
+        if (first) {
+            links.push({ rel: 'preload', as: 'image' as const, href: img(first.src, { format: 'webp', quality: 80, width: 600 }), fetchpriority: 'high' as const, media: '(min-width: 1024px)' })
+        }
+        return links
+    })
+})
+
 useSeoMeta({
     title,
     ogTitle: title,
@@ -20,13 +36,6 @@ useSeoMeta({
     ogDescription: description,
 })
 
-useHead({
-    link: computed(() => {
-        const first = page.value?.hero?.screenshots?.[0]
-        if (!first) return []
-        return [{ rel: 'preload', as: 'image', href: first.src, fetchpriority: 'high', media: '(min-width: 1024px)' }]
-    })
-})
 
 useHead({
     script: computed(() => {
@@ -76,7 +85,9 @@ useHead({
 <template>
     <UPage v-if="page">
         <div class="relative overflow-hidden">
-            <ClientOnly><LazyParticules :star-count="200" :size="{ min: 1, max: 3 }" /></ClientOnly>
+            <ClientOnly>
+                <LazyParticules :star-count="200" :size="{ min: 1, max: 3 }" />
+            </ClientOnly>
             <UPageHero v-if="page.hero" :title="page.hero.title" :description="page.hero.description"
                 orientation="horizontal">
                 <template #headline>
@@ -111,7 +122,7 @@ useHead({
                     </div>
                 </template>
                 <NuxtImg v-if="page.hero.image" :src="page.hero.image.src" :alt="page.hero.image.alt"
-                    class="lg:hidden mx-auto rounded-xl" placeholder :preload="{ fetchPriority: 'high' }" quality="85"
+                    class="lg:hidden mx-auto rounded-xl" placeholder loading="eager" fetchpriority="high" quality="85"
                     format="webp" width="600" height="400" />
                 <div v-if="page.hero.screenshots?.length"
                     class="hidden lg:flex items-center justify-center perspective-midrange">
@@ -125,9 +136,8 @@ useHead({
                             :autoplay="{ delay: 3000, stopOnInteraction: false }" :arrows="false" :dots="false">
                             <template #default="{ item, index }">
                                 <NuxtImg :src="item.src" :alt="item.alt" class="w-full aspect-video object-cover"
-                                    width="600" height="338" format="webp" quality="80"
-                                    :loading="index === 0 ? 'eager' : 'lazy'"
-                                    v-bind="index === 0 ? { fetchpriority: 'high' } : {}" />
+                                    width="600" height="338" format="webp" quality="80" :loading="'eager'"
+                                    v-bind="index === 0 ? { fetchpriority: 'high' as const } : {}" />
                             </template>
                         </UCarousel>
                     </div>

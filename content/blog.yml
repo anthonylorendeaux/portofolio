@@ -1,2 +1,5 @@
-title: "Blog Web & SEO Toulouse | Anthony Lorendeaux"
-description: "Articles techniques sur Nuxt.js, Vue.js, SEO et le développement web moderne. Conseils d'expert pour vos projets."
+title: "Blog"
+description: "Articles techniques sur Nuxt.js, Vue.js, SEO et le développement web moderne."
+seo:
+  title: "Blog Web & SEO Toulouse | Anthony Lorendeaux"
+  description: "Articles techniques sur Nuxt.js, Vue.js, SEO et le développement web moderne. Conseils d'expert pour vos projets."

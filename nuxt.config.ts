@@ -72,7 +72,7 @@ export default defineNuxtConfig({
   },
   fonts: {
     families: [
-      { name: 'DM Sans', provider: 'google' },
+      { name: 'DM Sans', provider: 'google', display: 'swap', preload: true },
     ]
   },
   css: ['~/assets/css/main.css']

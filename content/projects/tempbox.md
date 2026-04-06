@@ -3,13 +3,13 @@ title: "Tempbox : emails temporaires"
 category: Application
 description: "Tempbox.fr : service emails jetables 1h. Nuxt 3 frontend + Python backend. Interface intuitive, sécurité renforcée, 100% responsive."
 image:
-  src: "/projects/tempbox.png"
+  src: "/projects/tempbox.webp"
   alt: "Tempbox : emails temporaires sécurisés 1 heure"
 publishedAt: 2025-04-22T12:00:00.000Z
 summary: "Service d'emails temporaires sécurisés avec Nuxt 3 et Python, gérant des millions d'emails avec une interface mobile-first et une inbox temps réel."
 ---
 
-![Tempbox hero](/projects/tempbox.png)
+![Tempbox hero](/projects/tempbox.webp)
 
 Service emails temporaires 1h pour protéger vie privée en ligne. Solution rapide/sécurisée pour inscriptions temporaires.
 
