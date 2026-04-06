@@ -20,13 +20,55 @@ useSeoMeta({
     ogDescription: description,
 })
 
+useHead({
+    script: computed(() => {
+        const scripts = []
+        if (page.value?.faq?.items?.length) {
+            scripts.push({
+                type: 'application/ld+json',
+                innerHTML: JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'FAQPage',
+                    mainEntity: page.value.faq.items.map((item: { label: string; content: string }) => ({
+                        '@type': 'Question',
+                        name: item.label,
+                        acceptedAnswer: { '@type': 'Answer', text: item.content }
+                    }))
+                })
+            })
+        }
+        scripts.push({
+            type: 'application/ld+json',
+            innerHTML: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'ProfessionalService',
+                name: 'Anthony Lorendeaux - Développeur Freelance',
+                url: 'https://anthony-lorendeaux.com',
+                areaServed: [
+                    { '@type': 'City', name: 'Toulouse' },
+                    { '@type': 'Country', name: 'France' }
+                ],
+                priceRange: '€€',
+                provider: { '@id': 'https://anthony-lorendeaux.com/#person' },
+                aggregateRating: {
+                    '@type': 'AggregateRating',
+                    ratingValue: '4.8',
+                    reviewCount: '12',
+                    bestRating: '5'
+                }
+            })
+        })
+        return scripts
+    })
+})
+
 
 </script>
 
 <template>
     <UPage v-if="page">
         <div class="relative overflow-hidden">
-            <LazyParticules :star-count="100" :size="{ min: 0.5, max: 1.5 }" />
+            <LazyParticules :star-count="300" :size="{ min: 1, max: 3 }" />
             <UPageHero v-if="page.hero" :title="page.hero.title" :description="page.hero.description"
                 headline="page.hero.badge" orientation="horizontal">
                 <template #headline>
@@ -37,37 +79,55 @@ useSeoMeta({
                             <span class="relative inline-flex w-2 h-2 rounded-full"
                                 :class="page.hero.badge ? 'bg-success-400' : 'bg-error-400'"></span>
                         </span>
-                        {{ page.hero.badge ? 'Available for work' : 'Working on a project' }}
+                        {{ page.hero.badge ? 'Disponible pour un projet' : 'En mission' }}
                     </UBadge>
                 </template>
                 <template #links>
-                    <div class="flex flex-col gap-5">
+                    <div class="flex flex-col gap-6">
                         <div class="flex flex-wrap gap-3">
-                            <UButton v-for="link in page.hero.links" :key="link.label" v-bind="link" />
+                            <UButton v-for="link in page.hero.links" :key="link.label" v-bind="link" size="lg" />
                         </div>
                         <div v-if="page.hero.socialProof" class="flex items-center gap-3">
-                            <UAvatarGroup size="sm" :max="4">
-                                <UAvatar v-for="avatar in page.hero.socialProof.avatars" :key="avatar.src"
-                                    :src="avatar.src" :alt="avatar.alt" />
+                            <UAvatarGroup size="sm">
+                                <UAvatar v-for="(avatar, i) in page.hero.socialProof.avatars" :key="i" :src="avatar.src"
+                                    :alt="avatar.alt" />
                             </UAvatarGroup>
-                            <div class="flex flex-col gap-0.5">
-                                <span class="text-sm font-medium text-default">{{ page.hero.socialProof.text }}</span>
+                            <div class="flex flex-col">
                                 <div class="flex items-center gap-0.5">
-                                    <UIcon v-for="i in page.hero.socialProof.rating" :key="i"
-                                        name="i-heroicons-star-20-solid" class="size-4 text-amber-400" />
+                                    <UIcon v-for="n in page.hero.socialProof.rating" :key="n"
+                                        name="i-heroicons-star-20-solid" class="w-4 h-4 text-warning-400" />
                                 </div>
+                                <span class="text-sm text-muted">{{ page.hero.socialProof.text }}</span>
                             </div>
                         </div>
                     </div>
                 </template>
-                <div class="hidden md:block w-full aspect-4/5 max-w-xs mx-auto">
-                    <CanvasEffect />
+                <NuxtImg v-if="page.hero.image" :src="page.hero.image.src" :alt="page.hero.image.alt"
+                    class="lg:hidden mx-auto rounded-xl" placeholder :preload="{ fetchPriority: 'high' }"
+                    quality="85" format="webp" width="600" height="400" />
+                <div v-if="page.hero.screenshots?.length"
+                    class="hidden lg:flex items-center justify-center perspective-midrange">
+                    <div class="w-full shadow-2xl rounded-xl overflow-hidden border border-default">
+                        <div class="flex items-center gap-1.5 px-3 h-8 bg-muted shrink-0">
+                            <span class="size-3 rounded-full bg-error-400/70" />
+                            <span class="size-3 rounded-full bg-warning-400/70" />
+                            <span class="size-3 rounded-full bg-success-400/70" />
+                        </div>
+                        <UCarousel :items="page.hero.screenshots" :loop="true"
+                            :autoplay="{ delay: 3000, stopOnInteraction: false }" :arrows="false" :dots="false">
+                            <template #default="{ item }">
+                                <NuxtImg :src="item.src" :alt="item.alt" class="w-full aspect-video object-cover"
+                                    width="600" height="338" format="webp" quality="80" loading="lazy" />
+                            </template>
+                        </UCarousel>
+                    </div>
                 </div>
-                <NuxtImg :src="page.hero.image.src" :alt="page.hero.image.alt" class="md:hidden" placeholder
-                    :preload="{ fetchPriority: 'high' }" quality="85" format="webp" width="600" height="400" />
             </UPageHero>
         </div>
         <USeparator />
+        <UPageSection v-if="page.services" :headline="page.services.headline" :title="page.services.title"
+            :description="page.services.description" :features="page.services.features" :links="page.services.links" />
+
         <UPageSection v-if="page.projects" :title="page.projects.title" :description="page.projects.description"
             :headline="page.projects.headline">
             <UBlogPosts>
@@ -94,11 +154,23 @@ useSeoMeta({
                     :description="testimonial.quote"
                     :ui="{ description: 'before:content-[open-quote] after:content-[close-quote]' }">
                     <template #footer>
-                        <UUser v-bind="testimonial.user" :avatar="{ alt: testimonial.user.name }" size="lg" />
+                        <div class="flex items-center justify-between w-full">
+                            <UUser v-bind="testimonial.user"
+                                :avatar="{ src: testimonial.user.avatar?.src, alt: testimonial.user.name }" size="lg" />
+                            <UButton icon="i-ri-fiverr-fill" to="https://www.fiverr.com/antho_lor" target="_blank"
+                                size="xs" color="neutral" variant="ghost" aria-label="Voir sur Fiverr" />
+                        </div>
                     </template>
                 </UPageCard>
             </UPageColumns>
         </UPageSection>
+
+        <UPageSection v-if="page.process" :headline="page.process.headline" :title="page.process.title"
+            :description="page.process.description">
+            <UTimeline :items="page.process.features.map((f, i) => ({ ...f, date: `Étape ${i + 1}` }))" color="primary"
+                size="md" :default-value="page.process.features.length - 1" class="max-w-lg mx-auto" />
+        </UPageSection>
+
         <div class="bg-elevated">
             <UPageSection v-if="page.about" :headline="page.about.headline" :title="page.about.title"
                 :description="page.about.description" :links="page.about.links" orientation="horizontal"
@@ -107,8 +179,6 @@ useSeoMeta({
                     loading="lazy" />
             </UPageSection>
         </div>
-        <UPageSection v-if="page.services" :headline="page.services.headline" :title="page.services.title"
-            :description="page.services.description" :features="page.services.features" />
 
         <UPageSection v-if="page.faq" :title="page.faq.title" :description="page.faq.description">
             <UAccordion :items="page.faq.items" />

@@ -44,6 +44,32 @@ useSeoMeta({
     articleSection: post.value?.category,
     articleTag: post.value?.category ? [post.value.category] : undefined,
 })
+
+useHead({
+    script: computed(() => post.value ? [{
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: title,
+            description: description,
+            image: post.value.image?.src ? `https://anthony-lorendeaux.com${post.value.image.src}` : undefined,
+            datePublished: post.value.publishedAt ? new Date(post.value.publishedAt).toISOString() : undefined,
+            dateModified: post.value.updatedAt
+                ? new Date(post.value.updatedAt).toISOString()
+                : (post.value.publishedAt ? new Date(post.value.publishedAt).toISOString() : undefined),
+            author: {
+                '@type': 'Person',
+                '@id': 'https://anthony-lorendeaux.com/#person',
+                name: 'Anthony Lorendeaux'
+            },
+            publisher: { '@id': 'https://anthony-lorendeaux.com/#person' },
+            url: `https://anthony-lorendeaux.com${route.path}`,
+            inLanguage: 'fr-FR',
+            articleSection: post.value.category
+        })
+    }] : [])
+})
 </script>
 
 <template>

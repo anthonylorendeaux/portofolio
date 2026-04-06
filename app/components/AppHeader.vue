@@ -13,6 +13,10 @@ const appConfig = useAppConfig();
         </template>
 
         <template #right>
+            <UButton :to="appConfig.header.cta.to" :icon="appConfig.header.cta.icon" color="primary" variant="solid"
+                target="_blank" class="sm:hidden" />
+            <UButton :label="appConfig.header.cta.label" :to="appConfig.header.cta.to" :icon="appConfig.header.cta.icon"
+                color="primary" variant="solid" target="_blank" class="hidden sm:inline-flex" />
             <UColorModeButton />
         </template>
 
