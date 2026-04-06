@@ -67,44 +67,30 @@ testimonials:
       user:
         name: A. D.
         description: France
-        avatar:
-          src: https://i.pravatar.cc/150?img=10
     - quote: Anthony was great to work with, assessed our stripe checkout property, suggested a fix, tested and implemented this quickly. He was proactive, polite and efficient, I would not hesitate to recommend him.
       user:
         name: Toby T.
         description: Royaume-Uni
-        avatar:
-          src: https://i.pravatar.cc/150?img=7
     - quote: "Anthony est un vrai professionnel, il a su réaliser le travail demandé. C'était quelque chose de très compliqué à réaliser, tout est terminé parfaitement. Mille mercis."
       user:
         name: Rémi P.
         description: France
-        avatar:
-          src: https://i.pravatar.cc/150?img=14
     - quote: Great communication easy to work with and a professional job!
       user:
         name: Anthony V.
         description: États-Unis
-        avatar:
-          src: https://i.pravatar.cc/150?img=11
     - quote: "Anthony a réalisé un travail parfait, dans les temps. Vous pouvez lui faire une entière confiance pour mener à bien votre projet, c'est un vrai professionnel."
       user:
         name: Rémi P.
         description: France
-        avatar:
-          src: https://i.pravatar.cc/150?img=3
     - quote: Anthony deliver a quick work with all my needs satisfied. Thanks for your professionalism I hope that I will work with you again.
       user:
         name: Elodie L.
         description: France
-        avatar:
-          src: https://i.pravatar.cc/150?img=44
     - quote: Freelancer professionnel et à l'écoute.
       user:
         name: Maggie B.
         description: France
-        avatar:
-          src: https://i.pravatar.cc/150?img=47
 services:
   headline: Services
   title: Des solutions web qui génèrent des résultats

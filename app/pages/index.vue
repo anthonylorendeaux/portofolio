@@ -175,8 +175,7 @@ useHead({
                     :ui="{ description: 'before:content-[open-quote] after:content-[close-quote]' }">
                     <template #footer>
                         <div class="flex items-center justify-between w-full">
-                            <UUser v-bind="testimonial.user"
-                                :avatar="{ src: testimonial.user.avatar?.src, alt: testimonial.user.name }" size="lg" />
+                            <UUser :name="testimonial.user.name" :description="testimonial.user.description" size="lg" />
                             <UButton icon="i-ri-fiverr-fill" to="https://www.fiverr.com/antho_lor" target="_blank"
                                 size="xs" color="neutral" variant="ghost" aria-label="Voir sur Fiverr" />
                         </div>
