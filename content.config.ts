@@ -79,7 +79,7 @@ export default defineContentConfig({
                 hero: createBaseSchema().extend({
                     badge: z.boolean(),
                     links: z.array(createLinkSchema()),
-                    image: createImageSchema(),
+                    image: createImageSchema().optional(),
                     socialProof: z.object({
                         text: z.string().nonempty(),
                         rating: z.number().min(1).max(5),

@@ -102,6 +102,9 @@ useHead({
                         </div>
                     </div>
                 </template>
+                <NuxtImg v-if="page.hero.image" :src="page.hero.image.src" :alt="page.hero.image.alt"
+                    class="lg:hidden mx-auto rounded-xl" placeholder :preload="{ fetchPriority: 'high' }"
+                    quality="85" format="webp" width="600" height="400" />
                 <div v-if="page.hero.screenshots?.length"
                     class="hidden lg:flex items-center justify-center perspective-midrange">
                     <div class="w-full shadow-2xl rounded-xl overflow-hidden border border-default">
