@@ -59,10 +59,16 @@ export default defineNuxtConfig({
     exclude: ['/legal/**']
   },
   routeRules: {
+    '/': { swr: 86400 },
     '/blog/**': { swr: 3600 },
     '/projects/**': { swr: 3600 },
     '/assets/**': { headers: { 'cache-control': 's-maxage=31536000' } },
+    '/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
     '/legal/**': { robots: 'noindex, nofollow' },
+  },
+  image: {
+    quality: 80,
+    format: ['webp'],
   },
   fonts: {
     families: [
