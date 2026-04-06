@@ -43,12 +43,19 @@ const speedMap = {
     fast: { duration: 100, opacity: 1, ratio: 0.4 }
 }
 
+const generateStarLayers = (count: number) => ({
+    slow: generateStars(Math.floor(count * speedMap.slow.ratio)),
+    normal: generateStars(Math.floor(count * speedMap.normal.ratio)),
+    fast: generateStars(Math.floor(count * speedMap.fast.ratio))
+})
+
 // Utiliser effectiveStarCount au lieu de props.starCount
-const stars = useState<{ slow: Star[], normal: Star[], fast: Star[] }>('stars', () => ({
-    slow: generateStars(Math.floor(effectiveStarCount.value * speedMap.slow.ratio)),
-    normal: generateStars(Math.floor(effectiveStarCount.value * speedMap.normal.ratio)),
-    fast: generateStars(Math.floor(effectiveStarCount.value * speedMap.fast.ratio))
-}))
+const stars = useState('stars', () => generateStarLayers(effectiveStarCount.value))
+
+// Régénérer les étoiles quand effectiveStarCount change (ex: après détection mobile dans onMounted)
+watch(effectiveStarCount, (count) => {
+    stars.value = generateStarLayers(count)
+})
 
 const starLayers = computed(() => [
     { stars: stars.value.fast, ...speedMap.fast },

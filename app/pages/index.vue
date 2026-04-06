@@ -68,9 +68,9 @@ useHead({
 <template>
     <UPage v-if="page">
         <div class="relative overflow-hidden">
-            <LazyParticules :star-count="300" :size="{ min: 1, max: 3 }" />
+            <LazyParticules :star-count="200" :size="{ min: 1, max: 3 }" />
             <UPageHero v-if="page.hero" :title="page.hero.title" :description="page.hero.description"
-                headline="page.hero.badge" orientation="horizontal">
+                orientation="horizontal">
                 <template #headline>
                     <UBadge size="md" color="neutral" variant="outline">
                         <span class="relative flex w-2 h-2 mr-2">
@@ -103,8 +103,8 @@ useHead({
                     </div>
                 </template>
                 <NuxtImg v-if="page.hero.image" :src="page.hero.image.src" :alt="page.hero.image.alt"
-                    class="lg:hidden mx-auto rounded-xl" placeholder :preload="{ fetchPriority: 'high' }"
-                    quality="85" format="webp" width="600" height="400" />
+                    class="lg:hidden mx-auto rounded-xl" placeholder :preload="{ fetchPriority: 'high' }" quality="85"
+                    format="webp" width="600" height="400" />
                 <div v-if="page.hero.screenshots?.length"
                     class="hidden lg:flex items-center justify-center perspective-midrange">
                     <div class="w-full shadow-2xl rounded-xl overflow-hidden border border-default">
@@ -115,9 +115,11 @@ useHead({
                         </div>
                         <UCarousel :items="page.hero.screenshots" :loop="true"
                             :autoplay="{ delay: 3000, stopOnInteraction: false }" :arrows="false" :dots="false">
-                            <template #default="{ item }">
+                            <template #default="{ item, index }">
                                 <NuxtImg :src="item.src" :alt="item.alt" class="w-full aspect-video object-cover"
-                                    width="600" height="338" format="webp" quality="80" loading="lazy" />
+                                    width="600" height="338" format="webp" quality="80"
+                                    :loading="index === 0 ? 'eager' : 'lazy'"
+                                    v-bind="index === 0 ? { fetchpriority: 'high' } : {}" />
                             </template>
                         </UCarousel>
                     </div>
