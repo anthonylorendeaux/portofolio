@@ -1,41 +1,23 @@
 <script setup lang="ts">
-
 const route = useRoute()
-const { data: page } = await useAsyncData(route.path, () => {
-    return queryCollection('index').path(route.path).first()
-})
-const { data: projects } = await useAsyncData('projects_articles', () => queryCollection('projects_articles').order('publishedAt', 'DESC')
-    .limit(3)
-    .all())
+
+const [{ data: page }, { data: projects }] = await Promise.all([
+    useAsyncData(route.path, () => queryCollection('index').path(route.path).first()),
+    useAsyncData('projects_articles', () =>
+        queryCollection('projects_articles').order('publishedAt', 'DESC').limit(3).all()
+    ),
+])
 
 if (!page.value) throw createError({ statusCode: 404 })
 
-const title = page.value?.seo?.title || page.value?.title
-const description = page.value?.seo?.description || page.value?.description
+const title = page.value.seo?.title || page.value.title
+const description = page.value.seo?.description || page.value.description
 
-const img = useImage()
+function formatDate(date: string) {
+    return new Date(date).toLocaleDateString('fr', { year: 'numeric', month: 'short', day: 'numeric' })
+}
 
-useHead({
-    link: computed(() => {
-        const links = []
-        if (page.value?.hero?.image?.src) {
-            links.push({ rel: 'preload', as: 'image' as const, href: img(page.value.hero.image.src, { format: 'webp', quality: 85, width: 600 }), fetchpriority: 'high' as const, media: '(max-width: 1023px)' })
-        }
-        const first = page.value?.hero?.screenshots?.[0]
-        if (first) {
-            links.push({ rel: 'preload', as: 'image' as const, href: img(first.src, { format: 'webp', quality: 80, width: 600 }), fetchpriority: 'high' as const, media: '(min-width: 1024px)' })
-        }
-        return links
-    })
-})
-
-useSeoMeta({
-    title,
-    ogTitle: title,
-    description,
-    ogDescription: description,
-})
-
+useSeoMeta({ title, ogTitle: title, description, ogDescription: description })
 
 useHead({
     script: computed(() => {
@@ -49,9 +31,9 @@ useHead({
                     mainEntity: page.value.faq.items.map((item: { label: string; content: string }) => ({
                         '@type': 'Question',
                         name: item.label,
-                        acceptedAnswer: { '@type': 'Answer', text: item.content }
-                    }))
-                })
+                        acceptedAnswer: { '@type': 'Answer', text: item.content },
+                    })),
+                }),
             })
         }
         scripts.push({
@@ -63,23 +45,16 @@ useHead({
                 url: 'https://anthony-lorendeaux.com',
                 areaServed: [
                     { '@type': 'City', name: 'Toulouse' },
-                    { '@type': 'Country', name: 'France' }
+                    { '@type': 'Country', name: 'France' },
                 ],
                 priceRange: '€€',
                 provider: { '@id': 'https://anthony-lorendeaux.com/#person' },
-                aggregateRating: {
-                    '@type': 'AggregateRating',
-                    ratingValue: '4.8',
-                    reviewCount: '12',
-                    bestRating: '5'
-                }
-            })
+                aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '12', bestRating: '5' },
+            }),
         })
         return scripts
-    })
+    }),
 })
-
-
 </script>
 
 <template>
@@ -94,9 +69,9 @@ useHead({
                     <UBadge size="md" color="neutral" variant="outline">
                         <span class="relative flex w-2 h-2 mr-2">
                             <span class="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
-                                :class="page.hero.badge ? 'bg-success-400' : 'bg-error-400'"></span>
+                                :class="page.hero.badge ? 'bg-success-400' : 'bg-error-400'" />
                             <span class="relative inline-flex w-2 h-2 rounded-full"
-                                :class="page.hero.badge ? 'bg-success-400' : 'bg-error-400'"></span>
+                                :class="page.hero.badge ? 'bg-success-400' : 'bg-error-400'" />
                         </span>
                         {{ page.hero.badge ? 'Disponible pour un projet' : 'En mission' }}
                     </UBadge>
@@ -118,8 +93,8 @@ useHead({
                     </div>
                 </template>
                 <NuxtImg v-if="page.hero.image" :src="page.hero.image.src" :alt="page.hero.image.alt"
-                    class="lg:hidden mx-auto rounded-xl" placeholder loading="eager" fetchpriority="high" quality="85"
-                    format="webp" width="600" height="400" />
+                    class="lg:hidden mx-auto rounded-xl" loading="eager" fetchpriority="high"
+                    :preload="{ fetchPriority: 'high' }" format="webp" quality="85" width="600" height="400" />
                 <div v-if="page.hero.screenshots?.length"
                     class="hidden lg:flex items-center justify-center perspective-midrange">
                     <div class="w-full shadow-2xl rounded-xl overflow-hidden border border-default">
@@ -132,23 +107,27 @@ useHead({
                             :autoplay="{ delay: 3000, stopOnInteraction: false }" :arrows="false" :dots="false">
                             <template #default="{ item, index }">
                                 <NuxtImg :src="item.src" :alt="item.alt" class="w-full aspect-video object-cover"
-                                    width="600" height="338" format="webp" quality="80" :loading="'eager'"
-                                    v-bind="index === 0 ? { fetchpriority: 'high' as const } : {}" />
+                                    loading="eager" :fetchpriority="index === 0 ? 'high' : undefined"
+                                    :preload="index === 0 ? { fetchPriority: 'high' } : false"
+                                    format="webp" quality="80" width="600" height="338" />
                             </template>
                         </UCarousel>
                     </div>
                 </div>
             </UPageHero>
         </div>
+
         <USeparator />
+
         <UPageSection v-if="page.services" :headline="page.services.headline" :title="page.services.title"
             :description="page.services.description" :features="page.services.features" :links="page.services.links" />
 
-        <UPageSection v-if="page.projects" :title="page.projects.title" :description="page.projects.description"
-            :headline="page.projects.headline">
+        <UPageSection v-if="page.projects" :headline="page.projects.headline" :title="page.projects.title"
+            :description="page.projects.description">
             <UBlogPosts>
-                <UBlogPost v-for="(project, index) in projects" :key="index" :to="project.path" :title="project.title"
-                    :description="project.description" :image="{
+                <UBlogPost v-for="project in projects" :key="project.path" :to="project.path" :title="project.title"
+                    :description="project.description" :date="formatDate(project.publishedAt)"
+                    :badge="{ label: project.category, variant: 'solid' }" variant="outline" :image="{
                         src: project.image.src,
                         alt: project.image.alt,
                         width: 384,
@@ -157,12 +136,10 @@ useHead({
                         format: 'webp',
                         quality: 80,
                         loading: 'lazy',
-                    }" :date="new Date(project.publishedAt).toLocaleDateString('fr', {
-                        year: 'numeric', month: 'short', day:
-                            'numeric'
-                    })" :badge="{ label: project.category, variant: 'solid' }" variant="outline" />
+                    }" />
             </UBlogPosts>
         </UPageSection>
+
         <UPageSection v-if="page.testimonials" id="testimonials" :headline="page.testimonials.headline"
             :title="page.testimonials.title" :description="page.testimonials.description">
             <UPageColumns class="sm:columns-2 lg:columns-3 xl:columns-4">
@@ -188,10 +165,9 @@ useHead({
 
         <div class="bg-elevated">
             <UPageSection v-if="page.about" :headline="page.about.headline" :title="page.about.title"
-                :description="page.about.description" :links="page.about.links" orientation="horizontal"
-                :reverse="true">
+                :description="page.about.description" :links="page.about.links" orientation="horizontal" :reverse="true">
                 <NuxtImg :src="page.about.image.src" :alt="page.about.image.alt" class="rounded-md" placeholder
-                    loading="lazy" width="560" height="315" format="webp" quality="80" />
+                    loading="lazy" format="webp" quality="80" width="560" height="315" />
             </UPageSection>
         </div>
 
