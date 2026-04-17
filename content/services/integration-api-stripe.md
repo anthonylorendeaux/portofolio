@@ -1,9 +1,9 @@
 ---
-title: Solutions E-commerce Expert - Intégration Stripe & Nuxt
-description: Développeur spécialiste e-commerce à Toulouse. Conception de boutiques en ligne performantes avec paiement sécurisé Stripe et gestion de stocks.
+title: Intégration Stripe & Paiement Sécurisé en Ligne
+description: Vendez en ligne simplement. Intégrez Stripe à votre site, app ou e-commerce. Paiements sécurisés, gestion automatisée, déploiement rapide.
 ---
 
-# Plateforme E-commerce & Intégration Stripe
+# Vendre en ligne simplement, en toute sécurité
 
 Vendre en ligne exige une robustesse technique sans faille et une expérience utilisateur (UX) fluide pour maximiser vos conversions. Une boutique lente ou un tunnel de paiement complexe sont les premiers freins à votre croissance.
 

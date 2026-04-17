@@ -1,9 +1,9 @@
 ---
-title: Développement d'Applications SaaS & Produits Digitaux - Anthony Lorendeaux
-description: Expert en conception d'applications web complexes et SaaS multi-tenant à Toulouse. Architecture scalable avec Nuxt 4, Supabase et Stripe.
+title: Application Web SaaS sur Mesure - Développeur Freelance
+description: Transformez votre idée en produit. Application scalable, sécurisée, avec paiements intégrés. Démarrage en 2 semaines.
 ---
 
-# Développement d'Applications SaaS & Produits Sur-Mesure
+# Votre produit digital, prêt pour le marché
 
 Lancer un produit digital (SaaS) ou une application métier nécessite une expertise qui dépasse la simple création de sites. Il s'agit de bâtir une infrastructure solide, capable de gérer des utilisateurs, des données complexes et des paiements récurrents en toute sécurité.
 

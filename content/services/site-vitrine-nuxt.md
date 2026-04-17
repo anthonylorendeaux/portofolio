@@ -1,9 +1,9 @@
 ---
-title: Création de Site Vitrine Haute Performance - Anthony Lorendeaux
-description: Expert en conception de sites vitrines professionnels optimisés pour le SEO et la conversion à Toulouse. Solutions administrables avec Nuxt.js.
+title: Site Vitrine Professionnel sur Mesure - Créé Vite
+description: Créez votre présence en ligne. Site vitrine professionnel livré en 3 semaines, administrable simplement, conçu pour convertir vos visiteurs.
 ---
 
-# Création de Site Vitrine avec Nuxt.js à Toulouse
+# Votre site vitrine qui fait travailler pour vous
 
 Aujourd'hui, une simple présence en ligne ne suffit plus. Votre site web est le pivot de votre stratégie digitale : il doit être **immédiatement rapide**, parfaitement référencé et inspirer une confiance absolue à vos prospects.
 
