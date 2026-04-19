@@ -17,6 +17,11 @@ useSeoMeta({
     twitterCard: 'summary_large_image',
     twitterImage: 'https://anthony-lorendeaux.com/contact_head.png',
 })
+
+useJsonLdBreadcrumb([
+    { name: 'Accueil', path: '/' },
+    { name: 'Portfolio', path: '/projects' }
+])
 </script>
 
 <template>

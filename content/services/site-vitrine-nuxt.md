@@ -1,6 +1,23 @@
 ---
 title: Site Vitrine Professionnel sur Mesure - Créé Vite
 description: Créez votre présence en ligne. Site vitrine professionnel livré en 3 semaines, administrable simplement, conçu pour convertir vos visiteurs.
+faq:
+  headline: "FAQ"
+  title: "Questions fréquentes sur votre site vitrine"
+  description: "Trouvez les réponses à vos questions avant de commencer"
+  items:
+    - label: "Quel est l'investissement pour un site vitrine ?"
+      content: "Mes prestations démarrent à partir de 500€ HT pour un site complet (5 à 10 pages). Chaque projet fait l'objet d'un devis détaillé et transparent sous 24h."
+    - label: "Comment se passe le paiement ?"
+      content: "Le règlement s'effectue de manière sécurisée (Stripe 3D Secure) : 50% d'acompte au lancement et 50% à la livraison finale du projet."
+    - label: "Êtes-vous basé à Toulouse ?"
+      content: "Oui, je suis développeur freelance basé dans la métropole toulousaine. Nous pouvons organiser nos échanges de vive voix ou travailler intégralement à distance selon votre préférence."
+    - label: "Combien de temps entre la commande et le lancement ?"
+      content: "Pour un site vitrine standard : 2-4 semaines. Cela inclut l'audit, les maquettes, le développement et les tests. Les délais peuvent varier selon votre disponibilité pour les feedbacks."
+    - label: "Je peux gérer mon site moi-même après ?"
+      content: "Oui, c'est l'idée. J'intègre un CMS headless intuitive. Vous modifiez vos textes et images sans avoir besoin d'une formation spécialisée. Je vous guide lors de la livraison."
+    - label: "Mon site sera-t-il rapide et bien référencé sur Google ?"
+      content: "Garantie : score Lighthouse 95+, temps de chargement < 2 secondes. Oui à la deuxième question, avec balisage SEO natif, vous serez mieux classé dans 3-6 mois."
 ---
 
 # Votre site vitrine qui fait travailler pour vous

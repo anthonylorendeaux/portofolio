@@ -1,6 +1,21 @@
 ---
 title: Application Web SaaS sur Mesure - Développeur Freelance
 description: Transformez votre idée en produit. Application scalable, sécurisée, avec paiements intégrés. Démarrage en 2 semaines.
+faq:
+  headline: "FAQ"
+  title: "Questions fréquentes sur le développement SaaS"
+  description: "Tout ce que vous devez savoir pour lancer votre application"
+  items:
+    - label: "Quel est l'investissement pour un SaaS ?"
+      content: "Le développement d'un MVP (Produit Minimum Viable) complet démarre à partir de 1200€ HT. Le prix final dépend de la complexité de votre logique métier et des fonctionnalités souhaitées."
+    - label: "Quels sont les délais de production ?"
+      content: "Prévoyez un minimum de 21 jours pour obtenir une première version fonctionnelle et testée. Je travaille en mode agile pour vous permettre de voir l'évolution de votre produit au fil de l'eau."
+    - label: "Puis-je faire évoluer le projet plus tard ?"
+      content: "Absolument. En utilisant des technologies standards et documentées (TS, Nuxt, PostgreSQL), votre application reste ouverte à toutes les évolutions futures, que ce soit par mes soins ou par une équipe interne."
+    - label: "Comment gérez-vous la sécurité des données utilisateurs ?"
+      content: "La sécurité est une priorité absolue. Authentification forte, chiffrement des données en transit et au repos, infrastructure sécurisée et conformité RGPD. Votre système ne sera jamais exposé."
+    - label: "Puis-je exporter mes données ou changer de fournisseur ?"
+      content: "Bien sûr. Aucun vendor lock-in. Vous pouvez exporter vos données complètes à tout moment. J'utilise des technologies ouvertes pour garantir votre indépendance."
 ---
 
 # Votre produit digital, prêt pour le marché

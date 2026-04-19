@@ -15,6 +15,15 @@ useSeoMeta({
     ogDescription: description
 })
 
+useJsonLdBreadcrumb([
+    { name: 'Accueil', path: '/' },
+    { name: 'Services', path: '/services' }
+])
+
+if (page.value?.faq?.items) {
+    useJsonLdFaqPage(page.value.faq.items)
+}
+
 </script>
 
 <template>

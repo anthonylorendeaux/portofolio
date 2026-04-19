@@ -1,6 +1,21 @@
 ---
 title: Intégration Stripe & Paiement Sécurisé en Ligne
 description: Vendez en ligne simplement. Intégrez Stripe à votre site, app ou e-commerce. Paiements sécurisés, gestion automatisée, déploiement rapide.
+faq:
+  headline: "FAQ"
+  title: "Questions fréquentes sur l'e-commerce"
+  description: "Tout ce qu'il faut savoir avant de vendre en ligne"
+  items:
+    - label: "Quel est le budget pour une boutique e-commerce ?"
+      content: "Une plateforme e-commerce complète (Design, Paiement, Gestion produits et SEO) démarre à partir de 800€ HT. Je vous propose un accompagnement de A à Z pour lancer votre boutique sereinement."
+    - label: "Quels sont les frais Stripe ?"
+      content: "Stripe prélève une commission par transaction (généralement 1.5% + 0.25€). Il n'y a aucun abonnement mensuel fixe, vous ne payez que si vous vendez, ce qui est idéal pour lancer une activité."
+    - label: "Puis-je gérer mon catalogue seul ?"
+      content: "Absolument. Une fois la boutique livrée, je vous forme à l'utilisation de votre interface d'administration (Studio CMS) pour que vous soyez 100% autonome dans l'ajout de produits ou la gestion de vos prix."
+    - label: "Suis-je obligé de quitter mon ancien site immédiatement ?"
+      content: "Non. Nous pouvons paralléliser l'ancienne et la nouvelle boutique le temps de migrer vos données et vos clients progressivement sans interruption de service."
+    - label: "Que se passe-t-il si j'ai un pic de commandes ?"
+      content: "L'infrastructure est pensée pour la scalabilité. Une charge de 1000 commandes/jour ne pose aucun problème. Pas de ralentissement, pas d'indisponibilité."
 ---
 
 # Vendre en ligne simplement, en toute sécurité

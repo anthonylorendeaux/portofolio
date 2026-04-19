@@ -1,7 +1,12 @@
 <script setup lang="ts">
-import { Analytics } from '@vercel/analytics/nuxt';
+import { Analytics } from '@vercel/analytics/nuxt'
 
 const route = useRoute()
+
+// JSON-LD Schemas (global)
+const personScript = useJsonLdPerson()
+const serviceScript = useJsonLdProfessionalService()
+const websiteScript = useJsonLdWebsite()
 
 useHead({
   htmlAttrs: { lang: 'fr' },
@@ -9,43 +14,7 @@ useHead({
     { rel: 'canonical', href: `https://anthony-lorendeaux.com${route.path}` },
     { rel: 'icon', type: 'image/png', href: '/favicon.png' },
   ]),
-  script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@graph': [
-          {
-            '@type': 'Person',
-            '@id': 'https://anthony-lorendeaux.com/#person',
-            name: 'Anthony Lorendeaux',
-            jobTitle: 'Développeur Freelance Nuxt/Vue.js',
-            url: 'https://anthony-lorendeaux.com',
-            image: 'https://anthony-lorendeaux.com/contact_head.png',
-            address: {
-              '@type': 'PostalAddress',
-              addressLocality: 'Toulouse',
-              addressRegion: 'Occitanie',
-              addressCountry: 'FR'
-            },
-            sameAs: [
-              'https://github.com/anthonylorendeaux',
-              'https://linkedin.com/in/anthony-lorendeaux/',
-              'https://www.fiverr.com/antho_lor'
-            ]
-          },
-          {
-            '@type': 'WebSite',
-            '@id': 'https://anthony-lorendeaux.com/#website',
-            url: 'https://anthony-lorendeaux.com',
-            name: 'Anthony Lorendeaux',
-            publisher: { '@id': 'https://anthony-lorendeaux.com/#person' },
-            inLanguage: 'fr-FR'
-          }
-        ]
-      })
-    }
-  ]
+  script: computed(() => [personScript.value, serviceScript.value, websiteScript.value]),
 })
 
 useSeoMeta({

@@ -18,6 +18,11 @@ useSeoMeta({
     ogDescription: description,
     twitterCard: 'summary_large_image',
 })
+
+useJsonLdBreadcrumb([
+    { name: 'Accueil', path: '/' },
+    { name: 'Blog', path: '/blog' }
+])
 </script>
 
 <template>

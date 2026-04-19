@@ -216,7 +216,14 @@ export default defineContentConfig({
             asSitemapCollection({
                 type: 'page',
                 source: 'services/*.md',
-                schema: createBaseSchema()
+                schema: createBaseSchema().extend({
+                    faq: createBaseSectionSchema().extend({
+                        items: z.array(z.object({
+                            label: z.string().nonempty(),
+                            content: z.string().nonempty()
+                        }))
+                    }).optional()
+                })
             })
         ),
 

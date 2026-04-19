@@ -24,6 +24,16 @@ useSeoMeta({
     ogUrl: url.href
 })
 
+useJsonLdBreadcrumb([
+    { name: 'Accueil', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: page.value.title, path: route.path }
+])
+
+if (page.value?.faq?.items) {
+    useJsonLdFaqPage(page.value.faq.items)
+}
+
 </script>
 
 <template>

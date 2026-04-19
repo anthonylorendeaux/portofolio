@@ -19,42 +19,10 @@ function formatDate(date: string) {
 
 useSeoMeta({ title, ogTitle: title, description, ogDescription: description })
 
-useHead({
-    script: computed(() => {
-        const scripts = []
-        if (page.value?.faq?.items?.length) {
-            scripts.push({
-                type: 'application/ld+json',
-                innerHTML: JSON.stringify({
-                    '@context': 'https://schema.org',
-                    '@type': 'FAQPage',
-                    mainEntity: page.value.faq.items.map((item: { label: string; content: string }) => ({
-                        '@type': 'Question',
-                        name: item.label,
-                        acceptedAnswer: { '@type': 'Answer', text: item.content },
-                    })),
-                }),
-            })
-        }
-        scripts.push({
-            type: 'application/ld+json',
-            innerHTML: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'ProfessionalService',
-                name: 'Anthony Lorendeaux - Développeur Freelance',
-                url: 'https://anthony-lorendeaux.com',
-                areaServed: [
-                    { '@type': 'City', name: 'Toulouse' },
-                    { '@type': 'Country', name: 'France' },
-                ],
-                priceRange: '€€',
-                provider: { '@id': 'https://anthony-lorendeaux.com/#person' },
-                aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '12', bestRating: '5' },
-            }),
-        })
-        return scripts
-    }),
-})
+// FAQPage JSON-LD (global ProfessionalService already injected in app.vue)
+if (page.value?.faq?.items?.length) {
+    useJsonLdFaqPage(page.value.faq.items)
+}
 </script>
 
 <template>

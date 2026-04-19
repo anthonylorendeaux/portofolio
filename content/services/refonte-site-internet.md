@@ -1,6 +1,23 @@
 ---
 title: Refonte Site Internet PME - Générer des Leads
 description: Votre site ne convertit pas ? Refonte complète pour attirer vos clients. Audit gratuit, résultats en 4 à 6 semaines, sans migrer vos données.
+faq:
+  headline: "FAQ"
+  title: "Questions fréquentes sur la refonte de site"
+  description: "Tout ce que vous devez savoir avant de lancer votre refonte web"
+  items:
+    - label: "Combien de temps ça prend, une refonte de site ?"
+      content: "Généralement 4 à 6 semaines du kickoff à la livraison. Cela inclut l'audit gratuit, le design, le développement et les tests. Les délais dépendent du volume de contenu à migrer et de la complexité du design."
+    - label: "Est-ce que je perds mon classement Google pendant la refonte ?"
+      content: "Non. Je configure les redirections 301 automatiquement pour préserver votre SEO. Toutes vos anciennes URLs redirigent vers les nouvelles sans perte de ranking. Vous verrez même une amélioration dans les 3-4 mois grâce au code plus performant."
+    - label: "Puis-je konserver mon contenu et mon domaine ?"
+      content: "Bien sûr. Votre domaine ne change pas, et tout votre contenu est migré automatiquement. Aucune donnée n'est perdue. Vous ne payez que pour développement et design, pas pour l'infrastructure d'accueil."
+    - label: "Quelle différence avec un agence web ?"
+      content: "Une agence vous facture 3 000€ à 10 000€ pour la même refonte. Je travaille seul, sans overhead, et je répasse mon économie. Vous obtenez la même qualité à 1/3 du prix. Pas d'intermédiaire, pas de détours."
+    - label: "Et après la refonte ? Je dois en mettre combien pour la maintenance ?"
+      content: "Zéro obligation. Votre site tourne seul. Vous pouvez acheter une maintenance optionnelle à 30€/mois si vous voulez une sécurité supplémentaire (mises à jour, sauvegardes). Sinon, c'est votre problème."
+    - label: "Comment ça marche si je ne suis pas tech ? Je dois vérifier du code ?"
+      content: "Zéro. Je gère tout. Vous validez le design sur des maquettes avant développement, vous testez le site livré. Pas besoin de lire du code. Je vous laisse une interface intuitive pour gérer votre contenu (texte, images) après."
 ---
 
 # Votre site PME enfin rentable

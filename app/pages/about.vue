@@ -19,6 +19,11 @@ useSeoMeta({
     twitterImage: 'https://anthony-lorendeaux.com/tlse.jpg',
 })
 
+useJsonLdBreadcrumb([
+    { name: 'Accueil', path: '/' },
+    { name: 'À propos', path: '/about' }
+])
+
 </script>
 
 <template>
