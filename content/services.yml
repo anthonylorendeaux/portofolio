@@ -1,79 +1,192 @@
-title: "Mes services"
-description: "Des solutions web adaptées à votre budget et à vos besoins."
+title: Création site web & applications sur mesure
+description: Développeur freelance Toulouse. Site vitrine, boutique e-commerce ou application SaaS.
+headline: Développeur Web Freelance Toulouse
 seo:
-  title: "Services Développeur Web Freelance - Site & Paiements"
-  description: "Services web complets : refonte site internet, création vitrine, application SaaS, intégration Stripe. Solutions sur mesure, délivrées vite."
-faq:
-  title: Questions fréquentes
-  description: Réponses aux questions les plus courantes avant de lancer votre projet web.
-  items:
-    - label: Quels sont les délais de livraison ?
-      content: 14 jours pour un site vitrine • 21 jours pour un site e-commerce • 21j ou plus pour une application saas
-    - label: Comment se passe le paiement ?
-      content: Vous payez 50% d'avance • Le solde à la livraison • Le tout via Stripe 3D Secure
-    - label: Comment marche les modifications ?
-      content: Studio CMS illimité avec un support de 30j gratuit
-    - label: Où est hébergé mon site ?
-      content: Le site est hébergé sur cloudflare par mes soins.
-headline: ""
+  title: "Développeur Web Freelance Toulouse | Création Site, E-commerce & SaaS"
+  description: "Création site web à partir de 500€. Site vitrine, boutique e-commerce ou application SaaS. Devis gratuit sous 24h, maintenance 30€/mois. Accompagnement personnalisé."
+hero:
+  title: Transformer votre vision en réalité
+  description: Site vitrine, boutique en ligne ou application web. Des solutions claires, des prix transparents, un accompagnement humain du premier contact à la mise en ligne.
+  links:
+    - label: Demander un devis
+      to: /contact
+      color: primary
+      size: lg
+    - label: Voir les offres
+      to: "#offres"
+      variant: ghost
+  proofs:
+    - text: Devis gratuit sous 24h
+      icon: i-lucide-clock
+    - text: Prix transparents
+      icon: i-lucide-euro
+    - text: Maintenance 30€/mois
+      icon: i-lucide-wrench
+
 pricing:
-  title: Choisissez votre solution
-  description: Tarifs HT • Devis personnalisé gratuit • Maintenance 30€/mois
+  headline: Choisissez l'offre
+  title: Solutions pour différents profils
+  description: Pas de mauvaise surprise. Prix fixes, délais tenus, pas de dépassement de budget.
+  anchor: offres
   plans:
     - title: Site Vitrine
-      description: 5-10 pages responsive + SEO technique
       price: 500€
-      features:
-        - Responsive Tailwind CSS
-        - SEO technique Toulouse
-        - Studio CMS admin
-        - Cloudflare Pages
-        - Analytics intégrés
-      button:
-        label: Voir les détails
-        to: /services/site-vitrine-nuxt
+      priceLabel: Dès
+      description: Votre présence professionnelle en ligne. 5-10 pages, design responsive, SEO technique incluse.
       scale: false
+      badge:
+        label: Best-seller
+        color: primary
+      forWho: Artisan, freelance, petite association
+      forWhy: Presence pro en ligne, mise en avant de vos services ou produits
+      benefits:
+        - label: SEO Google inclut
+          description: Optimisation technique pour apparaître dans les résultats de recherche locaux
+        - label: Design responsive
+          description: Parfait sur mobile, tablette et desktop
+        - label: CMS intégré
+          description: Modifier vos textes et images sans toucher au code
+        - label: Hébergement 1 an OFFERT
+          description: Valeur 60€, déjà incluse
+      deliverables:
+        - 5 à 10 pages (accueil, services, à propos, contact...)
+        - Formulaire de contact fonctionnel
+        - Google Analytics intégré
+        - Nom de domaine au choix (.fr, .com)
+        - Certificat SSL
+      cta:
+        label: Demander un devis
+        to: /contact?service=vitrine
+        color: primary
+      mostPopular: false
+
     - title: Site E-commerce
-      description: Boutique + paiement Stripe configuré
       price: 800€
+      priceLabel: Dès
+      description: Boutique en ligne prête à vendre. Paiement sécurisé Stripe, catalogue produits, gestion des commandes.
       scale: true
-      features:
-        - Catalogue produits SEO
-        - Stripe paiements CB
-        - Panier + checkout
-        - Analytics ventes
-        - Gestion stocks
-      button:
-        label: Voir les détails
-        to: /services/integration-api-stripe
+      badge:
+        label: Pour vendre en ligne
+        color: green
+      forWho: Commerçant, artisan, TPE
+      forWhy: Vendre vos produits 24h/24, accepter les paiements par CB
+      benefits:
+        - label: Paiement Stripe intégré
+          description: CB, Visa, Mastercard, avec validation 3D Secure
+        - label: Gestion produits
+          description: Ajouter, modifier, archiver vos produits depuis le CMS
+        - label: Suivi commandes
+          description: Dashboard pour suivre les commandes en attente et livrées
+        - label: SEO produits
+          description: Fiches produits optimisées pour Google
+      deliverables:
+        - Catalogue produits illimité
+        - Panier et checkout
+        - Paiement Stripe configuré
+        - Emails transactionnels
+        - Tableau de bord commande
+        - Google Analytics + métriques ventes
+      cta:
+        label: Demander un devis
+        to: /contact?service=ecommerce
+        color: primary
+      mostPopular: true
+
     - title: Application SaaS
-      description: Multi-tenant + database + paiements
       price: 1200€
-      features:
-        - Nuxt 4 multi-tenant
-        - Database Supabase
-        - Stripe abonnements
-        - Authentification
-        - Admin dashboard
-      button:
-        label: Voir les détails
-        to: /services/developpement-fullstack
+      priceLabel: Dès
+      description: Application web multi-utilisateurs. Authentification, base de données, abonnements Stripe.
       scale: false
-  headline: "Prix "
-services:
-  headline: Services
-  title: Mes différents services web
-  description: Des sites vitrines aux applications web complexes, je vous accompagne dans vos projets.
-  features:
-    - title: Site Vitrine
-      description: 5-10 pages responsive + SEO technique. Solution administrable (CMS headless). Dès 500€.
-      icon: i-lucide-layout
-      to: /services/site-vitrine-nuxt
-    - title: Site E-commerce
-      description: Boutique complète, paiement Stripe sécurisé, SEO produits et analytics. Dès 800€.
-      icon: i-lucide-shopping-cart
-      to: /services/integration-api-stripe
-    - title: Application SaaS
-      description: Développement SaaS multi-tenant, base de données, authentification et paiement. Dès 1200€.
+      badge:
+        label: Sur mesure
+        color: violet
+      forWho: Entrepreneur, startup, PME
+      forWhy: "Outil métier personnalisé: gestion clients, suivi activité, membership"
+      benefits:
+        - label: Multi-utilisateurs
+          description: Plusieurs utilisateurs avec rôles différents (admin, client...)
+        - label: Base de données
+          description: Stockage sécurisé de vos données avec sauvegardes automatiques
+        - label: Abonnements Stripe
+          description: Gestion des abonnements mensuels ou annuels récurrents
+        - label: Dashboard admin
+          description: Tableau de bord complet pour gérer votre activité
+      deliverables:
+        - Authentification (email/mot de passe)
+        - Base de données Supabase
+        - Pages protégées par login
+        - Système d'abonnement
+        - Export données CSV
+        - Dashboard analytics intégré
+      cta:
+        label: Demander un devis
+        to: /contact?service=saas
+        color: primary
+      mostPopular: false
+
+included:
+  headline: Inclus dans chaque offre
+  title: Ce que vous obtenez systématiquement
+  description: Des livrables concrets, pas des promesses vagues. Voici ce qui est livré avec chaque projet.
+  items:
+    - title: Délai garanti
+      description: 14 jours pour un site vitrine, 21 jours pour un e-commerce ou SaaS. Pas de dépassement de budget.
+      icon: i-lucide-clock
+    - title: Accompagnement personnalisé
+      description: Contact direct avec le développeur, pas de intermédiaire. Réponse sous 24h en semaine.
+      icon: i-lucide-user
+    - title: Formation CMS
+      description: 30 min de formation vidéo pour gérer votre site en autonomie. Accès à vie.
+      icon: i-lucide-graduation-cap
+    - title: Maintenance facilitée
+      description: Forfait 30€/mois pour modifications, corrections, mises à jour sécurité. Sans engagement.
+      icon: i-lucide-wrench
+    - title: Transfert complet
+      description: Ownership totale à la livraison. Vous êtes propriétaire de votre nom de domaine et du code source.
+      icon: i-lucide-files
+
+about:
+  headline: Pourquoi travailler avec moi
+  title: Un développeur freelance, pas une agence
+  description: L'avantage ? Vous avez un interlocuteur unique du début à la fin. Pas de chef de projet, pas de turn-over, pas de mauvaise surprise.
+  items:
+    - title: Contact direct
+      description: Vous discutez directement avec le développeur. Pas de intermédiaire qui perd les infos en chemin.
+      icon: i-lucide-phone
+    - title: Stack moderne
+      description: Nuxt 4, Supabase, Stripe, Cloudflare. Technologies éprouvées, performantes, maintainables.
       icon: i-lucide-cpu
-      to: /services/developpement-fullstack
+    - title: Performance web
+      description: Sites notés 90+ sur Google PageSpeed. Temps de chargement minimal = meilleur SEO et conversion.
+      icon: i-lucide-zap
+    - title: SEO technique
+      description: Meta, sitemap, Schema.org, performance web... Tout Built-in. Votre site est prêt pour Google.
+      icon: i-lucide-search
+    - title: Simplicité de gestion
+      description: Pas de plugin à activer, pas de mise à jour hebdomadaire. Votre site fonctionne, point.
+      icon: i-lucide-hand-heart
+
+faq:
+  title: Questions fréquentes
+  description: Les réponses aux questions essentielles avant de lancer votre projet.
+  items:
+    - label: Quels sont les délais ?
+      content: 14 jours pour un site vitrine, 21 jours pour un e-commerce ou SaaS. Ces délais incluent les révisions. On tient les délais, toujours.
+    - label: Comment se passe le paiement ?
+      content: 50% à la commande, 50% à la livraison. Via Stripe (CB 3D Secure) ou virement. Pas de prélèvements automatiques.
+    - label: Puis-je modifier mon site moi-même ?
+      content: Oui. Chaque offre inclut un CMS pour modifier textes et images. Le forfait maintenance 30€/mois couvre les changements plus complexes.
+    - label: Quelle différence entre vitrine et e-commerce ?
+      content: Vitrine = présentation de vos services, formulaire de contact. E-commerce = possibilidade de vendre avec paiement en ligne.
+    - label: Quand choisir une application SaaS ?
+      content: "Quand vous avez besoin d'un outil métier: gestion clients, abonnements récurrents. Prix plus élevé, mais un outil fait pour votre activité."
+
+cta:
+  title: Prêt à lancer votre projet ?
+  description: Parlons de votre projet. Réponse garantie sous 24h, devis gratuit et sans engagement.
+  links:
+    - label: Demander un devis gratuit
+      to: /contact
+      color: primary
+      size: lg
+      icon: i-lucide-arrow-right

@@ -64,9 +64,23 @@ const createPricingPlanSchema = () => z.object({
     title: z.string().nonempty(),
     description: z.string().nonempty(),
     price: z.string().nonempty(),
-    features: z.array(z.string().nonempty()),
-    button: createButtonSchema(),
+    priceLabel: z.string().optional(),
+    features: z.array(z.string().nonempty()).optional(),
+    button: createButtonSchema().optional(),
+    cta: createButtonSchema().optional(),
     scale: z.boolean().default(false),
+    badge: z.object({
+        label: z.string(),
+        color: z.enum(['primary', 'green', 'violet', 'orange', 'red']).optional()
+    }).optional(),
+    forWho: z.string().optional(),
+    forWhy: z.string().optional(),
+    benefits: z.array(z.object({
+        label: z.string().nonempty(),
+        description: z.string().nonempty()
+    })).optional(),
+    deliverables: z.array(z.string().nonempty()).optional(),
+    mostPopular: z.boolean().optional()
 })
 
 const createFeatureSchema = () => z.object({
@@ -163,17 +177,37 @@ export default defineContentConfig({
         services: defineCollection({
             type: 'page',
             source: 'services.yml',
-            schema: createBaseSectionSchema().extend({
-                pricing: createBaseSectionSchema().extend({ plans: z.array(createPricingPlanSchema()) }),
+            schema: createBaseSchema().extend({
+                seo: createSeoSchema(),
+                hero: createBaseSchema().extend({
+                    links: z.array(createLinkSchema()),
+                    proofs: z.array(z.object({
+                        text: z.string().nonempty(),
+                        icon: createIconString().optional()
+                    })).optional()
+                }),
+                pricing: createBaseSectionSchema().extend({
+                    anchor: z.string().optional(),
+                    plans: z.array(createPricingPlanSchema())
+                }),
+                included: createBaseSectionSchema().extend({
+                    items: z.array(createFeatureSchema())
+                }),
+                about: createBaseSectionSchema().extend({
+                    items: z.array(createFeatureSchema())
+                }),
                 services: createBaseSectionSchema().extend({
                     features: z.array(createFeatureSchema()),
-                }),
+                }).optional(),
                 faq: createBaseSectionSchema().extend({
                     items: z.array(z.object({
                         label: z.string().nonempty(),
                         content: z.string().nonempty()
                     }))
                 }),
+                cta: createBaseSectionSchema().extend({
+                    links: z.array(createLinkSchema())
+                })
             })
         }),
 
