@@ -76,8 +76,8 @@ if (page.value?.faq?.items?.length) {
                             <template #default="{ item, index }">
                                 <NuxtImg :src="item.src" :alt="item.alt" class="w-full aspect-video object-cover"
                                     loading="eager" :fetchpriority="index === 0 ? 'high' : undefined"
-                                    :preload="index === 0 ? { fetchPriority: 'high' } : false"
-                                    format="webp" quality="80" width="600" height="338" />
+                                    :preload="index === 0 ? { fetchPriority: 'high' } : false" format="webp"
+                                    quality="80" width="600" height="338" />
                             </template>
                         </UCarousel>
                     </div>
@@ -116,7 +116,8 @@ if (page.value?.faq?.items?.length) {
                     :ui="{ description: 'before:content-[open-quote] after:content-[close-quote]' }">
                     <template #footer>
                         <div class="flex items-center justify-between w-full">
-                            <UUser :name="testimonial.user.name" :description="testimonial.user.description" size="lg" />
+                            <UUser :name="testimonial.user.name" :description="testimonial.user.description"
+                                size="lg" />
                             <UButton icon="i-ri-fiverr-fill" to="https://www.fiverr.com/antho_lor" target="_blank"
                                 size="xs" color="neutral" variant="ghost" aria-label="Voir sur Fiverr" />
                         </div>
@@ -133,7 +134,8 @@ if (page.value?.faq?.items?.length) {
 
         <div class="bg-elevated">
             <UPageSection v-if="page.about" :headline="page.about.headline" :title="page.about.title"
-                :description="page.about.description" :links="page.about.links" orientation="horizontal" :reverse="true">
+                :description="page.about.description" :links="page.about.links" orientation="horizontal"
+                :reverse="true">
                 <NuxtImg :src="page.about.image.src" :alt="page.about.image.alt" class="rounded-md" placeholder
                     loading="lazy" format="webp" quality="80" width="560" height="315" />
             </UPageSection>

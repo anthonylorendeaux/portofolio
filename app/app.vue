@@ -3,7 +3,6 @@ import { Analytics } from '@vercel/analytics/nuxt'
 
 const route = useRoute()
 
-// JSON-LD Schemas (global)
 const personScript = useJsonLdPerson()
 const serviceScript = useJsonLdProfessionalService()
 const websiteScript = useJsonLdWebsite()

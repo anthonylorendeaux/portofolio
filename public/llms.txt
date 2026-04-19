@@ -18,9 +18,10 @@
 
 ## Services
 
-- [Site Vitrine](/services/site-vitrine) — À partir de 500€, livraison 2-3 semaines. Site ultra-rapide (Lighthouse 95+), SEO-ready, éditable sans développeur via Nuxt Studio.
-- [E-commerce](/services/e-commerce) — Boutique en ligne sur-mesure avec Nuxt + Stripe. Panier, paiement sécurisé, gestion produits.
-- [SaaS / Application Web](/services/developpement-fullstack) — À partir de 1200€. Application full-stack multi-tenant avec authentification, base de données et tableau de bord.
+- [Site Vitrine Professionnel](/services/site-vitrine-nuxt) — À partir de 500€, livraison 2-3 semaines. Site ultra-rapide (Lighthouse 95+), SEO-ready, éditable sans développeur via Nuxt Studio.
+- [Intégration Stripe & E-commerce](/services/integration-api-stripe) — À partir de 800€, livraison 3-4 semaines. Boutique en ligne avec paiements sécurisés, gestion produits, analytics ventes.
+- [Développement Fullstack SaaS](/services/developpement-fullstack) — À partir de 1200€, livraison 3-4 semaines. Application multi-tenant avec authentification, base de données et tableau de bord.
+- [Refonte Site Internet PME](/services/refonte-site-internet) — À partir de 800€, livraison 4-6 semaines. Refonte complète pour générer des leads, audit gratuit, préservation SEO.
 
 ## Projets réalisés
 
@@ -35,6 +36,7 @@
 - [Combien coûte un site web](/blog/combien-coute-site-web)
 - [Moltbook : retour d'expérience](/blog/moltbook)
 - [Risques sécurité Moltbot](/blog/moltbot-risques-securite)
+- [Nuxt vs Next.js](/blog/nuxt-vs-nextjs)
 
 ## Contact
 
