@@ -93,15 +93,15 @@ services:
     - title: Site Vitrine Sur Mesure
       description: Site responsive optimisé Lighthouse 95+, SEO technique intégré et CMS autonome pour gérer votre contenu.
       icon: i-lucide-layout
-      to: /services/site-vitrine-nuxt
+      to: /services/site-vitrine
     - title: Plateforme E-commerce
       description: Boutique avec tunnel d'achat optimisé, paiement Stripe sécurisé et analytics de conversion intégrés.
       icon: i-lucide-shopping-cart
-      to: /services/integration-api-stripe
+      to: /services/site-e-commerce
     - title: Application Web (SaaS)
       description: Architecture scalable multi-tenant, authentification sécurisée et facturation récurrente Stripe.
       icon: i-lucide-cpu
-      to: /services/developpement-fullstack
+      to: /services/application-saas
   links:
     - label: Découvrir les offres
       to: /services

@@ -2,7 +2,16 @@
 let navigation = [
     { label: 'Accueil', to: '/' },
     { label: 'À propos', to: '/about' },
-    { label: 'Services', to: '/services' },
+    { 
+        label: 'Services', 
+        to: '/services',
+        description: 'Site vitrine, e-commerce ou SaaS',
+        children: [
+            { label: 'Site Vitrine', to: '/services/site-vitrine', description: 'À partir de 500€' },
+            { label: 'Site E-commerce', to: '/services/site-e-commerce', description: 'À partir de 800€' },
+            { label: 'Application SaaS', to: '/services/application-saas', description: 'À partir de 1200€' }
+        ]
+    },
     { label: 'Portfolio', to: '/projects' },
     { label: 'Blog', to: '/blog' },
     { label: 'Contact', to: '/contact' }
