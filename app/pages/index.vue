@@ -19,7 +19,6 @@ function formatDate(date: string) {
 
 useSeoMeta({ title, ogTitle: title, description, ogDescription: description })
 
-// FAQPage JSON-LD (global ProfessionalService already injected in app.vue)
 if (page.value?.faq?.items?.length) {
     useJsonLdFaqPage(page.value.faq.items)
 }
