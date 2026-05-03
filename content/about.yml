@@ -9,8 +9,7 @@ about:
   headline: Développeur Freelance à Toulouse
   title: Anthony Lorendeaux
   description: |
-    Développeur web freelance basé à Toulouse, j'ai découvert ma passion pour le code il y a 10 ans.
-    J'accompagne aujourd'hui les entreprises dans la création d'applications modernes et performantes avec Nuxt.js et Vue.js, tout en optimisant leur SEO technique.
+    Développeur web freelance à Toulouse avec 10 ans de passion pour le code. Diplômé ingénieur du CESI en 2023, je travaille aujourd'hui chez Infotel en développement SaaS fullstack. Cette double expérience entreprise + freelance me permet d'allier rigueur et agilité. Depuis 2020, j'accompagne PME et artisans vers des sites performants sans complexité technique. Certifié Microsoft & Google en cloud et IA.
   llm_summary: "Anthony Lorendeaux is a French freelance full-stack developer based in Toulouse, specializing in Nuxt.js, Vue.js, TypeScript, Node.js, and SEO/GEO optimization. He offers custom web development, e-commerce, and SaaS solutions for SMBs and startups."
 contact:
   headline: Votre projet web performant
@@ -23,38 +22,66 @@ contact:
       variant: solid
       icon: i-heroicons-arrow-path
       target: _self
-description: "Développeur freelance Nuxt/Vue.js basé à Toulouse. Ingénieur logiciel certifié Microsoft & Google, spécialisé en applications web performantes, SEO technique et architecture fullstack pour PME et startups."
+  description: "Développeur freelance Nuxt/Vue.js basé à Toulouse. Ingénieur logiciel certifié Microsoft & Google, spécialisé en applications web performantes, SEO technique et architecture fullstack pour PME et startups."
 timeline:
   headline: Mon parcours professionnel
   title: Ingénieur & Freelance
   description: Comment j'en suis arrivé là.
   items:
     - title: Formation ingénieur
-      description: Diplôme ingénieur logiciel 2023. Développement logiciel et web.
+      description: CESI Toulouse — Diplôme d'ingénieur en 2023, spécialité développement web. Certification Microsoft MTA-98-361 obtenue en parallèle (juin 2021). Bases solides en fullstack et méthodologie de projet.
       icon: i-lucide-graduation-cap
-      date: 2018-01-01
-    - title: Ingénieur Logiciel
-      description: Développeur fullstack entreprise. Projets techniques complexes.
+      date: 2018-2023
+    - title: Ingénieur Logiciel à Infotel
+      description: Développement fullstack sur applications SaaS. Architecture scalable, bases de données, APIs REST. Double activité entreprise + freelance pour allier rigueur et agilité.
       icon: i-lucide-code-2
-      date: 2023-01-01
-    - title: Freelance Toulouse
-      description: "Projets indépendants : Alternative Strategies, Garage Bourgeois. Expert SEO technique."
+      date: 2023-aujourd'hui
+    - title: Freelance
+      description: Lancé en 2020 pour me former. Aujourd'hui 12+ clients satisfaits, 4.8/5 sur Fiverr. Expertise SEO technique et sites optimisés pour Google et les IA.
       icon: i-lucide-briefcase
-      date: 2023-01-01
+      date: 2020-aujourd'hui
+certifications:
+  headline: Certifications
+  title: Expertise validée Microsoft & Google
+  description: Des certifications à jour pour garantir des solutions modernes et performantes.
+  items:
+    - title: Microsoft MTA-98-361
+      description: Software Development Fundamentals — Certification obtenue en juin 2021 validant les bases du développement fullstack et les fondamentaux du cycle de vie du logiciel.
+      icon: i-lucide-award
+    - title: Google App Engine
+      description: "3 Ways Skill Badge — Certification obtenue en décembre 2025. Expertise en déploiement cloud et architecture serverless sur la plateforme Google Cloud."
+      icon: i-lucide-cloud
+    - title: Google Vertex AI
+      description: "Prompt Design Skill Badge — Certification obtenue en décembre 2025. Conception de prompts et intégration d'IA générative dans les applications web."
+      icon: i-lucide-cpu
+coverage:
+  headline: Zone d'intervention
+  title: Toulouse, France et au-delà
+  description: Une flexibilité géographique pour s'adapter à vos besoins.
+  items:
+    - title: Toulouse & Occitanie
+      description: Intervention en présentiel possible sur Toulouse et sa région. Connaissance approfondie du tissu économique local.
+      icon: i-lucide-map-pin
+    - title: France entière
+      description: 100% remote ou déplacements ponctuels selon les projets. Déjà accompagné des clients à distance dans plusieurs régions françaises.
+      icon: i-lucide-globe
+    - title: Flexibilité garantie
+      description: Hybride, remote total ou présentiel selon vos préférences. L'important est de trouver le mode de collaboration qui fonctionne pour votre projet.
+      icon: i-lucide-handshake
 values:
   headline: Pourquoi moi ?
   title: Tarifs fixes et résultats concrets
   description: Une approche transparente, des résultats mesurables et un accompagnement sur-mesure pour chaque projet.
   features:
     - title: Tarifs transparents
-      description: Devis détaillé sans surprise. Forfaits adaptés à votre budget avec un suivi clair à chaque étape du projet.
+      description: Devis détaillé sans surprise, forfaits adaptés aux budgets PME. Devis sous 24h sans engagement, avec un suivi clair à chaque étape du projet.
       icon: i-lucide-euro
       to: /services
     - title: Expertise SEO & GEO
-      description: Optimisation pour le référencement naturel classique et pour les moteurs génératifs (IA).
+      description: Optimisation pour le référencement naturel classique et pour les moteurs génératifs (IA). Certifications Google en IA appliquée pour des sites prêts pour l'avenir.
       icon: i-lucide-map-pin
       to: /services
     - title: Performance garantie
-      description: Sites optimisés avec un score Core Web Vitals supérieur à 95/100. Tableau de bord analytics pour suivre vos résultats.
+      description: Sites optimisés avec un score Core Web Vitals supérieur à 95/100. Tableau de bord analytics pour suivre vos résultats et mesurer vos conversions.
       icon: i-lucide-trending-up
       to: /projects

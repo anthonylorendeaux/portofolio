@@ -54,10 +54,10 @@ const createImageSchema = () => z.object({
 })
 
 const createTimelineSchema = () => z.object({
-    title: z.string().nonempty(),
-    description: z.string().nonempty(),
-    icon: createIconString().nonempty(),
-    date: z.coerce.date(),
+  title: z.string().nonempty(),
+  description: z.string().nonempty(),
+  icon: createIconString().nonempty(),
+  date: z.string().nonempty(),
 })
 
 const createPricingPlanSchema = () => z.object({
@@ -156,23 +156,29 @@ export default defineContentConfig({
             })
         }),
 
-        about: defineCollection({
-            type: 'page',
-            source: 'about.yml',
-            schema: z.object({
-                seo: createSeoSchema(),
-                about: createBaseSectionSchema().extend({
-                    image: createImageSchema()
-                }),
-                timeline: createBaseSectionSchema().extend({ items: z.array(createTimelineSchema()), }),
-                values: createBaseSectionSchema().extend({
-                    features: z.array(createFeatureSchema()),
-                }),
-                contact: createBaseSectionSchema().extend({
-                    links: z.array(createButtonSchema())
-                })
-            })
-        }),
+  about: defineCollection({
+    type: 'page',
+    source: 'about.yml',
+    schema: z.object({
+      seo: createSeoSchema(),
+      about: createBaseSectionSchema().extend({
+        image: createImageSchema()
+      }),
+      timeline: createBaseSectionSchema().extend({ items: z.array(createTimelineSchema()), }),
+      certifications: createBaseSectionSchema().extend({
+        items: z.array(createFeatureSchema()),
+      }).optional(),
+      coverage: createBaseSectionSchema().extend({
+        items: z.array(createFeatureSchema()),
+      }).optional(),
+      values: createBaseSectionSchema().extend({
+        features: z.array(createFeatureSchema()),
+      }),
+      contact: createBaseSectionSchema().extend({
+        links: z.array(createButtonSchema())
+      })
+    })
+  }),
 
         services: defineCollection({
             type: 'page',
